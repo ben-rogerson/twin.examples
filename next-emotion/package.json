@@ -1,0 +1,33 @@
+{
+  "name": "next-tailwind-emotion-starter",
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "emotion",
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@zeit/next-css": "^1.0.1",
+    "next": "latest",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "twin.macro": "^1.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "next emotion tailwind twin starter"
+  ]
+}
