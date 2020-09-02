@@ -1,0 +1,8 @@
+{
+  "presets": [
+    "@vue/app"
+  ],
+  "plugins": [
+    "babel-plugin-macros"
+  ]
+}
