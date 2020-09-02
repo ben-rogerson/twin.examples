@@ -1,0 +1,29 @@
+{
+  "babelMacros": {
+    "twin": {
+      "config": "tailwind.config.js",
+      "preset": "styled-components",
+      "autoCssProp": true,
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch"
+  },
+  "dependencies": {
+    "@babel/core": "7.11.5",
+    "preact": "^10.4.8",
+    "styled-components": "5.1.1",
+    "twin.macro": "1.8.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "if-env": "^1.0.4",
+    "preact-cli": "^3.0.1"
+  }
+}
