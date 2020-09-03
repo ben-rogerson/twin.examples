@@ -1,5 +1,4 @@
 {
-  "name": "gatsby-tailwind-styled-components-starter",
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
@@ -29,6 +28,5 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1"
-  },
-  "keywords": []
+  }
 }

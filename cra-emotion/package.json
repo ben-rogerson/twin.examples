@@ -1,5 +1,4 @@
 {
-  "name": "cra-tailwind-emotion-starter",
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
@@ -26,9 +25,5 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "cra tailwind starter",
-    "react tailwind starter"
-  ]
+  }
 }

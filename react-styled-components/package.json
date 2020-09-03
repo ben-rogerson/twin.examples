@@ -1,8 +1,4 @@
 {
-  "name": "react-tailwind-styled-components-starter",
-  "description": "",
-  "author": "",
-  "version": "",
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
@@ -26,6 +22,5 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.6.1"
-  },
-  "keywords": []
+  }
 }

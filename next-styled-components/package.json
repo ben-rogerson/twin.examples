@@ -1,5 +1,4 @@
 {
-  "name": "next-tailwind-styled-components-starter",
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
@@ -21,6 +20,5 @@
     "react-dom": "^16.7.0",
     "styled-components": "^5.0.1",
     "twin.macro": "^1.8.0"
-  },
-  "keywords": []
+  }
 }

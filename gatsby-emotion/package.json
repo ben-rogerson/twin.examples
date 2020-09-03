@@ -1,5 +1,4 @@
 {
-  "name": "gatsby-tailwind-emotion-starter",
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
@@ -29,8 +28,5 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "gatsby emotion tailwind twin starter"
-  ]
+  }
 }

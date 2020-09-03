@@ -1,5 +1,4 @@
 {
-  "name": "react-emotion-tailwind-twin-starter",
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
@@ -16,7 +15,6 @@
   },
   "dependencies": {
     "@babel/core": "^7.10.2",
-    "@babel/plugin-transform-react-jsx": "^7.9.1",
     "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -29,11 +27,5 @@
   "devDependencies": {
     "parcel-bundler": "^1.6.1",
     "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "react tailwind starter",
-    "emotion",
-    "tailwind js",
-    "css in js"
-  ]
+  }
 }

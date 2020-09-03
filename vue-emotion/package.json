@@ -1,6 +1,4 @@
 {
-  "name": "vue-emotion-tailwind-twin-starter",
-  "description": "This sandbox demonstrates conditional button styling with Emotion and Tailwind in a modern Vue app. ",
   "babelMacros": {
     "twin": {
       "styled": {
