@@ -1,0 +1,10 @@
+{
+  "name": "twin-component-library-monorepo",
+  "scripts": {
+    "start": "cd packages/app && npm run start",
+    "build": "cd packages/app && npm run build"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
