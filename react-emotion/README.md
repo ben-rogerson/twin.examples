@@ -1,6 +1,8 @@
-# Twin + "Vanilla" React + Emotion Example
+# Twin + React + Emotion Example
 
-**[🔥 Check out this repo on CodeSandbox →](https://codesandbox.io/s/delicate-violet-u6b0w?file=/src/App.js)**
+<a href="https://codesandbox.io/s/delicate-violet-u6b0w?file=/src/App.js"><img src="https://i.imgur.com/YyG9s4u.png" alt="twin logo" width="550"></a>
+
+**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/delicate-violet-u6b0w?file=/src/App.js)**
 
 ## Getting started
 
@@ -201,7 +203,7 @@ Twin comes with types for every import except the `css` and `styled` imports.
 
 ## More examples with Emotion
 
-- "Vanilla" React (current)
+- React (current)
 - [Create React App](https://github.com/ben-rogerson/twin.examples/blob/master/cra-emotion/README.md)
 - [Gatsby](https://github.com/ben-rogerson/twin.examples/blob/master/gatsby-emotion/README.md)
 - [Next.js](https://github.com/ben-rogerson/twin.examples/blob/master/next-emotion/README.md)
