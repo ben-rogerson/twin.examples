@@ -7,7 +7,7 @@
       {
         "export": "jsx",
         "import": "__cssprop",
-        "module": "@emotion/core"
+        "module": "@emotion/react"
       }
     ],
     [

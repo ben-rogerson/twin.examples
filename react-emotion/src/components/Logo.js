@@ -2,8 +2,6 @@ import 'twin.macro'
 
 const Logo = () => (
   <a
-    // After adding the jsx pragma at the top of the file,
-    // you can use the tw prop to add tailwind styles directly on jsx elements
     tw="w-32 mb-10 p-5 block opacity-50 hover:opacity-100"
     href="https://github.com/ben-rogerson/twin.macro"
     target="_blank"
