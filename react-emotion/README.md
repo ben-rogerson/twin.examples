@@ -1,6 +1,6 @@
 # Twin + "Vanilla" React + Emotion Example
 
-**[🔥 Check out this repo on CodeSandbox →](https://codesandbox.io/embed/react-tailwind-emotion-starter-3d1dl?module=%2Fsrc%2FApp.js)**
+**[🔥 Check out this repo on CodeSandbox →](https://codesandbox.io/s/delicate-violet-u6b0w?file=/src/App.js)**
 
 ## Getting started
 

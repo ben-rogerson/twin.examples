@@ -13,7 +13,8 @@
     [
       "@babel/plugin-transform-react-jsx",
       {
-        "pragma": "__cssprop"
+        "pragma": "__cssprop",
+        "pragmaFrag": "React.Fragment"
       }
     ]
   ]
