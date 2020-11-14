@@ -131,7 +131,13 @@ You can avoid adding the pragma yourself with the following babel config:
         "module": "@emotion/react"
       }
     ],
-    ["babel-plugin-transform-react-jsx", { "pragma": "__cssprop" }]
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "__cssprop",
+        "pragmaFrag": "React.Fragment"
+      }
+    ]
   ]
 }
 ```
@@ -145,7 +151,13 @@ First add these babel plugins:
 {
   "plugins": [
     "babel-plugin-macros",
-    "babel-plugin-transform-react-jsx"
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "__cssprop",
+        "pragmaFrag": "React.Fragment"
+      }
+    ]
   ]
 }
 ```
