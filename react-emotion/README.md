@@ -1,8 +1,6 @@
-# Twin + React + Emotion Example
+<a href="https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/react-emotion?file=/src/App.js"><img src="https://i.imgur.com/YyG9s4u.png" alt="twin, react, emotion" width="550"></a>
 
-<a href="https://codesandbox.io/s/delicate-violet-u6b0w?file=/src/App.js"><img src="https://i.imgur.com/YyG9s4u.png" alt="twin logo" width="550"></a>
-
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/delicate-violet-u6b0w?file=/src/App.js)**
+**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/react-emotion?file=/src/App.js)**
 
 ## Getting started
 
@@ -164,7 +162,7 @@ First add these babel plugins:
 }
 ```
 
-Then when styling with the tw/css prop, add the pragma at the top of your file. This also replaces the react import:
+Then when styling with the tw or css prop, add the pragma at the top of your file. This also replaces the react import:
 
 ```js
 /** @jsxImportSource @emotion/react */
