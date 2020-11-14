@@ -108,10 +108,11 @@ module.exports = {
 
 To use the `tw` and `css` props, emotion must first extend jsx with a [jsx pragma](https://emotion.sh/docs/css-prop#jsx-pragma).
 
-When styling with the tw or css prop, add the pragma at the top of your file. This also replaces the react import:
+When styling with the tw or css prop, add the pragma at the top of your file. This also replaces the react import, unless you're using fragments `<>`:
 
 ```js
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import tw from 'twin.macro'
 
 const Input = () => <input tw="bg-black" />

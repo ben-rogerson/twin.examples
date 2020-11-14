@@ -1,4 +1,6 @@
-/** @jsxImportSource @emotion/react */
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
+import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 import { Button, Logo } from './components'
 
