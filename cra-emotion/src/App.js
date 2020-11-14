@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import React from 'react'
+// eslint-disable-line needed below for react fragments <></>
+// <React.Fragment> can be used instead
+import React from 'react' // eslint-disable-line
 import tw, { GlobalStyles } from 'twin.macro'
 import { Button, Logo } from './components'
 
