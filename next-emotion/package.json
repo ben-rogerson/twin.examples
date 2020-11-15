@@ -1,8 +1,19 @@
 {
   "babelMacros": {
     "twin": {
+      "styled": {
+        "import": "default",
+        "from": "@emotion/styled"
+      },
+      "css": {
+        "import": "css",
+        "from": "@emotion/react"
+      },
+      "global": {
+        "import": "Global",
+        "from": "@emotion/react"
+      },
       "config": "tailwind.config.js",
-      "preset": "emotion",
       "debugProp": true,
       "debugPlugins": false,
       "debug": false
@@ -14,16 +25,16 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^10.0.27",
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/babel-preset-css-prop": "^11.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
     "@zeit/next-css": "^1.0.1",
     "next": "latest",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "twin.macro": "^1.8.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "twin.macro": "^1.12.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.1.2"
   }
 }
