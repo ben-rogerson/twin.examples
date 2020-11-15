@@ -33,6 +33,7 @@ Twin adds the preflight base styles with the `GlobalStyles` import which you can
 
 ```js
 // src/App.js
+/** @jsxImportSource @emotion/react */
 import React from 'react'
 import { GlobalStyles } from 'twin.macro'
 
@@ -111,8 +112,7 @@ To use the `tw` and `css` props, emotion must first extend jsx with a [jsx pragm
 When styling with the tw or css prop, add the pragma at the top of your file. This also replaces the react import, unless you're using fragments `<>`:
 
 ```js
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
+/** @jsxImportSource @emotion/react */
 import tw from 'twin.macro'
 
 const Input = () => <input tw="bg-black" />
