@@ -5,9 +5,6 @@ const Logo = () => (
   <a
     // Use the tw prop to add Tailwind styles directly on jsx elements
     tw="w-32 mb-10 p-5 block opacity-50 hover:opacity-100"
-    css={`
-      color: red;
-    `}
     href="https://github.com/ben-rogerson/twin.macro"
     target="_blank"
     rel="noopener noreferrer"
