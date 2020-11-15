@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-// eslint-disable-line needed below for react fragments <></>
-// <React.Fragment> can be used instead
+// The pragma above is so this example works in CodeSandbox.
+// Swap it with the new pragma when you're not using CodeSandbox:
+// /** @jsxImportSource @emotion/react */
+
 import React from 'react' // eslint-disable-line
 import tw, { GlobalStyles } from 'twin.macro'
 import { Button, Logo } from './components'
