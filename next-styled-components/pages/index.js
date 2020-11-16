@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 import { Button, Logo } from './../components'
 
-export default () => (
+const App = () => (
   <div
     css={[
       tw`flex flex-col items-center justify-center h-screen`,
@@ -17,3 +17,5 @@ export default () => (
     <Logo />
   </div>
 )
+
+export default App

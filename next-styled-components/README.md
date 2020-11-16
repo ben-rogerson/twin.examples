@@ -1,6 +1,6 @@
 <a href="https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/next-styled-components?file=/src/App.js"><img src="https://i.imgur.com/jFGtYJe.png" alt="twin, next, styled-components" width="550"></a>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/ next-styled-components?file=/src/App.js)**
+**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/next-styled-components?file=/src/App.js)**
 
 ## Getting started
 

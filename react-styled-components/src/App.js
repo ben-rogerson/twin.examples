@@ -3,7 +3,7 @@ import tw from 'twin.macro'
 import { Button, Logo } from './components'
 import 'tailwindcss/dist/base.min.css'
 
-export default () => (
+const App = () => (
   <div
     css={[
       tw`flex flex-col items-center justify-center h-screen`,
@@ -18,3 +18,5 @@ export default () => (
     <Logo />
   </div>
 )
+
+export default App
