@@ -49,10 +49,10 @@ import React from 'react'
 import { GlobalStyles } from 'twin.macro'
 
 const App = () => (
-  <>
+  <div>
     <GlobalStyles />
     {/* ... */}
-  </>
+  </div>
 )
 
 export default App

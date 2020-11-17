@@ -1,5 +1,5 @@
 {
   "extends": "@snowpack/app-scripts-react",
-  "install": ["styled-components"],
-  "plugins": []
+  "install": ["styled-components", "tailwindcss/dist/base.min.css"],
+  "plugins": ["@snowpack/plugin-babel"]
 }

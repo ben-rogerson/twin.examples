@@ -17,14 +17,14 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
-    "styled-components": "^5.1.1",
-    "twin.macro": "^1.8.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.0",
+    "styled-components": "^5.2.1",
+    "twin.macro": "^1.12.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.1.2"
   },
   "browserslist": {
     "production": [

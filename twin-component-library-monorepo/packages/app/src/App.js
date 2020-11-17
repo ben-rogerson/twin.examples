@@ -1,9 +1,8 @@
-import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 import { Button, Logo } from 'components'
 
 const App = () => (
-  <>
+  <div>
     <GlobalStyles />
     <div
       css={[
@@ -18,7 +17,7 @@ const App = () => (
       </div>
       <Logo />
     </div>
-  </>
+  </div>
 )
 
 export default App

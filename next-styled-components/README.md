@@ -47,14 +47,13 @@ Twin adds the preflight base styles with the `GlobalStyles` import which you can
 
 ```js
 // page/_app.js
-import React from 'react'
 import { GlobalStyles } from 'twin.macro'
 
 const App = ({ Component, pageProps }) => (
-  <>
+  <div>
     <GlobalStyles />
     <Component {...pageProps} />
-  </>
+  </div>
 )
 
 export default App
