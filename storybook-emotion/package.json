@@ -1,0 +1,46 @@
+{
+  "babelMacros": {
+    "twin": {
+      "styled": {
+        "import": "default",
+        "from": "@emotion/styled"
+      },
+      "css": {
+        "import": "css",
+        "from": "@emotion/react"
+      },
+      "global": {
+        "import": "Global",
+        "from": "@emotion/react"
+      },
+      "config": "tailwind.config.js",
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
+  },
+  "scripts": {
+    "start": "npm run storybook",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-controls": "^6.0.28",
+    "@storybook/addon-docs": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/react": "^6.0.28",
+    "babel-loader": "^8.2.1",
+    "react-is": "^17.0.1"
+  },
+  "dependencies": {
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^11.0.0",
+    "babel-plugin-macros": "^2.8.0",
+    "twin.macro": "^1.12.1"
+  }
+}
