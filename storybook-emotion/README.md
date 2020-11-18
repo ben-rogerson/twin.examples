@@ -1,10 +1,16 @@
-# Storybook + Emotion
+<img src="https://i.imgur.com/x9LMZVI.png" alt="twin, storybook, emotion" width="550"><br/>
 
-This repository demonstrates the Storybook setup with React and Emotion.
+This repository demonstrates a Storybook setup with Emotion in React.
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/storybook-emotion?file=/components/Button.stories.js)**
+## Getting started
 
-### Notes
+Either check out the setup in the attached repository or clone this repository with degit:
+
+```js
+npx degit https://github.com/ben-rogerson/twin.examples/storybook-emotion folder-name
+```
+
+## Notes
 
 It’s based on the [react-emotion demo](https://github.com/ben-rogerson/twin.examples/tree/master/react-emotion) and uses [@emotion/babel-plugin-jsx-pragmatic](https://github.com/emotion-js/emotion/tree/master/packages/babel-plugin-jsx-pragmatic) to automatically add the css/tw prop with a custom babel configuration.
 
@@ -20,7 +26,7 @@ This error comes from `@emotion/babel-preset-css-prop` which doesn’t work with
 
 Fix: Remove `@emotion/babel-preset-css-prop` from your storybook .babelrc:
 
-### Links
+## Links
 
 - [Storybook](https://storybook.js.org/)
 - [Emotion](https://emotion.sh/docs/introduction)

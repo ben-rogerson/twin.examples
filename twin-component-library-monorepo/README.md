@@ -8,7 +8,9 @@ The trick is to use Babel to compile typescript (rather than [rollup-plugin-type
 
 Clone this repository:
 
-`npx degit https://github.com/ben-rogerson/twin.examples/twin-component-library-monorepo folder-name`
+```shell
+npx degit https://github.com/ben-rogerson/twin.examples/twin-component-library-monorepo folder-name
+```
 
 ### npm@7 install
 
