@@ -2,8 +2,7 @@
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js",
-      "preset": "styled-components",
-      "autoCssProp": true,
+      "preset": "goober",
       "debugProp": true,
       "debugPlugins": false,
       "debug": false
@@ -18,11 +17,12 @@
   "dependencies": {
     "@babel/core": "7.12.3",
     "babel-plugin-macros": "^2.8.0",
+    "goober": "^2.0.15",
     "preact": "^10.5.7",
-    "styled-components": "5.2.1",
     "twin.macro": "1.12.1"
   },
   "devDependencies": {
+    "babel-plugin-transform-goober": "^1.2.0",
     "if-env": "^1.0.4",
     "preact-cli": "^3.0.3"
   }

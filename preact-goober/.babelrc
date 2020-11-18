@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    ["babel-plugin-transform-goober", { "name": "_styled" }],
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "h",
+        "pragmaFrag": "Fragment"
+      }
+    ],
+    "babel-plugin-macros"
+  ]
+}
