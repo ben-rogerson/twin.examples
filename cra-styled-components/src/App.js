@@ -1,3 +1,4 @@
+import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 import { Button, Logo } from './components'
 

@@ -1,6 +1,6 @@
-<a href="https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/gatsby-emotion?file=/src/App.js"><img src="https://i.imgur.com/zqspwBF.png" alt="twin, gatsby, emotion" width="550"></a>
+<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/gatsby-emotion?file=/src/App.js"><img src="https://i.imgur.com/zqspwBF.png" alt="twin, gatsby, emotion" width="550"></a>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/gatsby-emotion?file=/src/App.js)**
+**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/gatsby-emotion?file=/src/App.js)**
 
 ## Getting started
 

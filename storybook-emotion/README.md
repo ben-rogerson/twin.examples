@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/x9LMZVI.png" alt="twin, storybook, emotion" width="550"><br/>
+<a href="#"><img src="https://i.imgur.com/x9LMZVI.png" alt="twin, storybook, emotion" width="550"></a>
 
 This repository demonstrates a Storybook setup with Emotion in React.
 

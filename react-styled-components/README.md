@@ -1,6 +1,6 @@
-<a href="https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js"><img src="https://i.imgur.com/Uu6f8GU.png" alt="twin, react, styled-components" width="550"></a>
+<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js"><img src="https://i.imgur.com/Uu6f8GU.png" alt="twin, react, styled-components" width="550"></a>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/s/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js)**
+**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js)**
 
 ## Getting started
 
