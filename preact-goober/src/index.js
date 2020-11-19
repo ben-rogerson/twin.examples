@@ -1,6 +1,10 @@
-import { render } from "preact";
-import App from "./App";
+import { render, h } from 'preact'
+import App from './App'
 
-if (typeof window !== "undefined") {
-  render(<App />, document.body);
+// Setup should be called just once in your app entry file
+import { setup } from 'goober'
+setup(h)
+
+if (typeof window !== 'undefined') {
+  render(<App />, document.body)
 }

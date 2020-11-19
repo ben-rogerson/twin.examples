@@ -1,10 +1,6 @@
-import { createElement } from 'preact/compat'
+import { h } from 'preact' // codesandbox requires this import
 import tw, { styled, GlobalStyles } from 'twin.macro'
 import { Button, Logo } from './components'
-
-// Setup should be called just once in your app entry file
-import { setup } from 'goober'
-setup(createElement)
 
 const Container = styled.div([
   tw`flex flex-col items-center justify-center h-screen`,
