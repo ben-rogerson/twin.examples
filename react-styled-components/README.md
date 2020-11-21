@@ -9,7 +9,7 @@
 ```bash
 # React and Babel
 npm install --save react react-dom @babel/core @babel/plugin-transform-react-jsx
-# Twin and Styled Components
+# Twin and styled-components
 npm install --save twin.macro styled-components
 ```
 
@@ -19,7 +19,7 @@ npm install --save twin.macro styled-components
 ```bash
 # React and Babel
 yarn add react react-dom @babel/core @babel/plugin-transform-react-jsx
-# Twin and Styled Components
+# Twin and styled-components
 yarn add twin.macro styled-components
 ```
 
@@ -172,7 +172,7 @@ module.exports = {
 - Learn how to use the styled-components library<br/>
   The [css prop](https://styled-components.com/docs/api#css-prop) / [css import](https://styled-components.com/docs/api#css) / [styled import](https://styled-components.com/docs/api#styled)
 
-## More examples with Styled Components
+## More examples with styled-components
 
 - React (current)
 - [Preact](https://github.com/ben-rogerson/twin.examples/blob/master/preact-styled-components)

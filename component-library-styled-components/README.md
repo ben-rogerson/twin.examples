@@ -1,4 +1,4 @@
-# Component library with styled components
+# Component library with styled-components
 
 This setup demonstrates a React app using a typescript component library.
 
@@ -26,7 +26,7 @@ If you'd rather use [Yarn workspaces](https://yarnpkg.com/features/workspaces) t
 ### Components (packages/components)
 
 - [React](https://reactjs.org/)
-- [Styled Components](https://styled-components.com/)
+- [styled-components](https://styled-components.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
 - [Parcel](https://parceljs.org/)
@@ -35,7 +35,7 @@ If you'd rather use [Yarn workspaces](https://yarnpkg.com/features/workspaces) t
 
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
-- [Styled Components](https://styled-components.com/)
+- [styled-components](https://styled-components.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
 - [Rollup.js](https://rollupjs.org/guide/en/)

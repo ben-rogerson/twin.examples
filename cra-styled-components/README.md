@@ -159,7 +159,7 @@ module.exports = {
 - Learn how to use the styled-components library<br/>
   The [css prop](https://styled-components.com/docs/api#css-prop) / [css import](https://styled-components.com/docs/api#css) / [styled import](https://styled-components.com/docs/api#styled)
 
-## More examples with Styled Components
+## More examples with styled-components
 
 - [React](https://github.com/ben-rogerson/twin.examples/blob/master/react-styled-components)
 - [Preact](https://github.com/ben-rogerson/twin.examples/blob/master/preact-styled-components)

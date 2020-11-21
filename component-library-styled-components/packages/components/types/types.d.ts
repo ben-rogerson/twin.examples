@@ -1,7 +1,7 @@
 import 'twin.macro'
 import styledImport, { CSSProp, css as cssImport } from 'styled-components'
 
-// Allow the 'as' prop for styled components
+// Allow the 'as' prop for styled-components
 declare global {
     namespace JSX {
         interface IntrinsicAttributes<T> extends DOMAttributes<T> {

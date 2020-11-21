@@ -1,8 +1,8 @@
-# Snowpack + React + Styled Components + Tailwind + Twin
+# Snowpack + React + styled-components + Tailwind + Twin
 
 - [Snowpack](https://www.snowpack.dev/)
 - [React](https://reactjs.org/)
-- [Emotion](https://emotion.sh/docs/introduction)
+- [styled-components](https://styled-components.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
 
