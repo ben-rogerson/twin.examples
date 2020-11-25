@@ -1,0 +1,56 @@
+{
+  "babelMacros": {
+    "twin": {
+      "styled": {
+        "import": "default",
+        "from": "@emotion/styled"
+      },
+      "css": {
+        "import": "css",
+        "from": "@emotion/react"
+      },
+      "global": {
+        "import": "Global",
+        "from": "@emotion/react"
+      },
+      "config": "tailwind.config.js",
+      "debugProp": true,
+      "debugPlugins": false,
+      "debug": false
+    }
+  },
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "web-test-runner \"src/**/*.test.tsx\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^11.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "tailwindcss": "^2.0.1",
+    "twin.macro": "^1.12.1"
+  },
+  "devDependencies": {
+    "@snowpack/app-scripts-react": "^1.12.6",
+    "@snowpack/plugin-dotenv": "^2.0.4",
+    "@snowpack/plugin-react-refresh": "^2.3.7",
+    "@snowpack/plugin-typescript": "^1.1.0",
+    "@snowpack/web-test-runner-plugin": "^0.1.4",
+    "@testing-library/react": "^11.0.0",
+    "@types/chai": "^4.2.13",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/snowpack-env": "^2.3.2",
+    "@web/test-runner": "^0.9.7",
+    "chai": "^4.2.0",
+    "prettier": "^2.0.5",
+    "snowpack": "^2.17.1",
+    "typescript": "^4.0.0"
+  }
+}
