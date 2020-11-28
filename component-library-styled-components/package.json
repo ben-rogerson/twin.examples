@@ -1,8 +1,9 @@
 {
   "name": "twin-component-library-monorepo",
+  "private": true,
   "scripts": {
-    "start": "cd packages/app && npm run start",
-    "build": "cd packages/app && npm run build"
+    "start": "cd packages/app && yarn start",
+    "build": "cd packages/app && yarn build"
   },
   "workspaces": [
     "packages/*"

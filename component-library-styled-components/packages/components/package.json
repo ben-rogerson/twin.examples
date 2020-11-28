@@ -22,10 +22,10 @@
     "build": "npm run build:types && npm run build:js"
   },
   "peerDependencies": {
-    "styled-components": "^5.2.0",
+    "@types/react": "^17.0.0",
+    "@types/styled-components": "^5.1.4",
     "react": "^17.0.1",
-    "@types/react": "^16.9.55",
-    "@types/styled-components": "^5.1.4"
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -41,6 +41,7 @@
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
+    "@types/react": "17",
     "core-js": "^3.6.5",
     "twin.macro": "^1.12.0"
   }
