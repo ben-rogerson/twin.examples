@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^11.0.0",
+    "@emotion/css": "^11.0.0",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@zeit/next-css": "^1.0.1",

@@ -9,7 +9,7 @@
 After creating your next app:
 
 ```bash
-npm install --save twin.macro @emotion/react @emotion/styled @emotion/babel-preset-css-prop
+npm install --save twin.macro @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
 ```
 
 <details>
@@ -47,22 +47,26 @@ Twin adds the preflight base styles with the `GlobalStyles` import which you can
 ```js
 // page/_app.js
 import { GlobalStyles } from 'twin.macro'
+import { CacheProvider } from '@emotion/react'
+import { cache } from '@emotion/css'
 
 const App = ({ Component, pageProps }) => (
-  <div>
+  <CacheProvider value={cache}>
     <GlobalStyles />
     <Component {...pageProps} />
-  </div>
+  </CacheProvider>
 )
 
 export default App
 ```
 
-`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations. But if you’re not using the animate classes then you can [avoid adding the extra keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/docs/extra-keyframes.md).
+`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) work.
 
-### 4. Add the recommended config
+Emotion’s [CacheProvider](https://emotion.sh/docs/cache-provider) ensures the styles get distributed across your app by Next.js as demonstrated in the [`with-emotion-11` example repo](https://github.com/vercel/next.js/blob/master/examples/with-emotion-11/pages/_app.js).
 
-Twin’s recommended config can get added in a couple of different places.
+### 4. Add the twin config
+
+Twin’s config can get added in a couple of different places.
 
 **a) In a new file named `babel-plugin-macros.config.js` placed in your project root:**
 
@@ -70,22 +74,7 @@ Twin’s recommended config can get added in a couple of different places.
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    styled: {
-      import: 'default',
-      from: '@emotion/styled'
-    },
-    css: {
-      import: 'css',
-      from: '@emotion/react'
-    },
-    global: {
-      import: 'Global',
-      from: '@emotion/react'
-    },
-    config: 'tailwind.config.js',
-    debugProp: true,
-    debugPlugins: false,
-    debug: false
+    preset: 'emotion'
   }
 }
 ```
@@ -96,22 +85,7 @@ module.exports = {
 // package.json
 "babelMacros": {
   "twin": {
-    "styled": {
-      "import": "default",
-      "from": "@emotion/styled"
-    },
-    "css": {
-      "import": "css",
-      "from": "@emotion/react"
-    },
-    "global": {
-      "import": "Global",
-      "from": "@emotion/react"
-    },
-    "config": "tailwind.config.js",
-    "debugProp": true,
-    "debugPlugins": false,
-    "debug": false
+    "preset": "emotion"
   }
 },
 ```
