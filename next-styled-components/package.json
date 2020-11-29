@@ -1,11 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "config": "tailwind.config.js",
-      "preset": "styled-components",
-      "debugProp": true,
-      "debugPlugins": false,
-      "debug": false
+      "preset": "styled-components"
     }
   },
   "scripts": {
@@ -19,6 +15,6 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1",
-    "twin.macro": "^1.12.1"
+    "twin.macro": "^2.0.1"
   }
 }

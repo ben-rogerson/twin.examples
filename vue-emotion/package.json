@@ -24,7 +24,7 @@
     "@vue/cli-plugin-babel": "4.1.1",
     "babel-plugin-macros": "^2.8.0",
     "emotion": "^10.0.27",
-    "twin.macro": "^1.7.0",
+    "twin.macro": "^2.0.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {

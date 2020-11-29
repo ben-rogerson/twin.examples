@@ -1,9 +1,9 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { Button, Logo } from '../components'
+import { Button, Logo, Layout } from '../components'
 
 const App = () => (
-  <div
+  <Layout
     css={[
       tw`flex flex-col items-center justify-center h-screen`,
       tw`bg-gradient-to-b from-electric to-ribbon`
@@ -15,7 +15,7 @@ const App = () => (
       <Button isSmall>Close</Button>
     </div>
     <Logo />
-  </div>
+  </Layout>
 )
 
 export default App

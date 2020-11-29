@@ -6,22 +6,7 @@
   },
   "babelMacros": {
     "twin": {
-      "styled": {
-        "import": "default",
-        "from": "@emotion/styled"
-      },
-      "css": {
-        "import": "css",
-        "from": "@emotion/react"
-      },
-      "global": {
-        "import": "Global",
-        "from": "@emotion/react"
-      },
-      "config": "tailwind.config.js",
-      "debugProp": true,
-      "debugPlugins": false,
-      "debug": false
+      "preset": "emotion"
     }
   },
   "dependencies": {
@@ -29,11 +14,11 @@
     "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
-    "babel-plugin-macros": "^2.8.0",
+    "babel-plugin-macros": "^3.0.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "twin.macro": "^1.12.0"
+    "twin.macro": "^2.0.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",

@@ -45,11 +45,11 @@ const App = () => (
 export default App
 ```
 
-`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations. But if you’re not using the animate classes then you can [avoid adding the extra keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/docs/extra-keyframes.md).
+`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) work.
 
-### 4. Add the recommended config
+### 4. Add the twin config
 
-Twin’s recommended config can get added in a couple of different places.
+Twin’s config can get added in a couple of different places.
 
 **a) In a new file named `babel-plugin-macros.config.js` placed in your project root:**
 
@@ -57,12 +57,7 @@ Twin’s recommended config can get added in a couple of different places.
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    config: 'tailwind.config.js',
-    preset: 'styled-components',
-    autoCssProp: true,
-    debugProp: true,
-    debugPlugins: false,
-    debug: false
+    preset: 'styled-components'
   }
 }
 ```
@@ -72,14 +67,9 @@ module.exports = {
 ```js
 // package.json
 "babelMacros": {
-    "twin": {
-      "config": "tailwind.config.js",
-      "preset": "styled-components",
-      "autoCssProp": true,
-      "debugProp": true,
-      "debugPlugins": false,
-      "debug": false,
-    }
+  "twin": {
+    "preset": "styled-components"
+  }
 },
 ```
 
@@ -112,7 +102,7 @@ module.exports = {
   twin: {
     styled: {
       import: 'default',
-      from: 'styled-components'
+      from: 'styled-components/macro'
     },
     css: {
       import: 'css',
@@ -135,7 +125,7 @@ module.exports = {
   "twin": {
     "styled": {
       "import": "default",
-      "from": "styled-components"
+      "from": "styled-components/macro"
     },
     "css": {
       "import": "css",

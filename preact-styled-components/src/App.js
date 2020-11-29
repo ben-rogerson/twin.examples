@@ -1,6 +1,5 @@
-import tw from "twin.macro";
+import tw, { GlobalStyles } from "twin.macro";
 import { Button, Logo } from "./components";
-import "tailwindcss/dist/base.min.css";
 
 const App = () => (
   <div
@@ -9,6 +8,7 @@ const App = () => (
       tw`bg-gradient-to-b from-electric to-ribbon`,
     ]}
   >
+    <GlobalStyles />
     <div tw="flex flex-col justify-center h-full space-y-5">
       <Button isPrimary>Submit</Button>
       <Button isSecondary>Cancel</Button>

@@ -22,9 +22,9 @@ If you’re seeing this error:
 Module not found: Error: Can’t resolve '@emotion/styled/base' in '...'
 ```
 
-This error comes from `@emotion/babel-preset-css-prop` which doesn’t work with Emotion@11+ outside of Next.js.
+This error comes from `@emotion/babel-preset-css-prop` which has issues with Emotion@11+.
 
-Fix: Remove `@emotion/babel-preset-css-prop` from your storybook .babelrc:
+Fix: Remove `@emotion/babel-preset-css-prop` just from the .babelrc your storybook uses.
 
 ## Links
 

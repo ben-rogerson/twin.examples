@@ -9,9 +9,7 @@
   "babelMacros": {
     "twin": {
       "config": "./../../tailwind.config.js",
-      "preset": "styled-components",
-      "autoCssProp": true,
-      "debugProp": true
+      "preset": "styled-components"
     }
   },
   "scripts": {
@@ -43,6 +41,6 @@
   "dependencies": {
     "@types/react": "17",
     "core-js": "^3.6.5",
-    "twin.macro": "^1.12.0"
+    "twin.macro": "2.0.1"
   }
 }

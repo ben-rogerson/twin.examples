@@ -1,22 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "styled": {
-        "import": "default",
-        "from": "@emotion/styled"
-      },
-      "css": {
-        "import": "css",
-        "from": "@emotion/react"
-      },
-      "global": {
-        "import": "Global",
-        "from": "@emotion/react"
-      },
-      "config": "tailwind.config.js",
-      "debugProp": true,
-      "debugPlugins": false,
-      "debug": false
+      "preset": "emotion"
     }
   },
   "scripts": {
@@ -33,7 +18,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "tailwindcss": "^1.9.6",
-    "twin.macro": "^1.12.1"
+    "twin.macro": "^2.0.1"
   },
   "devDependencies": {
     "@snowpack/app-scripts-react": "^1.12.6",

@@ -82,8 +82,8 @@ Twin adds the preflight base styles with the `GlobalStyles` import which you can
 import React from 'react'
 import { GlobalStyles } from 'twin.macro'
 
-const Layout = ({ children }) => (
-  <div>
+const Layout = ({ children, ...rest }) => (
+  <div {...rest}>
     <GlobalStyles />
     {children}
   </div>
@@ -101,11 +101,11 @@ import Layout from './../components/Layout'
 const App = () => <Layout>{/* ... */}</Layout>
 ```
 
-`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations. But if you’re not using the animate classes then you can [avoid adding the extra keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/docs/extra-keyframes.md).
+`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) work.
 
-### 5. Add the recommended config
+### 5. Add the twin config
 
-Twin’s recommended config can get added in a couple of different places.
+Twin’s config can get added in a couple of different places.
 
 **a) In a new file named `babel-plugin-macros.config.js` placed in your project root:**
 
@@ -113,22 +113,7 @@ Twin’s recommended config can get added in a couple of different places.
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    styled: {
-      import: 'default',
-      from: '@emotion/styled'
-    },
-    css: {
-      import: 'css',
-      from: '@emotion/react'
-    },
-    global: {
-      import: 'Global',
-      from: '@emotion/react'
-    },
-    config: 'tailwind.config.js',
-    debugProp: true,
-    debugPlugins: false,
-    debug: false
+    preset: 'emotion'
   }
 }
 ```
@@ -139,22 +124,7 @@ module.exports = {
 // package.json
 "babelMacros": {
   "twin": {
-    "styled": {
-      "import": "default",
-      "from": "@emotion/styled"
-    },
-    "css": {
-      "import": "css",
-      "from": "@emotion/react"
-    },
-    "global": {
-      "import": "Global",
-      "from": "@emotion/react"
-    },
-    "config": "tailwind.config.js",
-    "debugProp": true,
-    "debugPlugins": false,
-    "debug": false
+    "preset": "emotion"
   }
 },
 ```

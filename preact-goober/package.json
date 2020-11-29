@@ -1,11 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "config": "tailwind.config.js",
-      "preset": "goober",
-      "debugProp": true,
-      "debugPlugins": false,
-      "debug": false
+      "preset": "goober"
     }
   },
   "scripts": {
@@ -16,10 +12,10 @@
   },
   "dependencies": {
     "@babel/core": "7.12.3",
-    "babel-plugin-macros": "^2.8.0",
+    "babel-plugin-macros": "^3.0.0",
     "goober": "^2.0.15",
     "preact": "^10.5.7",
-    "twin.macro": "1.12.1"
+    "twin.macro": "^2.0.1"
   },
   "devDependencies": {
     "babel-plugin-transform-goober": "^1.2.0",

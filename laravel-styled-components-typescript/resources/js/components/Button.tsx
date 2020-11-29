@@ -1,15 +1,14 @@
-import tw, { styled, css } from 'twin.macro'
+import tw, { styled, css, theme } from 'twin.macro'
 
 type ButtonProps = {
   isPrimary?: boolean
   isSecondary?: boolean
   isSmall?: boolean
-  theme: { colors: { white: string } }
   children: React.ReactNode
 }
 
 const Button = styled.button(
-  ({ isPrimary, isSecondary, isSmall, theme }: ButtonProps) => [
+  ({ isPrimary, isSecondary, isSmall }: ButtonProps) => [
     // The base button styles added with the tw import
     tw`text-lg px-8 py-2 rounded
     transform hocus:scale-105 transition-transform duration-75
@@ -31,7 +30,7 @@ const Button = styled.button(
 
     // Your tailwind.config.js styles are added by <Theme> in App.js
     css`
-      color: ${theme.colors.white};
+      color: ${theme`colors.white`};
     `
   ]
 )
