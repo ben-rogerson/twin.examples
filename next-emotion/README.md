@@ -1,4 +1,4 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/next-emotion?file=/src/App.js"><img src="https://i.imgur.com/zqspwBF.png" alt="twin, next, emotion" width="550"></a>
+<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/next-emotion?file=/src/App.js"><img src="https://i.imgur.com/rmQeDT3.png" alt="twin, next, emotion" width="550"></a>
 
 **[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/next-emotion?file=/src/App.js)**
 
