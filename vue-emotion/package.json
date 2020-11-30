@@ -9,7 +9,7 @@
         "import": "",
         "from": ""
       },
-      "debugProp": true,
+      "dataTwProp": true,
       "debugPlugins": false,
       "debug": false
     }
