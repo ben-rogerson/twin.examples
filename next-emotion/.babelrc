@@ -1,7 +1,4 @@
 {
   "presets": ["next/babel", "@emotion/babel-preset-css-prop"],
-  "plugins": [
-    "babel-plugin-macros",
-    ["styled-jsx/babel", { "plugins": ["styled-jsx-plugin-postcss"] }]
-  ]
+  "plugins": ["babel-plugin-macros"]
 }
