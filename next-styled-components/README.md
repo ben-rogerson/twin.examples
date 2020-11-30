@@ -140,7 +140,7 @@ Note: Adding styles within this file won’t work like you would expect, [take a
 | preset                | `string`  | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'                                  |
 | hasSuggestions        | `boolean` | `true`                 | Display class suggestions when a class isn't found                                                                        |
 | debugPlugins          | `boolean` | `false`                | Display generated class information in your terminal from your plugins                                                    |
-| debugProp             | `boolean` | `false`                | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />` |
+| dataTwProp            | `boolean` | `false`                | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />` |
 | debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                 |
 | disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                         |
 
