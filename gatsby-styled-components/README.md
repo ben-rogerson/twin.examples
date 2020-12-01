@@ -98,7 +98,7 @@ Twin comes with types for every import except the `css` and `styled` imports.
 
 [Add the remaining types →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/typescript.md)
 
-## Options
+## Twin config options
 
 | Name                  | Type      | Default                | Description                                                                                                                                                                                                              |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -160,8 +160,6 @@ module.exports = {
 
 </details>
 
-**Note:** Make sure you remove the `preset` option as that value disables these custom options.
-
 ## Next steps
 
 - See how to [customize your classes →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/customizing-config.md)
@@ -173,6 +171,6 @@ module.exports = {
 - [React](https://github.com/ben-rogerson/twin.examples/blob/master/react-styled-components)
 - [Preact](https://github.com/ben-rogerson/twin.examples/blob/master/preact-styled-components)
 - [Create React App](https://github.com/ben-rogerson/twin.examples/blob/master/cra-styled-components)
-- [Gatsby (current)
+- Gatsby (current)
 - [Next.js](https://github.com/ben-rogerson/twin.examples/blob/master/next-styled-components)
 - [Snowpack](https://github.com/ben-rogerson/twin.examples/blob/master/snowpack-react-styled-components)

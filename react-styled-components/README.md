@@ -81,7 +81,7 @@ module.exports = {
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": 'styled-components',
+    "preset": "styled-components",
   }
 },
 ```
@@ -89,13 +89,15 @@ module.exports = {
 <details>
   <summary><b>Parcel users:</b> Use this alternative config if you’re seeing errors.</summary>
 
-I’ve seen some issues using the default `styled-components/macro` import where Parcel gives up and throws errors after a couple of reloads! So I suggest avoiding the macro import and using the following config instead:
+I’ve seen some issues using the default `styled-components/macro` import where Parcel gives up and throws errors after a couple of reloads!
+
+I suggest avoiding the macro import and using the following config instead. A potential downside is that you won’t be able to define the styled-components configuration for the styled import via the .babelrc config.
 
 ```js
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": 'styled-components',
+    "preset": "styled-components",
     "styled": {
       "import": "default",
       "from": "styled-components"
@@ -127,7 +129,7 @@ Twin comes with types for every import except the `css` and `styled` imports.
 
 [Add the remaining types →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/typescript.md)
 
-## Options
+## Twin config options
 
 | Name                  | Type      | Default                | Description                                                                                                                                                                                                              |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -188,8 +190,6 @@ module.exports = {
 ```
 
 </details>
-
-**Note:** Make sure you remove the `preset` option as that value disables these custom options.
 
 ## Next steps
 

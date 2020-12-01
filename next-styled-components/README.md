@@ -81,9 +81,9 @@ module.exports = {
 ```js
 // package.json
 "babelMacros": {
-    "twin": {
-      "preset": "styled-components",
-    }
+  "twin": {
+    "preset": "styled-components",
+  }
 },
 ```
 
@@ -132,7 +132,7 @@ export default class MyDocument extends Document {
 
 Note: Adding styles within this file won’t work like you would expect, [take a look at this issue for a workaround](https://github.com/ben-rogerson/twin.macro/issues/146#issuecomment-691737363).
 
-## Options
+## Twin config options
 
 | Name                  | Type      | Default                | Description                                                                                                               |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -192,8 +192,6 @@ module.exports = {
 ```
 
 </details>
-
-**Note:** Make sure you remove the `preset` option as that value disables these custom options.
 
 ## Next steps
 

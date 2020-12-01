@@ -135,7 +135,7 @@ Twin comes with types for every import except the `css` and `styled` imports.
 
 [Add the remaining types →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/typescript.md)
 
-## Options
+## Twin config options
 
 | Name                  | Type      | Default                | Description                                                                                                                                                                                                                           |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

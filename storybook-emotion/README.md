@@ -24,7 +24,7 @@ Module not found: Error: Can’t resolve '@emotion/styled/base' in '...'
 
 This error comes from `@emotion/babel-preset-css-prop` which has issues with Emotion@11+.
 
-Fix: Remove `@emotion/babel-preset-css-prop` just from the .babelrc your storybook uses.
+Fix: Remove `@emotion/babel-preset-css-prop` only from the .babelrc your storybook uses.
 
 ## Links
 

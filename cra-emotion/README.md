@@ -90,7 +90,7 @@ const Input = () => <input tw="bg-black" />
 const Input = () => <input css={tw`bg-black`} />
 ```
 
-You can automate the injection of the jsx pragma but you’ll need to use a package like [rewire create react app](https://github.com/timarney/react-app-rewired) to allow changes to the project `.babelrc`. Check the [emotion + react docs](https://github.com/ben-rogerson/twin.examples/blob/master/react-emotion/README.md) for the babel config to use.
+You can automate the injection of the jsx pragma but you’ll need to use a package like [rewire create react app](https://github.com/timarney/react-app-rewired) to allow changes to the project `.babelrc`. Check the [twin emotion + react docs](https://github.com/ben-rogerson/twin.examples/blob/master/react-emotion/README.md) for the babel config to use.
 
 > Note: After build, if you’re seeing "process is not defined" then npm install and add `"babel-plugin-transform-inline-environment-variables"` to .babelrc
 
@@ -100,7 +100,7 @@ Twin comes with types for every import except the `css` and `styled` imports.
 
 [Add the remaining types →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/typescript.md)
 
-## Options
+## Twin config options
 
 | Name                  | Type      | Default                | Description                                                                                                                                                                                                                           |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
