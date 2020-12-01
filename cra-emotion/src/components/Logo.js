@@ -1,8 +1,9 @@
 /** @jsx jsx */
+// The pragma above for CodeSandbox,
+// you'll need to remove it for local development.
+
+/** @jsxImportSource @emotion/react */
 import { jsx } from '@emotion/react'
-// The pragma above is so this example works in CodeSandbox.
-// Swap it with the new pragma when you're not using CodeSandbox:
-// /** @jsxImportSource @emotion/react */
 
 import 'twin.macro'
 
