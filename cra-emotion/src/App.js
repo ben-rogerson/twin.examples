@@ -2,8 +2,8 @@
 // The pragma above is for CodeSandbox,
 // you'll need to remove it for local development.
 
-/** @jsxImportSource @emotion/react */
 import { jsx } from '@emotion/react'
+/** @jsxImportSource @emotion/react */
 
 import React from 'react' // eslint-disable-line
 import tw, { GlobalStyles } from 'twin.macro'
