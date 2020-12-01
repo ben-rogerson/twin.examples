@@ -1,5 +1,5 @@
 /** @jsx jsx */
-// The pragma above for CodeSandbox,
+// The pragma above is for CodeSandbox,
 // you'll need to remove it for local development.
 
 /** @jsxImportSource @emotion/react */
