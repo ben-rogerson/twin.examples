@@ -9,14 +9,14 @@
 After creating your next app:
 
 ```bash
-npm install --save twin.macro styled-components
+npm install --save twin.macro tailwindcss styled-components
 ```
 
 <details>
   <summary>Yarn instructions</summary>
 
 ```bash
-yarn add twin.macro styled-components
+yarn add twin.macro tailwindcss styled-components
 ```
 
 </details>

@@ -9,14 +9,14 @@
 After creating your next app:
 
 ```bash
-npm install --save twin.macro @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
+npm install --save twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
 ```
 
 <details>
   <summary>Yarn instructions</summary>
 
 ```bash
-yarn add twin.macro @emotion/react @emotion/styled @emotion/babel-preset-css-prop
+yarn add twin.macro tailwindcss @emotion/react @emotion/styled @emotion/babel-preset-css-prop
 ```
 
 </details>
