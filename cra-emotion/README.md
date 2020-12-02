@@ -2,6 +2,12 @@
 
 **[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra/emotion?file=/src/App.js)**
 
+Or download this example using [degit](https://github.com/Rich-Harris/degit):
+
+```bash
+npx degit https://github.com/ben-rogerson/twin.examples/cra-emotion folder-name
+```
+
 
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#table-of-contents)
 
@@ -19,8 +25,10 @@
 	* [Plugins](#plugins)
 		* [External](#external)
 		* [Custom classes](#custom-classes)
+* [Usage](#usage)
+	* [Prop Styling](#prop-styling)
+	* [Styled Components](#styled-components)
 * [Next Steps](#next-steps)
-* [More Emotion Examples](#more-emotion-examples)
 
 
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#getting-started)
@@ -135,25 +143,25 @@ To fix this, create a `twin.d.ts` file in your project root (`src/twin.d.ts` wit
 
 ```typescript
 // twin.d.ts
-import "twin.macro";
-import styledImport from "@emotion/styled";
-import { css as cssImport } from "@emotion/react";
+import 'twin.macro'
+import styledImport from '@emotion/styled'
+import { css as cssImport } from '@emotion/react'
 
 // The css prop
 // https://emotion.sh/docs/typescript#css-prop
-import {} from "@emotion/react/types/css-prop";
+import {} from '@emotion/react/types/css-prop'
 
-declare module "twin.macro" {
+declare module 'twin.macro' {
   // The styled and css imports
-  const styled: typeof styledImport;
-  const css: typeof cssImport;
+  const styled: typeof styledImport
+  const css: typeof cssImport
 }
 
 // The 'as' prop on styled components
 declare global {
   namespace JSX {
     interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string;
+      as?: string
     }
   }
 }
@@ -173,7 +181,7 @@ Then add the following in `tsconfig.json`:
 Now that you’ve added the definitions, you can use these imports:
 
 ```typescript
-import tw, { css, styled, theme } from "twin.macro";
+import tw, { css, styled, theme } from 'twin.macro'
 ```
 
 And these props:
@@ -182,8 +190,6 @@ And these props:
 <div tw="">
 <div css={}>
 ```
-
----
 
 </details>
 
@@ -279,17 +285,112 @@ function paddings({ addComponents, theme }) {
 
 
 
+[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#usage)
+
+## Usage
+
+### Prop Styling
+
+Use Twin’s `tw` prop when you have no conditional styles:
+
+```js
+import 'twin.macro'
+
+const Input = () => <input tw="border hover:border-black" />
+```
+
+Nest Twin’s `tw` import within a css prop to add conditional styles:
+
+```js
+import tw from 'twin.macro'
+
+const stylesInput = ({ hasHover }) => [
+  tw`border`, // Add base styles first
+  hasHover && tw`hover:border-black`, // Then conditional styles
+]
+
+const Input = props => <input css={stylesInput(props)} />
+```
+
+Your can add both `tw` and `css` props on the same element:
+
+```js
+import tw from 'twin.macro'
+
+const Input = ({ hasHover }) => (
+  <input tw="border" css={[hasHover && tw`hover:border-black`]} />
+)
+```
+
+Or mix sass and tw styles with the css import:
+
+```js
+import tw, { css } from 'twin.macro'
+
+const hoverStyles = css`
+  &:hover {
+    ${tw`text-black`}
+  }
+`
+
+const stylesInput = ({ hasHover }) => [
+    tw`border` // Add base styles first,
+    hasHover && hoverStyles // Then conditional styles
+]
+
+const Input = props => <input css={stylesInput(props)} />
+```
+
+> Tip: Prefer booleans over ternaries to reduce your line length and improve scannability.
+
+### Styled Components
+
+You can also use the tw import to create and style new components:
+
+```js
+import tw from 'twin.macro'
+
+const Input = tw.input`border hover:border-black`
+```
+
+And clone and style existing components:
+
+```js
+const PurpleInput = tw(Input)`border-purple-500`
+```
+
+Then switch to the styled import to add conditional styling:
+
+```js
+import tw, { styled, css } from 'twin.macro'
+
+const stylesWidth = css`border: 1px solid hotpink`,
+
+const Input = styled.input(({ hasHover }) => [
+    tw`border rounded`, // Add base styles first
+    hasHover && tw`hover:border-black`, // Then conditional styles
+    !hasHover && stylesWidth // Then any css/sass in variables
+])
+
+const Component = () => <Input hasHover />
+```
+
+- [VSCode snippits for speedy imports →](https://gist.github.com/ben-rogerson/c6b62508e63b3e3146350f685df2ddc9)
+
+
+
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#next-steps)
 
 ## Next Steps
 
-- Learn how to use the emotion library<br/>
-  The [css prop](https://emotion.sh/docs/css-prop) / [css import](https://emotion.sh/docs/css-prop#string-styles) / [styled import](https://emotion.sh/docs/styled)
+Learn more about emotion
+
+- [Emotion’s css prop](https://emotion.sh/docs/css-prop)
+- [Emotion’s css import](https://emotion.sh/docs/css-prop#string-styles)
+- [Emotion’s styled import](https://emotion.sh/docs/styled)
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#more-emotion-examples)
-
-## More Emotion Examples
+View more emotion examples
 
 - [React](https://github.com/ben-rogerson/twin.examples/blob/master/react-emotion)
 - Create React App (current)
