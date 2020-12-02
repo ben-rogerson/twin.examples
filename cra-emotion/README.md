@@ -296,4 +296,4 @@ function paddings({ addComponents, theme }) {
 - [Gatsby](https://github.com/ben-rogerson/twin.examples/blob/master/gatsby-emotion)
 - [Next.js](https://github.com/ben-rogerson/twin.examples/blob/master/next-emotion)
 - [Snowpack](https://github.com/ben-rogerson/twin.examples/blob/master/snowpack-react-emotion)
-- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/blob/master/)
+- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/tree/master/vue-emotion)
