@@ -32,6 +32,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1",
+    "tailwindcss": "^2.0.1",
     "twin.macro": "^2.0.1"
   }
 }

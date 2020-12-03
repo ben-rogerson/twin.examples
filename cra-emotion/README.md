@@ -8,28 +8,27 @@ Or download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/cra-emotion folder-name
 ```
 
-
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#table-of-contents)
 
 ## Table of Contents
 
-* [Getting Started](#getting-started)
-	* [Installation](#installation)
-	* [Add the global styles](#add-the-global-styles)
-	* [Add the twin config (optional)](#add-the-twin-config-optional)
-	* [Enable babel macros and the jsx pragma](#enable-babel-macros-and-the-jsx-pragma)
-	* [Add the types for css and styled (TypeScript only)](#add-the-types-for-css-and-styled-typescript-only)
-* [Customization](#customization)
-	* [Twin Options](#twin-options)
-	* [Tailwind Config](#tailwind-config)
-	* [Plugins](#plugins)
-		* [External](#external)
-		* [Custom classes](#custom-classes)
-* [Usage](#usage)
-	* [Prop Styling](#prop-styling)
-	* [Styled Components](#styled-components)
-* [Next Steps](#next-steps)
-
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Add the global styles](#add-the-global-styles)
+  - [Add the twin config (optional)](#add-the-twin-config-optional)
+  - [Enable babel macros and the jsx pragma](#enable-babel-macros-and-the-jsx-pragma)
+  - [Add the types for css and styled (TypeScript only)](#add-the-types-for-css-and-styled-typescript-only)
+- [Customization](#customization)
+  - [Twin Options](#twin-options)
+  - [Tailwind Config](#tailwind-config)
+  - [Plugins](#plugins)
+    - [External](#external)
+    - [Custom classes](#custom-classes)
+- [Usage](#usage)
+  - [Prop Styling](#prop-styling)
+  - [Styled Components](#styled-components)
+- [Next Steps](#next-steps)
 
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#getting-started)
 
@@ -46,7 +45,7 @@ npm init create-react-app my-app
 Install the dependencies
 
 ```
-npm install --save twin.macro @emotion/react @emotion/styled
+npm install --save twin.macro tailwindcss @emotion/react @emotion/styled
 ```
 
 ### Add the global styles
@@ -54,7 +53,6 @@ npm install --save twin.macro @emotion/react @emotion/styled
 Projects using Twin use the Tailwind [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) to smooth over cross-browser inconsistencies.
 
 Twin automatically adds the preflight base styles with the `GlobalStyles` import. `GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
-
 
 You can add Twin’s `GlobalStyles` import in `src/App.js`:
 
@@ -86,8 +84,8 @@ Twin’s config can get added in a couple of different places.
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    preset: 'emotion',
-  },
+    preset: 'emotion'
+  }
 }
 ```
 
@@ -101,7 +99,6 @@ module.exports = {
   }
 },
 ```
-
 
 ### Enable babel macros and the jsx pragma
 
@@ -193,8 +190,6 @@ And these props:
 
 </details>
 
-
-
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#customization)
 
 ## Customization
@@ -227,11 +222,11 @@ Choose from one of the following configs:
   module.exports = {
     theme: {
       extend: {
-        colors: {},
-      },
+        colors: {}
+      }
     },
-    plugins: [],
-  };
+    plugins: []
+  }
   ```
 
 - b) Start with a [full config](https://raw.githubusercontent.com/tailwindcss/tailwindcss/master/stubs/defaultConfig.stub.js):
@@ -255,7 +250,6 @@ Support for those features is planned for release in December 2020/January 2021.
 
 Check out the [list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
-
 #### Custom classes
 
 This example adds a custom class that changes at different screen sizes:
@@ -264,7 +258,7 @@ This example adds a custom class that changes at different screen sizes:
 // tailwind.config.js
 module.exports = {
   // ...
-  plugins: [paddings],
+  plugins: [paddings]
 }
 
 function paddings({ addComponents, theme }) {
@@ -272,18 +266,16 @@ function paddings({ addComponents, theme }) {
     '.custom-paddings': {
       '@screen md': {
         'padding-left': theme`padding.3`,
-        'padding-right': theme`padding.3`,
+        'padding-right': theme`padding.3`
       },
       '@screen lg': {
         'padding-left': theme`padding.6`,
-        'padding-right': theme`padding.6`,
-      },
-    },
+        'padding-right': theme`padding.6`
+      }
+    }
   })
 }
 ```
-
-
 
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#usage)
 
@@ -306,10 +298,10 @@ import tw from 'twin.macro'
 
 const stylesInput = ({ hasHover }) => [
   tw`border`, // Add base styles first
-  hasHover && tw`hover:border-black`, // Then conditional styles
+  hasHover && tw`hover:border-black` // Then conditional styles
 ]
 
-const Input = props => <input css={stylesInput(props)} />
+const Input = (props) => <input css={stylesInput(props)} />
 ```
 
 Your can add both `tw` and `css` props on the same element:
@@ -377,8 +369,6 @@ const Component = () => <Input hasHover />
 
 - [VSCode snippits for speedy imports →](https://gist.github.com/ben-rogerson/c6b62508e63b3e3146350f685df2ddc9)
 
-
-
 [![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#next-steps)
 
 ## Next Steps
@@ -388,7 +378,6 @@ Learn more about emotion
 - [Emotion’s css prop](https://emotion.sh/docs/css-prop)
 - [Emotion’s css import](https://emotion.sh/docs/css-prop#string-styles)
 - [Emotion’s styled import](https://emotion.sh/docs/styled)
-
 
 View more emotion examples
 

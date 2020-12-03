@@ -41,6 +41,7 @@
   "dependencies": {
     "@types/react": "17",
     "core-js": "^3.6.5",
+    "tailwindcss": "^2.0.1",
     "twin.macro": "2.0.1"
   }
 }

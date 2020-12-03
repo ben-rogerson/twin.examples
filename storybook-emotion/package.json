@@ -26,6 +26,7 @@
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "babel-plugin-macros": "^2.8.0",
+    "tailwindcss": "^2.0.1",
     "twin.macro": "^2.0.1"
   }
 }

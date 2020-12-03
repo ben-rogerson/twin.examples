@@ -13,7 +13,7 @@ npx create-react-app my-app
 ### 2. Install the dependencies
 
 ```bash
-npm install --save twin.macro styled-components
+npm install --save twin.macro tailwindcss styled-components
 ```
 
 <details>

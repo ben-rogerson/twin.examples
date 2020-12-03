@@ -15,6 +15,7 @@
     "babel-plugin-macros": "^3.0.0",
     "preact": "^10.5.7",
     "styled-components": "5.2.1",
+    "tailwindcss": "^2.0.1",
     "twin.macro": "^2.0.1"
   },
   "devDependencies": {

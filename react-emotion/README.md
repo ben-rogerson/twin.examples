@@ -10,7 +10,7 @@
 # React and Babel
 npm install --save react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros
 # Twin and Emotion
-npm install --save twin.macro @emotion/react @emotion/styled
+npm install --save twin.macro tailwindcss @emotion/react @emotion/styled
 ```
 
 <details>

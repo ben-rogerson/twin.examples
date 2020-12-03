@@ -13,7 +13,7 @@ npx gatsby new gatsby-site
 ### 2. Install the dependencies
 
 ```shell
-npm install --save twin.macro @emotion/react @emotion/styled
+npm install --save twin.macro tailwindcss @emotion/react @emotion/styled
 ```
 
 <details>

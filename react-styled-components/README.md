@@ -10,7 +10,7 @@
 # React and Babel
 npm install --save react react-dom @babel/core @babel/plugin-transform-react-jsx
 # Twin and styled-components
-npm install --save twin.macro styled-components
+npm install --save twin.macro tailwindcss styled-components
 ```
 
 <details>
