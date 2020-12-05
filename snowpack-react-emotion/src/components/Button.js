@@ -1,4 +1,4 @@
-import tw, { css, styled, theme } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro'
 
 const Button = styled.button(({ isPrimary, isSecondary, isSmall }) => [
   // The common button styles
@@ -26,6 +26,6 @@ const Button = styled.button(({ isPrimary, isSecondary, isSmall }) => [
   css`
     color: ${theme`colors.white`};
   `,
-]);
+])
 
-export default Button;
+export default Button
