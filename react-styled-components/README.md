@@ -1,51 +1,76 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js"><img src="https://i.imgur.com/Uu6f8GU.png" alt="twin, react, styled-components" width="550"></a>
+<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js"><img src="https://i.imgur.com/Uu6f8GU.png" alt="twin, react, styled-components" width="500"></a>
 
 **[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js)**
 
-## Getting started
+Or download this example using [degit](https://github.com/Rich-Harris/degit):
 
-### 1. Install the dependencies
+```shell
+npx degit https://github.com/ben-rogerson/twin.examples/react-styled-components folder-name
+```
 
-```bash
-# React and Babel
-npm install --save react react-dom @babel/core @babel/plugin-transform-react-jsx
-# Twin and styled-components
-npm install --save twin.macro tailwindcss styled-components
+
+[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#table-of-contents)
+
+## Table of Contents
+
+* [Getting Started](#getting-started)
+	* [Installation](#installation)
+	* [Add the global styles](#add-the-global-styles)
+	* [Add the twin config](#add-the-twin-config)
+	* [Add the babel config](#add-the-babel-config)
+	* [Complete the TypeScript setup](#complete-the-typescript-setup)
+* [Customization](#customization)
+	* [Twin Options](#twin-options)
+	* [Tailwind Config](#tailwind-config)
+	* [Plugins](#plugins)
+		* [External](#external)
+		* [Custom classes](#custom-classes)
+* [Next Steps](#next-steps)
+
+
+[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#getting-started)
+
+## Getting Started
+
+### Installation
+
+React and Babel
+
+```shell
+npm install react react-dom @babel/core @babel/plugin-transform-react-jsx
+```
+
+Twin and styled-components
+
+```shell
+npm install twin.macro tailwindcss styled-components
 ```
 
 <details>
-  <summary>Yarn instructions</summary>
+  <summary>Install with Yarn</summary>
 
-```bash
-# React and Babel
+```shell
 yarn add react react-dom @babel/core @babel/plugin-transform-react-jsx
-# Twin and styled-components
-yarn add twin.macro styled-components
+```
+
+Twin and styled-components
+
+```shell
+yarn add twin.macro tailwindcss styled-components
 ```
 
 </details>
 
-### 2. Enable babel macros and jsx
+### Add the global styles
 
-```js
-// In .babelrc
-{
-  "plugins": [
-    "babel-plugin-macros",
-    "@babel/plugin-transform-react-jsx",
-  ]
-}
-```
+Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
 
-### 3. Add the global styles
+The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-Projects using Twin also use the Tailwind [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) to smooth over cross-browser inconsistencies.
-
-Twin adds the preflight base styles with the `GlobalStyles` import which you can add in `src/App.js`:
+You can add Twin’s `GlobalStyles` import in `src/App.js`:
 
 ```js
 // src/App.js
-import React from 'react'
 import { GlobalStyles } from 'twin.macro'
 
 const App = () => (
@@ -58,150 +83,230 @@ const App = () => (
 export default App
 ```
 
-`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) work.
 
-### 4. Add the twin config
+### Add the twin config
 
-Twin’s config can get added in a couple of different places.
+Twin’s config can be added in a couple of different files.
 
-**a) In a new file named `babel-plugin-macros.config.js` placed in your project root:**
-
-```js
-// babel-plugin-macros.config.js
-module.exports = {
-  twin: {
-    preset: 'styled-components'
-  }
-}
-```
-
-**b) Or in your `package.json`:**
-
-```js
-// package.json
-"babelMacros": {
-  "twin": {
-    "preset": "styled-components",
-  }
-},
-```
-
-<details>
-  <summary><b>Parcel users:</b> Use this alternative config if you’re seeing errors.</summary>
-
-I’ve seen some issues using the default `styled-components/macro` import where Parcel gives up and throws errors after a couple of reloads!
-
-I suggest avoiding the macro import and using the following config instead. A potential downside is that you won’t be able to define the styled-components configuration for the styled import via the .babelrc config.
-
-```js
-// package.json
-"babelMacros": {
-  "twin": {
-    "preset": "styled-components",
-    "styled": {
-      "import": "default",
-      "from": "styled-components"
-    },
-  }
-},
-```
+a) Either in `babel-plugin-macros.config.js`:
 
 ```js
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
     preset: 'styled-components',
-    styled: {
-      import: 'default',
-      from: 'styled-components'
-    }
-  }
+  },
 }
 ```
 
----
-
-</details>
-
-### 5. Complete the TypeScript support (TypeScript only)
-
-Twin comes with types for every import except the `css` and `styled` imports.
-
-[Add the remaining types →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/typescript.md)
-
-## Twin config options
-
-| Name                  | Type      | Default                | Description                                                                                                                                                                                                              |
-| --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| config                | `string`  | `"tailwind.config.js"` | The path to your Tailwind config                                                                                                                                                                                         |
-| preset                | `string`  | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'                                                                                                                                 |
-| autoCssProp           | `boolean` | `true`                 | This code automates the import of 'styled-components/macro' so you can use their css prop. Enable it if you're using styled-components with React, CRA or Gatsby. If you're using Emotion, setting to true does nothing. |
-| hasSuggestions        | `boolean` | `true`                 | Display class suggestions when a class isn't found                                                                                                                                                                       |
-| dataTwProp            | `boolean` | `true`                 | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />`                                                                                                |
-| debugPlugins          | `boolean` | `false`                | Display generated class information in your terminal from your plugins                                                                                                                                                   |
-| debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                                                                                                                |
-| disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                                                                                                                        |
-
-## Customized imports
-
-Instead of using `preset: "styled-components"`, you can also customize the `styled`, `css` and `GlobalStyles` imports with the following config:
-
-```js
-// babel-plugin-macros.config.js
-module.exports = {
-  twin: {
-    styled: {
-      import: 'default',
-      from: 'styled-components'
-    },
-    css: {
-      import: 'css',
-      from: 'styled-components/macro'
-    },
-    global: {
-      import: 'createGlobalStyle',
-      from: 'styled-components'
-    }
-  }
-}
-```
-
-<details>
-  <summary>package.json instructions</summary>
+b) Or in `package.json`:
 
 ```js
 // package.json
 "babelMacros": {
   "twin": {
-    "styled": {
-      "import": "default",
-      "from": "styled-components"
-    },
-    "css": {
-      "import": "css",
-      "from": "styled-components/macro"
-    },
-    "global": {
-      "import": "createGlobalStyle",
-      "from": "styled-components"
-    }
+    "preset": "styled-components"
   }
 },
 ```
 
+
+### Add the babel config
+
+```js
+// .babelrc
+// In .babelrc
+{
+  "plugins": [
+    "babel-plugin-macros",
+    "@babel/plugin-transform-react-jsx",
+  ]
+}
+```
+
+### Complete the TypeScript setup
+
+To complete the TypeScript setup, you’ll need to add the remaining types for your chosen css-in-js framework.
+
+<details>
+  <summary>Setup instructions</summary>
+
+Twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
+
+```js
+Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
+// or
+Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
+// or
+Property 'css' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+```
+
+To fix this, create a `twin.d.ts` file in your project root (`src/twin.d.ts` with create-react-app) and add these declarations:
+
+```typescript
+// twin.d.ts
+import 'twin.macro'
+import styledImport, { CSSProp, css as cssImport } from 'styled-components'
+
+declare module 'twin.macro' {
+  // The styled and css imports
+  const styled: typeof styledImport
+  const css: typeof cssImport
+}
+
+declare module 'react' {
+  // The css prop
+  interface HTMLAttributes<T> extends DOMAttributes<T> {
+    css?: CSSProp
+  }
+  // The inline svg css prop
+  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
+    css?: CSSProp
+  }
+}
+
+// The 'as' prop on styled components
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
+      as?: string
+    }
+  }
+}
+```
+
+Then add the following in `tsconfig.json`:
+
+```typescript
+// tsconfig.json
+{
+  "files": ["twin.d.ts"],
+  // or
+  // "include": ["twin.d.ts"],
+}
+```
+
+Now that you’ve added the definitions, you can use these imports:
+
+```typescript
+import tw, { css, styled, theme } from 'twin.macro'
+```
+
+And these props:
+
+```typescript
+<div tw="">
+<div css={}>
+```
+
 </details>
 
-## Next steps
 
-- See how to [customize your classes →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/customizing-config.md)
-- Learn how to use the styled-components library<br/>
-  The [css prop](https://styled-components.com/docs/api#css-prop) / [css import](https://styled-components.com/docs/api#css) / [styled import](https://styled-components.com/docs/api#styled)
 
-## More examples with styled-components
+[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#customization)
+
+## Customization
+
+### Twin Options
+
+| Name                  | Type      | Default                | Description                                                                                                               |
+| --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| config                | `string`  | `"tailwind.config.js"` | The path to your Tailwind config                                                                                          |
+| preset                | `string`  | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'                                  |
+| autoCssProp           | `boolean` | `true`                 | This code automates the import of 'styled-components/macro' so you can use their css prop                                 |
+| hasSuggestions        | `boolean` | `true`                 | Display class suggestions when a class isn't found                                                                        |
+| dataTwProp            | `boolean` | `true`                 | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />` |
+| debugPlugins          | `boolean` | `false`                | Display generated class information in your terminal from your plugins                                                    |
+| debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                 |
+| disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                         |
+
+### Tailwind Config
+
+For style customizations, add a `tailwind.config.js` in your project root.
+
+> It’s important to know that you don’t need a `tailwind.config.js` to use Twin. You already have access to every class with every variant.
+> Unlike Tailwind, twin.macro only generates styles for the classes so you don’t need to use [PurgeCSS](https://purgecss.com/).
+
+Choose from one of the following configs:
+
+- a) Start with an empty config:
+
+  ```js
+  // tailwind.config.js
+  module.exports = {
+    theme: {
+      extend: {
+        colors: {},
+      },
+    },
+    plugins: [],
+  }
+  ```
+
+- b) Start with a [full config](https://raw.githubusercontent.com/tailwindcss/tailwindcss/master/stubs/defaultConfig.stub.js):
+
+  ```shell
+  # cd into your project folder then:
+  curl https://raw.githubusercontent.com/tailwindcss/tailwindcss/master/stubs/defaultConfig.stub.js > tailwind.config.js
+  ```
+
+  In the config, twin only reads from the `theme: {}` and the `plugins: []` entries, so strip out the rest.
+
+### Plugins
+
+#### External
+
+You can use many Tailwind plugins with twin but there’s no compatibility with other plugins that use the addVariant or addBase functions - those features are coming soon.
+
+> Note: Twin is currently catching up on support for some popular plugins that were updated for Tailwind v2.
+
+See the list of [plugins and support →](https://twin-docs.netlify.app/plugin-support)
+
+
+#### Custom classes
+
+You can add your own custom css within a plugin. Here’s an example of a custom class that adds breakpoint based paddings from theme values:
+
+```js
+// tailwind.config.js
+module.exports = {
+  // ...
+  plugins: [paddings],
+}
+
+function paddings({ addComponents, theme }) {
+  addComponents({
+    '.my-padding': {
+      '@screen md': {
+        'padding-left': theme`padding.3`,
+        'padding-right': theme`padding.3`,
+      },
+      '@screen lg': {
+        'padding-left': theme`padding.6`,
+        'padding-right': theme`padding.6`,
+      },
+    },
+  })
+}
+```
+
+
+
+[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#next-steps)
+
+## Next Steps
+
+Learn more about styled-components
+
+- [The css prop](https://styled-components.com/docs/api#css-prop)
+- [The css import](https://styled-components.com/docs/api#css)
+- [The styled import](https://styled-components.com/docs/api#styled)
+
+
+View more styled-components examples
 
 - React (current)
-- [Preact](https://github.com/ben-rogerson/twin.examples/blob/master/preact-styled-components)
-- [Create React App](https://github.com/ben-rogerson/twin.examples/blob/master/cra-styled-components)
-- [Gatsby](https://github.com/ben-rogerson/twin.examples/blob/master/gatsby-styled-components)
-- [Next.js](https://github.com/ben-rogerson/twin.examples/blob/master/next-styled-components)
-- [Snowpack](https://github.com/ben-rogerson/twin.examples/blob/master/snowpack-react-styled-components)
+- [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components)
+- [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-styled-components)
+- [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components)
+- [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components)
