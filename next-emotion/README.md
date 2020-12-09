@@ -47,7 +47,7 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop @zeit/next-css
+npm install twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
 ```
 
 <details>

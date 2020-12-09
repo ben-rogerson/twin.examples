@@ -48,7 +48,7 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install twin.macro tailwindcss styled-components @zeit/next-css
+npm install twin.macro tailwindcss styled-components
 ```
 
 <details>
@@ -61,7 +61,7 @@ yarn create next-app
 Install the dependencies
 
 ```shell
-yarn add twin.macro tailwindcss styled-components @zeit/next-css
+yarn add twin.macro tailwindcss styled-components
 ```
 
 </details>
