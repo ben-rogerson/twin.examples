@@ -118,18 +118,13 @@ b) Or in `package.json`:
 
 ### Add the babel config
 
-Add this babel configuration in `.babelrc`:
+Add this babel configuration in `.babelrc.js`:
 
 ```js
-// In .babelrc
-{
-  "presets": [
-    "next/babel"
-  ],
-  "plugins": [
-    "babel-plugin-macros",
-    ["styled-components", { "ssr": true }]
-  ]
+// In .babelrc.js
+module.exports = {
+  presets: [['next/babel', { 'preset-react': { runtime: 'automatic' } }]],
+  plugins: ['babel-plugin-macros', ['styled-components', { ssr: true }]],
 }
 ```
 
@@ -139,9 +134,7 @@ Add this next configuration in `next.config.js`:
 
 ```js
 // next.config.js
-const withCSS = require('@zeit/next-css')
-
-module.exports = withCSS({
+module.exports = {
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
@@ -150,7 +143,7 @@ module.exports = withCSS({
 
     return config
   },
-})
+}
 ```
 
 > 'fs' is a server-side dependency which we don’t want added client-side. Adding the code above will make sure you don’t experience errors.

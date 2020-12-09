@@ -27,7 +27,7 @@ npx degit https://github.com/ben-rogerson/twin.examples/next-emotion folder-name
 		* [External](#external)
 		* [Custom classes](#custom-classes)
 * [Usage](#usage)
-	* [Prop Styling](#prop-styling)
+	* [Styled Props](#styled-props)
 	* [Styled Components](#styled-components)
 * [Next Steps](#next-steps)
 
@@ -47,7 +47,7 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
+npm install twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop @zeit/next-css
 ```
 
 <details>
@@ -123,18 +123,23 @@ Note: The preset gets set to 'emotion' by default, so adding the config is only 
 
 ### Add the babel config
 
-Add this babel configuration in `.babelrc`:
+Add this babel configuration in `.babelrc.js`:
 
 ```js
-// .babelrc
-{
-  "presets": [
-    "next/babel",
-    "@emotion/babel-preset-css-prop"
+// .babelrc.js
+module.exports = {
+  presets: [
+    [
+      'next/babel',
+      {
+        'preset-react': {
+          runtime: 'automatic',
+          importSource: '@emotion/react',
+        },
+      },
+    ],
   ],
-  "plugins": [
-    "babel-plugin-macros"
-  ]
+  plugins: ['@emotion/babel-plugin', 'babel-plugin-macros'],
 }
 ```
 
@@ -144,9 +149,7 @@ Add this next configuration in `next.config.js`:
 
 ```js
 // next.config.js
-const withCSS = require('@zeit/next-css')
-
-module.exports = withCSS({
+module.exports = {
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
@@ -155,7 +158,7 @@ module.exports = withCSS({
 
     return config
   },
-})
+}
 ```
 
 > 'fs' is a server-side dependency which we don’t want added client-side. Adding the code above will make sure you don’t experience errors.
@@ -326,7 +329,9 @@ function paddings({ addComponents, theme }) {
 
 ## Usage
 
-### Prop Styling
+Twin has a couple of different styling techniques to choose from.
+
+### Styled Props
 
 Use Twin’s `tw` prop when you have no conditional styles:
 
@@ -411,8 +416,6 @@ const Input = styled.input(({ hasHover }) => [
 
 const Component = () => <Input hasHover />
 ```
-
-- [VSCode snippits for speedy imports →](https://gist.github.com/ben-rogerson/c6b62508e63b3e3146350f685df2ddc9)
 
 
 
