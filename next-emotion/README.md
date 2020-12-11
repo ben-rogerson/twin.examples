@@ -1,8 +1,6 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/next-emotion?file=/src/App.js"><img src="https://i.imgur.com/rmQeDT3.png" alt="twin, next, emotion" width="500"></a>
+<p><img src="https://i.imgur.com/rmQeDT3.png" alt="twin, next, emotion" width="500"></p>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/next-emotion?file=/src/App.js)**
-
-Or download this example using [degit](https://github.com/Rich-Harris/degit):
+Download this example using [degit](https://github.com/Rich-Harris/degit):
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/next-emotion folder-name
@@ -47,7 +45,7 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
+npm install twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css
 ```
 
 <details>
@@ -60,7 +58,7 @@ yarn create next-app
 Install the dependencies
 
 ```shell
-yarn add twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css @emotion/babel-preset-css-prop
+yarn add twin.macro tailwindcss @emotion/react @emotion/styled @emotion/css
 ```
 
 </details>
