@@ -8,29 +8,31 @@ Or download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/react-styled-components folder-name
 ```
 
+Or keep scrolling for installation instructions.
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#table-of-contents)
 
-## Table of Contents
+[](#table-of-contents)
 
-* [Getting Started](#getting-started)
+## Table of contents
+
+* [Getting started](#getting-started)
 	* [Installation](#installation)
 	* [Add the global styles](#add-the-global-styles)
 	* [Add the twin config](#add-the-twin-config)
 	* [Add the babel config](#add-the-babel-config)
 	* [Complete the TypeScript setup](#complete-the-typescript-setup)
 * [Customization](#customization)
-	* [Twin Options](#twin-options)
-	* [Tailwind Config](#tailwind-config)
+	* [Twin options](#twin-options)
+	* [Tailwind config](#tailwind-config)
 	* [Plugins](#plugins)
 		* [External](#external)
 		* [Custom classes](#custom-classes)
-* [Next Steps](#next-steps)
+* [Next steps](#next-steps)
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#getting-started)
+[](#getting-started)
 
-## Getting Started
+## Getting started
 
 ### Installation
 
@@ -131,9 +133,17 @@ To complete the TypeScript setup, you’ll need to add the remaining types for y
 <details>
   <summary>Setup instructions</summary>
 
-Twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
+First up, you’ll need to install some types for React:
 
-```js
+```bash
+npm install -D @types/react
+// or
+yarn add @types/react -D
+```
+
+Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
+
+```shell
 Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
 // or
 Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
@@ -203,11 +213,11 @@ And these props:
 
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#customization)
+[](#customization)
 
 ## Customization
 
-### Twin Options
+### Twin options
 
 | Name                  | Type      | Default                | Description                                                                                                               |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -220,7 +230,7 @@ And these props:
 | debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                 |
 | disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                         |
 
-### Tailwind Config
+### Tailwind config
 
 For style customizations, add a `tailwind.config.js` in your project root.
 
@@ -256,11 +266,9 @@ Choose from one of the following configs:
 
 #### External
 
-You can use many Tailwind plugins with twin but there’s no compatibility with other plugins that use the addVariant or addBase functions - those features are coming soon.
+You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions (support coming soon).
 
-> Note: Twin is currently catching up on support for some popular plugins that were updated for Tailwind v2.
-
-See the list of [plugins and support →](https://twin-docs.netlify.app/plugin-support)
+[See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
 
 #### Custom classes
@@ -292,9 +300,9 @@ function paddings({ addComponents, theme }) {
 
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#next-steps)
+[](#next-steps)
 
-## Next Steps
+## Next steps
 
 Learn more about styled-components
 

@@ -6,12 +6,15 @@ Download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/next-emotion folder-name
 ```
 
+Or keep scrolling for installation instructions.
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#table-of-contents)
 
-## Table of Contents
 
-* [Getting Started](#getting-started)
+[](#table-of-contents)
+
+## Table of contents
+
+* [Getting started](#getting-started)
 	* [Installation](#installation)
 	* [Add the global styles](#add-the-global-styles)
 	* [Add the twin config (optional)](#add-the-twin-config-optional)
@@ -19,20 +22,20 @@ npx degit https://github.com/ben-rogerson/twin.examples/next-emotion folder-name
 	* [Add the next config](#add-the-next-config)
 	* [Complete the TypeScript setup](#complete-the-typescript-setup)
 * [Customization](#customization)
-	* [Twin Options](#twin-options)
-	* [Tailwind Config](#tailwind-config)
+	* [Twin options](#twin-options)
+	* [Tailwind config](#tailwind-config)
 	* [Plugins](#plugins)
 		* [External](#external)
 		* [Custom classes](#custom-classes)
 * [Usage](#usage)
-	* [Styled Props](#styled-props)
-	* [Styled Components](#styled-components)
-* [Next Steps](#next-steps)
+	* [Styled props](#styled-props)
+	* [Styled components](#styled-components)
+* [Next steps](#next-steps)
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#getting-started)
+[](#getting-started)
 
-## Getting Started
+## Getting started
 
 ### Installation
 
@@ -169,7 +172,15 @@ To complete the TypeScript setup, you’ll need to add the remaining types for y
 <details>
   <summary>Setup instructions</summary>
 
-Twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
+First up, you’ll need to install some types for React:
+
+```bash
+npm install -D @types/react
+// or
+yarn add @types/react -D
+```
+
+Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
 
 ```js
 Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
@@ -235,11 +246,11 @@ And these props:
 
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#customization)
+[](#customization)
 
 ## Customization
 
-### Twin Options
+### Twin options
 
 | Name                  | Type      | Default                | Description                                                                                                               |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -251,7 +262,7 @@ And these props:
 | debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                 |
 | disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                         |
 
-### Tailwind Config
+### Tailwind config
 
 For style customizations, add a `tailwind.config.js` in your project root.
 
@@ -287,11 +298,9 @@ Choose from one of the following configs:
 
 #### External
 
-You can use many Tailwind plugins with twin but there’s no compatibility with other plugins that use the addVariant or addBase functions - those features are coming soon.
+You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions (support coming soon).
 
-> Note: Twin is currently catching up on support for some popular plugins that were updated for Tailwind v2.
-
-See the list of [plugins and support →](https://twin-docs.netlify.app/plugin-support)
+[See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
 
 #### Custom classes
@@ -323,13 +332,13 @@ function paddings({ addComponents, theme }) {
 
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#usage)
+[](#usage)
 
 ## Usage
 
 Twin has a couple of different styling techniques to choose from.
 
-### Styled Props
+### Styled props
 
 Use Twin’s `tw` prop when you have no conditional styles:
 
@@ -383,7 +392,7 @@ const Input = props => <input css={stylesInput(props)} />
 
 > Tip: Prefer booleans over ternaries to reduce your line length and improve scannability.
 
-### Styled Components
+### Styled components
 
 You can also use the tw import to create and style new components:
 
@@ -417,9 +426,9 @@ const Component = () => <Input hasHover />
 
 
 
-[![-----------------------------------------------------](https://i.imgur.com/aLqZmjt.png)](#next-steps)
+[](#next-steps)
 
-## Next Steps
+## Next steps
 
 Learn more about emotion
 
