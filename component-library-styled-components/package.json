@@ -5,7 +5,13 @@
     "start": "cd packages/app && yarn start",
     "build": "cd packages/app && yarn build"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@tailwindcss",
+      "**/@tailwindcss/**"
+    ]
+  }
 }
