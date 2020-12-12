@@ -471,4 +471,4 @@ View more styled-components examples
 - [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components)
 - [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-styled-components)
 - Next.js (current)
-- [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components)
+- [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-styled-components)
