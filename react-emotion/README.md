@@ -1,35 +1,60 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-emotion?file=/src/App.js"><img src="https://i.imgur.com/YyG9s4u.png" alt="twin, react, emotion" width="550"></a>
+<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-emotion?file=/src/App.js"><img src="https://i.imgur.com/YyG9s4u.png" alt="twin, react, emotion" width="500"></a>
 
 **[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-emotion?file=/src/App.js)**
 
+Or download this example using [degit](https://github.com/Rich-Harris/degit):
+
+```shell
+npx degit https://github.com/ben-rogerson/twin.examples/react-emotion folder-name
+```
+
+Or keep scrolling for installation instructions.
+
+
+[](#table-of-contents)
+
+## Table of contents
+
+* [Getting started](#getting-started)
+	* [Install the dependencies](#install-the-dependencies)
+	* [Add the global styles](#add-the-global-styles)
+	* [Add the twin config (optional)](#add-the-twin-config-optional)
+	* [Add the babel config](#add-the-babel-config)
+	* [Complete the TypeScript setup](#complete-the-typescript-setup)
+* [Customization](#customization)
+	* [Twin options](#twin-options)
+	* [Tailwind config](#tailwind-config)
+	* [Plugins](#plugins)
+		* [External](#external)
+		* [Custom classes](#custom-classes)
+* [Next steps](#next-steps)
+
+
+[](#getting-started)
+
 ## Getting started
 
-### 1. Install the dependencies
+### Install the dependencies
 
-```bash
-# React and Babel
-npm install --save react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros
-# Twin and Emotion
-npm install --save twin.macro tailwindcss @emotion/react @emotion/styled
+React and Babel
+
+```shell
+npm install react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros
 ```
 
-<details>
-  <summary>Yarn instructions</summary>
+Twin and Emotion
 
-```bash
-# React and Babel
-yarn add react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros
-# Twin and Emotion
-yarn add twin.macro @emotion/react @emotion/styled
+```shell
+npm install twin.macro @emotion/react @emotion/styled
 ```
 
-</details>
+### Add the global styles
 
-### 2. Add the global styles
+Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
 
-Projects using Twin also use the Tailwind [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) to smooth over cross-browser inconsistencies.
+The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-Twin adds the preflight base styles with the `GlobalStyles` import which you can add in `src/App.js`:
+You can add Twin’s `GlobalStyles` import in `src/App.js`:
 
 ```js
 // src/App.js
@@ -45,35 +70,37 @@ const App = () => (
 export default App
 ```
 
-`GlobalStyles` also includes some [@keyframes](https://github.com/ben-rogerson/twin.macro/blob/master/src/config/globalStyles.js) so the `animate-xxx` classes have animations and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) work.
 
-### 3. Add the twin config
+### Add the twin config (optional)
 
-Twin’s config can get added in a couple of different places.
+Twin’s config can be added in a couple of different files.
 
-**a) In a new file named `babel-plugin-macros.config.js` placed in your project root:**
+a) Either in `babel-plugin-macros.config.js`:
 
 ```js
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    preset: 'emotion'
-  }
+    preset: 'emotion',
+  },
 }
 ```
 
-**b) Or in your `package.json`:**
+b) Or in `package.json`:
 
 ```js
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": "emotion",
+    "preset": "emotion"
   }
 },
 ```
 
-### 4. Enable babel macros and the jsx pragma
+Note: The preset gets set to 'emotion' by default, so adding the config is only useful if you want to adjust [Twin’s other options](#twin-options).
+
+
+### Add the babel config
 
 To use the `tw` and `css` props, emotion must first extend jsx with a [jsx pragma](https://emotion.sh/docs/css-prop#jsx-pragma).
 
@@ -144,13 +171,93 @@ const Input = () => <input css={tw`bg-black`} />
 
 > Note: After build, if you’re seeing "process is not defined" then npm install and add `"babel-plugin-transform-inline-environment-variables"` to .babelrc
 
-### 5. Add the types for `css` and `styled` (TypeScript only)
 
-Twin comes with types for every import except the `css` and `styled` imports.
+### Complete the TypeScript setup
 
-[Add the remaining types →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/typescript.md)
+To complete the TypeScript setup, you’ll need to add the remaining types for your chosen css-in-js framework.
 
-## Twin config options
+<details>
+  <summary>Setup instructions</summary>
+
+First up, you’ll need to install some types for React:
+
+```bash
+npm install -D @types/react
+// or
+yarn add @types/react -D
+```
+
+Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
+
+```js
+Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
+// or
+Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
+// or
+Property 'css' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+```
+
+To fix this, create a `twin.d.ts` file in your project root (`src/twin.d.ts` with create-react-app) and add these declarations:
+
+```typescript
+// twin.d.ts
+import 'twin.macro'
+import styledImport from '@emotion/styled'
+import { css as cssImport } from '@emotion/react'
+
+// The css prop
+// https://emotion.sh/docs/typescript#css-prop
+import {} from '@emotion/react/types/css-prop'
+
+declare module 'twin.macro' {
+  // The styled and css imports
+  const styled: typeof styledImport
+  const css: typeof cssImport
+}
+
+// The 'as' prop on styled components
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
+      as?: string
+    }
+  }
+}
+```
+
+Then add the following in `tsconfig.json`:
+
+```typescript
+// tsconfig.json
+{
+  "files": ["twin.d.ts"],
+  // or
+  // "include": ["twin.d.ts"],
+}
+```
+
+Now that you’ve added the definitions, you can use these imports:
+
+```typescript
+import tw, { css, styled, theme } from 'twin.macro'
+```
+
+And these props:
+
+```typescript
+<div tw="">
+<div css={}>
+```
+
+</details>
+
+
+
+[](#customization)
+
+## Customization
+
+### Twin options
 
 | Name                  | Type      | Default                | Description                                                                                                               |
 | --------------------- | --------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -162,17 +269,92 @@ Twin comes with types for every import except the `css` and `styled` imports.
 | debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                 |
 | disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                         |
 
+### Tailwind config
+
+For style customizations, add a `tailwind.config.js` in your project root.
+
+> It’s important to know that you don’t need a `tailwind.config.js` to use Twin. You already have access to every class with every variant.
+> Unlike Tailwind, twin.macro only generates styles for the classes so you don’t need to use [PurgeCSS](https://purgecss.com/).
+
+Choose from one of the following configs:
+
+- a) Start with an empty config:
+
+  ```js
+  // tailwind.config.js
+  module.exports = {
+    theme: {
+      extend: {
+        colors: {},
+      },
+    },
+    plugins: [],
+  }
+  ```
+
+- b) Start with a [full config](https://raw.githubusercontent.com/tailwindcss/tailwindcss/master/stubs/defaultConfig.stub.js):
+
+  ```shell
+  # cd into your project folder then:
+  curl https://raw.githubusercontent.com/tailwindcss/tailwindcss/master/stubs/defaultConfig.stub.js > tailwind.config.js
+  ```
+
+  In the config, twin only reads from the `theme: {}` and the `plugins: []` entries, so strip out the rest.
+
+### Plugins
+
+#### External
+
+You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions (support coming soon).
+
+[See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
+
+
+#### Custom classes
+
+You can add your own custom css within a plugin. Here’s an example of a custom class that adds breakpoint based paddings from theme values:
+
+```js
+// tailwind.config.js
+module.exports = {
+  // ...
+  plugins: [paddings],
+}
+
+function paddings({ addComponents, theme }) {
+  addComponents({
+    '.my-padding': {
+      '@screen md': {
+        'padding-left': theme`padding.3`,
+        'padding-right': theme`padding.3`,
+      },
+      '@screen lg': {
+        'padding-left': theme`padding.6`,
+        'padding-right': theme`padding.6`,
+      },
+    },
+  })
+}
+```
+
+
+
+[](#next-steps)
+
 ## Next steps
 
-- See how to [customize your classes →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/customizing-config.md)
-- Learn how to use the emotion library<br/>
-  The [css prop](https://emotion.sh/docs/css-prop) / [css import](https://emotion.sh/docs/css-prop#string-styles) / [styled import](https://emotion.sh/docs/styled)
+Learn more about emotion
 
-## More examples with Emotion
+- [Emotion’s css prop](https://emotion.sh/docs/css-prop)
+- [Emotion’s css import](https://emotion.sh/docs/css-prop#string-styles)
+- [Emotion’s styled import](https://emotion.sh/docs/styled)
+
+
+View more emotion examples
 
 - React (current)
-- [Create React App](https://github.com/ben-rogerson/twin.examples/blob/master/cra-emotion/README.md)
-- [Gatsby](https://github.com/ben-rogerson/twin.examples/blob/master/gatsby-emotion/README.md)
-- [Next.js](https://github.com/ben-rogerson/twin.examples/blob/master/next-emotion/README.md)
-- [Snowpack](https://github.com/ben-rogerson/twin.examples/blob/master/snowpack-react-emotion/README.md)
-- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/blob/master/vue-emotion/README.md)
+- [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-emotion)
+- [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-emotion)
+- [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion)
+- [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion)
+- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/tree/master/vue-emotion)
