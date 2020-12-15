@@ -1,6 +1,6 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra/emotion?file=/src/App.js"><img src="https://i.imgur.com/dn8SdzU.png" alt="twin, cra, emotion" width="500"></a>
+<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra-emotion?file=/src/App.js"><img src="https://i.imgur.com/dn8SdzU.png" alt="twin, cra, emotion" width="500"></a>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra/emotion?file=/src/App.js)**
+**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra-emotion?file=/src/App.js)**
 
 Or download this example using [degit](https://github.com/Rich-Harris/degit):
 
