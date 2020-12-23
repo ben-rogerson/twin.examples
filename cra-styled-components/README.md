@@ -57,7 +57,15 @@ Twin’s config can get added in a couple of different places.
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    preset: 'styled-components'
+    preset: 'styled-components',
+    styled: {
+      import: 'default',
+      from: 'styled-components'
+    },
+    css: {
+      import: 'css',
+      from: 'styled-components'
+    }
   }
 }
 ```
@@ -68,7 +76,15 @@ module.exports = {
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": "styled-components"
+    "preset": "styled-components",
+    "styled": {
+      "import": "default",
+      "from": "styled-components"
+    },
+    "css": {
+      "import": "css",
+      "from": "styled-components"
+    },
   }
 },
 ```
