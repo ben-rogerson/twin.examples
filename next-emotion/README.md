@@ -77,20 +77,16 @@ You can add Twin’s `GlobalStyles` import in `pages/_app.js`:
 ```js
 // page/_app.js
 import { GlobalStyles } from 'twin.macro'
-import { CacheProvider } from '@emotion/react'
-import { cache } from '@emotion/css'
 
 const App = ({ Component, pageProps }) => (
-  <CacheProvider value={cache}>
+  <div>
     <GlobalStyles />
     <Component {...pageProps} />
-  </CacheProvider>
+  </div>
 )
 
 export default App
 ```
-
-> Emotion’s [CacheProvider](https://emotion.sh/docs/cache-provider) ensures the styles get distributed across your app by Next.js as demonstrated in the [`with-emotion-11` example repo](https://github.com/vercel/next.js/blob/master/examples/with-emotion-11/pages/_app.js).
 
 
 ### Add the twin config (optional)
