@@ -133,12 +133,12 @@ To complete the TypeScript setup, you’ll need to add the remaining types for y
 <details>
   <summary>Setup instructions</summary>
 
-First up, you’ll need to install some types for React:
+First up, you’ll need to install some types for react and styled-components:
 
 ```bash
-npm install -D @types/react
+npm install -D @types/react @types/styled-components
 // or
-yarn add @types/react -D
+yarn add @types/react @types/styled-components -D
 ```
 
 Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
