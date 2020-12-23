@@ -36,43 +36,31 @@ Or keep scrolling for installation instructions.
 
 ### Installation
 
-Snowpack
+Install Snowpack
 
 ```shell
 npm install --save-dev snowpack @snowpack/app-scripts-react
 ```
 
-Emotion
+Install the dependencies
 
 ```shell
-npm install @emotion/react @emotion/styled @emotion/babel-plugin-jsx-pragmatic
-```
-
-React, Twin and Tailwind
-
-```shell
-npm install react react-dom twin.macro tailwindcss
+npm install react react-dom @emotion/react @emotion/styled @emotion/babel-plugin-jsx-pragmatic twin.macro tailwindcss
 ```
 
 <details>
   <summary>Install with Yarn</summary>
 
-Snowpack
+Install Snowpack
 
 ```shell
 yarn add snowpack @snowpack/app-scripts-react --dev
 ```
 
-Emotion
+Install the dependencies
 
 ```shell
-yarn add @emotion/react @emotion/styled @emotion/babel-plugin-jsx-pragmatic
-```
-
-React, Twin and Tailwind
-
-```shell
-yarn add react react-dom twin.macro tailwindcss
+yarn add react react-dom @emotion/react @emotion/styled @emotion/babel-plugin-jsx-pragmatic twin.macro tailwindcss
 ```
 
 </details>
