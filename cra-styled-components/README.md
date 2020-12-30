@@ -20,7 +20,7 @@ npm install --save twin.macro tailwindcss styled-components
   <summary>Yarn instructions</summary>
 
 ```bash
-yarn add twin.macro styled-components
+yarn add twin.macro tailwindcss styled-components
 ```
 
 </details>
