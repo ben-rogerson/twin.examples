@@ -18,7 +18,7 @@ Or keep scrolling for installation instructions.
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config (optional)](#add-the-twin-config-optional)
-  - [Add the babel config](#add-the-babel-config)
+  - [Add the jsx pragma](#add-the-jsx-pragma)
   - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
   - [Twin options](#twin-options)
@@ -118,7 +118,7 @@ b) Or in `package.json`:
 
 Note: The preset gets set to 'emotion' by default, so adding the config is only useful if you want to adjust [Twin’s other options](#twin-options).
 
-### Add the babel config
+### Add the jsx pragma
 
 To use the `tw` and `css` props, emotion must first extend jsx with a [jsx pragma](https://emotion.sh/docs/css-prop#jsx-pragma).
 
@@ -139,7 +139,7 @@ const Input = () => <input css={tw`bg-black`} />
 
 ### Complete the TypeScript setup
 
-To complete the TypeScript setup, you’ll need to add the remaining types for your chosen css-in-js framework.
+If you’re using TypeScript, you’ll need to add the remaining types for your chosen css-in-js framework.
 
 <details>
   <summary>Setup instructions</summary>
@@ -268,7 +268,7 @@ Choose from one of the following configs:
 
 #### External
 
-You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions (support coming soon).
+You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions.
 
 [See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 

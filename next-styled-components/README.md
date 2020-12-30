@@ -182,7 +182,7 @@ export default class MyDocument extends Document {
 
 ### Complete the TypeScript setup
 
-To complete the TypeScript setup, you’ll need to add the remaining types for your chosen css-in-js framework.
+If you’re using TypeScript, you’ll need to add the remaining types for your chosen css-in-js framework.
 
 <details>
   <summary>Setup instructions</summary>
@@ -318,7 +318,7 @@ Choose from one of the following configs:
 
 #### External
 
-You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions (support coming soon).
+You can use many Tailwind plugins with twin, like [tailwindcss-typography](https://github.com/tailwindlabs/tailwindcss-typography) and [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) but there’s no compatibility with plugins that use the `addVariant` functions.
 
 [See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
