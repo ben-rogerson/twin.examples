@@ -14,23 +14,25 @@ Or keep scrolling for installation instructions.
 
 ## Table of contents
 
-* [Getting started](#getting-started)
-	* [Installation](#installation)
-	* [Add the global styles](#add-the-global-styles)
-	* [Add the twin config (optional)](#add-the-twin-config-optional)
-	* [Add the babel config](#add-the-babel-config)
-	* [Add the next config](#add-the-next-config)
-	* [Complete the TypeScript setup](#complete-the-typescript-setup)
-* [Customization](#customization)
-	* [Twin options](#twin-options)
-	* [Tailwind config](#tailwind-config)
-	* [Plugins](#plugins)
-		* [External](#external)
-		* [Custom classes](#custom-classes)
-* [Usage](#usage)
-	* [Styled props](#styled-props)
-	* [Styled components](#styled-components)
-* [Next steps](#next-steps)
+- [Table of contents](#table-of-contents)
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Add the global styles](#add-the-global-styles)
+  - [Extract styling on server (optional)](#extract-styling-on-server-optional)
+  - [Add the twin config (optional)](#add-the-twin-config-optional)
+  - [Add the babel config](#add-the-babel-config)
+  - [Add the next config](#add-the-next-config)
+  - [Complete the TypeScript setup](#complete-the-typescript-setup)
+- [Customization](#customization)
+  - [Twin options](#twin-options)
+  - [Tailwind config](#tailwind-config)
+  - [Plugins](#plugins)
+    - [External](#external)
+    - [Custom classes](#custom-classes)
+- [Usage](#usage)
+  - [Styled props](#styled-props)
+  - [Styled components](#styled-components)
+- [Next steps](#next-steps)
 
 
 [](#getting-started)
@@ -88,6 +90,42 @@ const App = ({ Component, pageProps }) => (
 export default App
 ```
 
+
+### Extract styling on server (optional)
+
+If your notice your page flickering on first render, this might fix the problem.
+Creating a `_document.js` file like this will put critical styles in the head of the page.
+
+```js
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { extractCritical } from "@emotion/server";
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    const page = await ctx.renderPage();
+    const styles = extractCritical(page.html);
+    return { ...initialProps, ...page, ...styles };
+  }
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <style
+            data-emotion-css={this.props.ids.join(" ")}
+            dangerouslySetInnerHTML={{ __html: this.props.css }}
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+```
 
 ### Add the twin config (optional)
 
