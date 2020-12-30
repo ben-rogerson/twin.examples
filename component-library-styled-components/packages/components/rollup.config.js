@@ -6,7 +6,7 @@ import pkg from './package.json'
 
 const config = {
   name: 'ComponentLibrary',
-  extensions: ['.ts', '.tsx']
+  extensions: ['.ts', '.tsx'],
 }
 
 export default {
@@ -26,8 +26,8 @@ export default {
       // func();
       file: pkg.module,
       format: 'es',
-      sourcemap: true
-    }
+      sourcemap: true,
+    },
   ],
   plugins: [
     // Automatically add peerDependencies to the `external` config
@@ -45,7 +45,7 @@ export default {
     babel({
       extensions: config.extensions,
       include: ['src/**/*'],
-      exclude: 'node_modules/**'
-    })
-  ]
+      exclude: 'node_modules/**',
+    }),
+  ],
 }

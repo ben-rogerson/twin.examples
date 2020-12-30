@@ -19,7 +19,7 @@ const Button = styled.button(({ isPrimary, isSecondary, isSmall }) => [
   isSmall ? tw`text-sm` : tw`text-lg`,
 
   // The theme import can supply values from your tailwind.config.js
-  { color: theme`colors.white` }
+  { color: theme`colors.white` },
 ])
 
 export default Button

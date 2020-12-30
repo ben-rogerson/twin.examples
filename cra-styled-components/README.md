@@ -60,13 +60,13 @@ module.exports = {
     preset: 'styled-components',
     styled: {
       import: 'default',
-      from: 'styled-components'
+      from: 'styled-components',
     },
     css: {
       import: 'css',
-      from: 'styled-components'
-    }
-  }
+      from: 'styled-components',
+    },
+  },
 }
 ```
 
@@ -118,17 +118,17 @@ module.exports = {
   twin: {
     styled: {
       import: 'default',
-      from: 'styled-components/macro'
+      from: 'styled-components/macro',
     },
     css: {
       import: 'css',
-      from: 'styled-components/macro'
+      from: 'styled-components/macro',
     },
     global: {
       import: 'createGlobalStyle',
-      from: 'styled-components'
-    }
-  }
+      from: 'styled-components',
+    },
+  },
 }
 ```
 

@@ -9,22 +9,22 @@ export default {
       type: 'inline-radio',
       control: {
         type: 'inline-radio',
-        options: ['primary', 'secondary']
-      }
+        options: ['primary', 'secondary'],
+      },
     },
     isSmall: {
       description: 'A small version of the button',
-      type: 'boolean'
+      type: 'boolean',
     },
     children: {
       description: 'The button content',
       defaultValue: 'Button',
-      type: { name: 'text', required: true }
-    }
-  }
+      type: { name: 'text', required: true },
+    },
+  },
 }
 
-const Template = (props) => <Button {...props} />
+const Template = props => <Button {...props} />
 
 export const Primary = Template.bind({})
 

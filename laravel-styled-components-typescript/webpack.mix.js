@@ -20,7 +20,7 @@ mix.webpackConfig({
     // overlay: false,
     watchOptions: {
       poll: 200, // Lower for faster reloads (more cpu intensive)
-      ignored: ['node_modules', 'vendor']
-    }
-  }
+      ignored: ['node_modules', 'vendor'],
+    },
+  },
 })

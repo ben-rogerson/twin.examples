@@ -10,25 +10,23 @@ npx degit https://github.com/ben-rogerson/twin.examples/react-styled-components 
 
 Or keep scrolling for installation instructions.
 
-
 [](#table-of-contents)
 
 ## Table of contents
 
-* [Getting started](#getting-started)
-	* [Installation](#installation)
-	* [Add the global styles](#add-the-global-styles)
-	* [Add the twin config](#add-the-twin-config)
-	* [Add the babel config](#add-the-babel-config)
-	* [Complete the TypeScript setup](#complete-the-typescript-setup)
-* [Customization](#customization)
-	* [Twin options](#twin-options)
-	* [Tailwind config](#tailwind-config)
-	* [Plugins](#plugins)
-		* [External](#external)
-		* [Custom classes](#custom-classes)
-* [Next steps](#next-steps)
-
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Add the global styles](#add-the-global-styles)
+  - [Add the twin config](#add-the-twin-config)
+  - [Add the babel config](#add-the-babel-config)
+  - [Complete the TypeScript setup](#complete-the-typescript-setup)
+- [Customization](#customization)
+  - [Twin options](#twin-options)
+  - [Tailwind config](#tailwind-config)
+  - [Plugins](#plugins)
+    - [External](#external)
+    - [Custom classes](#custom-classes)
+- [Next steps](#next-steps)
 
 [](#getting-started)
 
@@ -85,7 +83,6 @@ const App = () => (
 export default App
 ```
 
-
 ### Add the twin config
 
 Twin’s config can be added in a couple of different files.
@@ -111,7 +108,6 @@ b) Or in `package.json`:
   }
 },
 ```
-
 
 ### Add the babel config
 
@@ -211,8 +207,6 @@ And these props:
 
 </details>
 
-
-
 [](#customization)
 
 ## Customization
@@ -270,7 +264,6 @@ You can use many Tailwind plugins with twin, like [tailwindcss-typography](https
 
 [See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
-
 #### Custom classes
 
 You can add your own custom css within a plugin. Here’s an example of a custom class that adds breakpoint based paddings from theme values:
@@ -298,8 +291,6 @@ function paddings({ addComponents, theme }) {
 }
 ```
 
-
-
 [](#next-steps)
 
 ## Next steps
@@ -309,7 +300,6 @@ Learn more about styled-components
 - [The css prop](https://styled-components.com/docs/api#css-prop)
 - [The css import](https://styled-components.com/docs/api#css)
 - [The styled import](https://styled-components.com/docs/api#styled)
-
 
 View more styled-components examples
 

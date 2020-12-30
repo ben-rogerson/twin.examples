@@ -22,7 +22,7 @@ const Button = styled.button(
       css`
         box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.25);
       `,
-      tw`border-2 border-yellow-600`
+      tw`border-2 border-yellow-600`,
     ],
 
     // Conditional props can be added
@@ -31,8 +31,8 @@ const Button = styled.button(
     // Your tailwind.config.js styles are added by <Theme> in App.js
     css`
       color: ${theme`colors.white`};
-    `
-  ]
+    `,
+  ],
 )
 
 export default Button

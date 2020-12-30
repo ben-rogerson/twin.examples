@@ -16,7 +16,7 @@ export const Button = styled.button(({ type = 'primary', isSmall = false }) => [
     css`
       box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.25);
     `,
-    tw`border-2 border-yellow-600`
+    tw`border-2 border-yellow-600`,
   ],
 
   // Conditional props can be used
@@ -25,5 +25,5 @@ export const Button = styled.button(({ type = 'primary', isSmall = false }) => [
   // The theme import can supply values from your tailwind.config.js
   css`
     color: ${theme`colors.white`};
-  `
+  `,
 ])

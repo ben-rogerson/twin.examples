@@ -1,6 +1,6 @@
-import React from 'react';
-import tw, { GlobalStyles } from 'twin.macro';
-import { Button, Logo } from './components';
+import React from 'react'
+import tw, { GlobalStyles } from 'twin.macro'
+import { Button, Logo } from './components'
 
 const App = () => (
   <div>
@@ -19,6 +19,6 @@ const App = () => (
       <Logo />
     </div>
   </div>
-);
+)
 
-export default App;
+export default App

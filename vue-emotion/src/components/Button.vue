@@ -18,32 +18,32 @@ const Button = styled('button')([
       `
         box-shadow: 0 0.1em 0 0 rgba(0, 0, 0, 0.25);
       `,
-      tw`border-2 border-yellow-600`
+      tw`border-2 border-yellow-600`,
     ],
 
   // Conditional props can be added
   ({ isSmall }) => (isSmall ? tw`text-sm` : tw`text-lg`),
 
   // The theme import can supply values from your tailwind.config.js
-  `color: ${theme`colors.white`};`
+  `color: ${theme`colors.white`};`,
 ])
 
 export default {
   name: 'button-component',
   components: {
-    Button
+    Button,
   },
   props: {
     isPrimary: Boolean,
     isSecondary: Boolean,
-    isSmall: Boolean
+    isSmall: Boolean,
   },
   render(createElement) {
     return createElement(
       Button,
       { attrs: { ...this.$props } },
-      this.$slots.default
+      this.$slots.default,
     )
-  }
+  },
 }
 </script>

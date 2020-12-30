@@ -1,5 +1,5 @@
-import tw, { GlobalStyles } from "twin.macro";
-import { Button, Logo } from "./components";
+import tw, { GlobalStyles } from 'twin.macro'
+import { Button, Logo } from './components'
 
 const App = () => (
   <div
@@ -16,6 +16,6 @@ const App = () => (
     </div>
     <Logo />
   </div>
-);
+)
 
-export default App;
+export default App

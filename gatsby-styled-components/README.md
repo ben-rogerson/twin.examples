@@ -62,7 +62,7 @@ const App = () => <Layout>{/* ... */}</Layout>
 ```js
 // gatsby-config.js
 module.exports = {
-  plugins: [`gatsby-plugin-styled-components`]
+  plugins: [`gatsby-plugin-styled-components`],
 }
 ```
 
@@ -76,8 +76,8 @@ Twin’s config can get added in a couple of different places.
 // babel-plugin-macros.config.js
 module.exports = {
   twin: {
-    preset: 'styled-components'
-  }
+    preset: 'styled-components',
+  },
 }
 ```
 
@@ -121,17 +121,17 @@ module.exports = {
   twin: {
     styled: {
       import: 'default',
-      from: 'styled-components'
+      from: 'styled-components',
     },
     css: {
       import: 'css',
-      from: 'styled-components/macro'
+      from: 'styled-components/macro',
     },
     global: {
       import: 'createGlobalStyle',
-      from: 'styled-components'
-    }
-  }
+      from: 'styled-components',
+    },
+  },
 }
 ```
 

@@ -8,27 +8,25 @@ npx degit https://github.com/ben-rogerson/twin.examples/snowpack-react-emotion f
 
 Or keep scrolling for installation instructions.
 
-
 [](#table-of-contents)
 
 ## Table of contents
 
-* [Getting started](#getting-started)
-	* [Installation](#installation)
-	* [Add the global styles](#add-the-global-styles)
-	* [Add the twin config (optional)](#add-the-twin-config-optional)
-	* [Add the babel config](#add-the-babel-config)
-	* [Add the snowpack config](#add-the-snowpack-config)
-	* [Add the startup scripts](#add-the-startup-scripts)
-	* [Complete the TypeScript setup](#complete-the-typescript-setup)
-* [Customization](#customization)
-	* [Twin options](#twin-options)
-	* [Tailwind config](#tailwind-config)
-	* [Plugins](#plugins)
-		* [External](#external)
-		* [Custom classes](#custom-classes)
-* [Next steps](#next-steps)
-
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Add the global styles](#add-the-global-styles)
+  - [Add the twin config (optional)](#add-the-twin-config-optional)
+  - [Add the babel config](#add-the-babel-config)
+  - [Add the snowpack config](#add-the-snowpack-config)
+  - [Add the startup scripts](#add-the-startup-scripts)
+  - [Complete the TypeScript setup](#complete-the-typescript-setup)
+- [Customization](#customization)
+  - [Twin options](#twin-options)
+  - [Tailwind config](#tailwind-config)
+  - [Plugins](#plugins)
+    - [External](#external)
+    - [Custom classes](#custom-classes)
+- [Next steps](#next-steps)
 
 [](#getting-started)
 
@@ -87,7 +85,6 @@ const App = () => (
 export default App
 ```
 
-
 ### Add the twin config (optional)
 
 Twin’s config can be added in a couple of different files.
@@ -115,7 +112,6 @@ b) Or in `package.json`:
 ```
 
 Note: The preset gets set to 'emotion' by default, so adding the config is only useful if you want to adjust [Twin’s other options](#twin-options).
-
 
 ### Add the babel config
 
@@ -190,7 +186,6 @@ const Input = () => <input css={tw`bg-black`} />
 </details>
 
 > Note: After build, if you’re seeing "process is not defined" then npm install and add `"babel-plugin-transform-inline-environment-variables"` to .babelrc
-
 
 ### Add the snowpack config
 
@@ -300,8 +295,6 @@ And these props:
 
 </details>
 
-
-
 [](#customization)
 
 ## Customization
@@ -358,7 +351,6 @@ You can use many Tailwind plugins with twin, like [tailwindcss-typography](https
 
 [See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
-
 #### Custom classes
 
 You can add your own custom css within a plugin. Here’s an example of a custom class that adds breakpoint based paddings from theme values:
@@ -386,8 +378,6 @@ function paddings({ addComponents, theme }) {
 }
 ```
 
-
-
 [](#next-steps)
 
 ## Next steps
@@ -397,7 +387,6 @@ Learn more about emotion
 - [Emotion’s css prop](https://emotion.sh/docs/css-prop)
 - [Emotion’s css import](https://emotion.sh/docs/css-prop#string-styles)
 - [Emotion’s styled import](https://emotion.sh/docs/styled)
-
 
 View more emotion examples
 

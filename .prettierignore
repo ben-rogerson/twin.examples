@@ -1,0 +1,6 @@
+.cache
+vendor
+public
+cache
+dist
+build

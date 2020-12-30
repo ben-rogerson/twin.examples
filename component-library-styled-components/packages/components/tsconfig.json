@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "jsx": "preserve",
     "target": "ESNext",
-    "module": "ESNext", 
+    "module": "ESNext",
     "strict": true,
     "skipLibCheck": true,
     // Ensure that .d.ts files are created by tsc, but not .js files
@@ -18,12 +18,6 @@
     // Ensure that Babel can safely transpile files in the TypeScript project
     "isolatedModules": true
   },
-  "include": [
-    "src/**/*.tsx",
-    "types/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/**/*.tsx", "types/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

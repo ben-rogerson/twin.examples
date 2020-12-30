@@ -5,7 +5,7 @@
       <Button isSecondary>Cancel</Button>
       <Button isSmall>Close</Button>
     </ButtonList>
-    <Logo/>
+    <Logo />
   </Wrap>
 </template>
 
@@ -40,7 +40,7 @@ const Wrap = styled('div')`
 `
 
 const ButtonList = styled('div')(
-  tw`flex flex-col justify-center h-full space-y-5`
+  tw`flex flex-col justify-center h-full space-y-5`,
 )
 
 export default {
@@ -49,7 +49,7 @@ export default {
     Wrap,
     ButtonList,
     Button,
-    Logo
-  }
+    Logo,
+  },
 }
 </script>

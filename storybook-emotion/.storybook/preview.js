@@ -9,18 +9,18 @@ export const parameters = {
     values: [
       {
         name: 'electric-ribbon',
-        value: `linear-gradient(180deg, ${theme`colors.electric`}, ${theme`colors.ribbon`})`
-      }
-    ]
-  }
+        value: `linear-gradient(180deg, ${theme`colors.electric`}, ${theme`colors.ribbon`})`,
+      },
+    ],
+  },
 }
 
 export const decorators = [
-  (Story) => (
+  Story => (
     <div>
       {/* */}
       <GlobalStyles />
       <Story />
     </div>
-  )
+  ),
 ]

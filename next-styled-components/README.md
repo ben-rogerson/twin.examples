@@ -8,30 +8,28 @@ npx degit https://github.com/ben-rogerson/twin.examples/next-styled-components f
 
 Or keep scrolling for installation instructions.
 
-
 [](#table-of-contents)
 
 ## Table of contents
 
-* [Getting started](#getting-started)
-	* [Installation](#installation)
-	* [Add the global styles](#add-the-global-styles)
-	* [Add the twin config](#add-the-twin-config)
-	* [Add the babel config](#add-the-babel-config)
-	* [Add the next config](#add-the-next-config)
-	* [Add the server stylesheet](#add-the-server-stylesheet)
-	* [Complete the TypeScript setup](#complete-the-typescript-setup)
-* [Customization](#customization)
-	* [Twin options](#twin-options)
-	* [Tailwind config](#tailwind-config)
-	* [Plugins](#plugins)
-		* [External](#external)
-		* [Custom classes](#custom-classes)
-* [Usage](#usage)
-	* [Styled props](#styled-props)
-	* [Styled components](#styled-components)
-* [Next steps](#next-steps)
-
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Add the global styles](#add-the-global-styles)
+  - [Add the twin config](#add-the-twin-config)
+  - [Add the babel config](#add-the-babel-config)
+  - [Add the next config](#add-the-next-config)
+  - [Add the server stylesheet](#add-the-server-stylesheet)
+  - [Complete the TypeScript setup](#complete-the-typescript-setup)
+- [Customization](#customization)
+  - [Twin options](#twin-options)
+  - [Tailwind config](#tailwind-config)
+  - [Plugins](#plugins)
+    - [External](#external)
+    - [Custom classes](#custom-classes)
+- [Usage](#usage)
+  - [Styled props](#styled-props)
+  - [Styled components](#styled-components)
+- [Next steps](#next-steps)
 
 [](#getting-started)
 
@@ -88,7 +86,6 @@ const App = ({ Component, pageProps }) => (
 export default App
 ```
 
-
 ### Add the twin config
 
 Twin’s config can be added in a couple of different files.
@@ -114,7 +111,6 @@ b) Or in `package.json`:
   }
 },
 ```
-
 
 ### Add the babel config
 
@@ -147,7 +143,6 @@ module.exports = {
 ```
 
 > 'fs' is a server-side dependency which we don’t want added client-side. Adding the code above will make sure you don’t experience errors.
-
 
 ### Add the server stylesheet
 
@@ -270,8 +265,6 @@ And these props:
 
 </details>
 
-
-
 [](#customization)
 
 ## Customization
@@ -329,7 +322,6 @@ You can use many Tailwind plugins with twin, like [tailwindcss-typography](https
 
 [See list of supported plugins →](https://twin-docs.netlify.app/plugin-support)
 
-
 #### Custom classes
 
 You can add your own custom css within a plugin. Here’s an example of a custom class that adds breakpoint based paddings from theme values:
@@ -356,8 +348,6 @@ function paddings({ addComponents, theme }) {
   })
 }
 ```
-
-
 
 [](#usage)
 
@@ -451,8 +441,6 @@ const Input = styled.input(({ hasHover }) => [
 const Component = () => <Input hasHover />
 ```
 
-
-
 [](#next-steps)
 
 ## Next steps
@@ -462,7 +450,6 @@ Learn more about styled-components
 - [The css prop](https://styled-components.com/docs/api#css-prop)
 - [The css import](https://styled-components.com/docs/api#css)
 - [The styled import](https://styled-components.com/docs/api#styled)
-
 
 View more styled-components examples
 

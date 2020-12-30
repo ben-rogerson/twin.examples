@@ -22,11 +22,11 @@
 import tw, { styled } from 'twin.macro'
 
 const LogoLink = styled('a')(
-  tw`w-32 m-10 p-5 block opacity-50 hover:opacity-100`
+  tw`w-32 m-10 p-5 block opacity-50 hover:opacity-100`,
 )
 
 export default {
   name: 'logo-component',
-  components: { LogoLink }
+  components: { LogoLink },
 }
 </script>
