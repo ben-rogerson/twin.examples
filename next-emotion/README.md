@@ -463,4 +463,3 @@ View more emotion examples
 - [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-emotion)
 - Next.js (current)
 - [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion)
-- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/tree/master/vue-emotion)

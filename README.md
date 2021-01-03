@@ -32,7 +32,6 @@
 
 - **Storybook**<br/>[emotion](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-emotion) / styled-components (soon)
 - **Component library with rollup + yarn**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/component-library-styled-components) / emotion (soon)
-- **Vue**<br/>[emotion (experimental)](https://github.com/ben-rogerson/twin.examples/tree/master/vue-emotion)
 
 [](#contributions)
 

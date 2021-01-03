@@ -10,7 +10,6 @@ const App = () => (
       tw`bg-gradient-to-b from-electric to-ribbon`,
     ]}
   >
-    <GlobalStyles />
     <div tw="flex flex-col justify-center h-full space-y-5">
       <Button isPrimary>Submit</Button>
       <Button isSecondary>Cancel</Button>
@@ -20,4 +19,10 @@ const App = () => (
   </div>
 )
 
-render(<App />, document.getElementById('app'))
+render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  document.getElementById('app'),
+)

@@ -1,6 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { GlobalStyles } from 'twin.macro'
 import App from './App'
 
-const rootElement = document.getElementById('root')
-render(<App />, rootElement)
+render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  document.getElementById('root'),
+)

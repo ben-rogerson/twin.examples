@@ -408,4 +408,3 @@ View more emotion examples
 - Gatsby (current)
 - [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion)
 - [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion)
-- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/tree/master/vue-emotion)

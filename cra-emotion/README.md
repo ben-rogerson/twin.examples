@@ -72,22 +72,22 @@ Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/ba
 
 The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-You can add Twin’s `GlobalStyles` import in `src/App.js`:
+You can add Twin’s `GlobalStyles` import in `src/index.js`:
 
 ```js
-// src/App.js
-/** @jsxImportSource @emotion/react */
+// src/index.js
 import React from 'react'
+import { render } from 'react-dom'
 import { GlobalStyles } from 'twin.macro'
+import App from './App'
 
-const App = () => (
-  <div>
+render(
+  <>
     <GlobalStyles />
-    {/* ... */}
-  </div>
+    <App />
+  </>,
+  document.getElementById('root'),
 )
-
-export default App
 ```
 
 ### Add the twin config (optional)
@@ -408,4 +408,3 @@ View more emotion examples
 - [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-emotion)
 - [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion)
 - [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion)
-- [Vue (experimental)](https://github.com/ben-rogerson/twin.examples/tree/master/vue-emotion)

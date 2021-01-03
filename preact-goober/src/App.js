@@ -1,5 +1,5 @@
 import { h } from 'preact' // codesandbox requires this import
-import tw, { styled, GlobalStyles } from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 import { Button, Logo } from './components'
 
 const Container = styled.div([
@@ -11,7 +11,6 @@ const ButtonList = styled.div(tw`flex flex-col justify-center h-full space-y-5`)
 
 const App = () => (
   <Container>
-    <GlobalStyles />
     <ButtonList>
       <Button isPrimary>Submit</Button>
       <Button isSecondary>Cancel</Button>
