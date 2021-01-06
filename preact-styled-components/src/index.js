@@ -1,5 +1,5 @@
 import { render } from 'react-dom'
-import { GlobalStyles } from 'twin.macro'
+import GlobalStyles from './GlobalStyles'
 import App from './App'
 
 if (typeof window !== 'undefined') {

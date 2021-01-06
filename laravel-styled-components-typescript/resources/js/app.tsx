@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
-import tw, { GlobalStyles } from 'twin.macro'
+import tw from 'twin.macro'
+import GlobalStyles from './GlobalStyles'
 import { Button, Logo } from './components'
 
 const App = () => (

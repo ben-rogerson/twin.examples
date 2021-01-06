@@ -1,4 +1,4 @@
-import { GlobalStyles } from 'twin.macro'
+import GlobalStyles from './../components'
 
 const App = ({ Component, pageProps }) => (
   <div>
