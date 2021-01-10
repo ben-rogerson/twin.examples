@@ -71,13 +71,28 @@ Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/ba
 
 The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-You can add Twin’s `GlobalStyles` import in `src/index.js`:
+> Due to an issue in styled-components, global styles get added in the wrong order when using styled-components. This gives the tailwind base styles an incorrect specificity.  
+> Until [the issue](https://github.com/styled-components/styled-components/issues/3146) is fixed, the workaround is to export the styles from another file.
+
+You can import `GlobalStyles` within a new file placed in `components/GlobalStyles.js`:
+
+```js
+// src/GlobalStyles.js
+import React from 'react'
+import { GlobalStyles } from 'twin.macro'
+
+export default function GlobalStylesComponent() {
+  return <GlobalStyles />
+}
+```
+
+Then import the GlobalStyles file in `src/index.js`:
 
 ```js
 // src/index.js
 import React from 'react'
 import { render } from 'react-dom'
-import { GlobalStyles } from 'twin.macro'
+import GlobalStyles from './GlobalStyles'
 import App from './App'
 
 render(
