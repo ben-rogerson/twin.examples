@@ -1,12 +1,10 @@
 import { GlobalStyles } from 'twin.macro'
-import { CacheProvider } from '@emotion/react'
-import { cache } from '@emotion/css'
 
 const App = ({ Component, pageProps }) => (
-  <CacheProvider value={cache}>
+  <div>
     <GlobalStyles />
     <Component {...pageProps} />
-  </CacheProvider>
+  </div>
 )
 
 export default App
