@@ -46,7 +46,8 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install twin.macro tailwindcss styled-components
+npm install styled-components
+npm install -D twin.macro tailwindcss babel-plugin-styled-components babel-plugin-macros react-is
 ```
 
 <details>
@@ -59,7 +60,8 @@ yarn create next-app
 Install the dependencies
 
 ```shell
-yarn add twin.macro tailwindcss styled-components
+yarn add styled-components
+npm install -D twin.macro tailwindcss babel-plugin-styled-components babel-plugin-macros react-is
 ```
 
 </details>
