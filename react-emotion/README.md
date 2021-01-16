@@ -145,13 +145,7 @@ First add these babel plugins:
 {
   "plugins": [
     "babel-plugin-macros",
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "pragma": "__cssprop",
-        "pragmaFrag": "React.Fragment"
-      }
-    ]
+    ["@babel/plugin-transform-react-jsx", { "runtime": "automatic" }]
   ]
 }
 ```
