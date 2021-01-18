@@ -61,7 +61,7 @@ Install the dependencies
 
 ```shell
 yarn add styled-components
-npm install -D twin.macro tailwindcss babel-plugin-styled-components babel-plugin-macros react-is
+yarn add twin.macro tailwindcss babel-plugin-styled-components babel-plugin-macros react-is --dev
 ```
 
 </details>
