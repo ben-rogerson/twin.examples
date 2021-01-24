@@ -1,0 +1,28 @@
+{
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
+    }
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && preact serve",
+    "dev": "preact watch"
+  },
+  "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.0.0",
+    "@emotion/css": "^11.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/server": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@babel/core": "7.12.3",
+    "babel-plugin-macros": "^3.0.0",
+    "preact": "^10.5.7",
+    "tailwindcss": "^2.0.1",
+    "twin.macro": "^2.0.1"
+  },
+  "devDependencies": {
+    "preact-cli": "^3.0.3"
+  }
+}
