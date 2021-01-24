@@ -1,7 +1,15 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "styled": {
+        "import": "default",
+        "from": "styled-components"
+      },
+      "css": {
+        "import": "css",
+        "from": "styled-components"
+      }
     }
   },
   "scripts": {
@@ -14,13 +22,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^2.26.1",
-    "gatsby-plugin-styled-components": "^3.4.0",
+    "gatsby": "^2.31.1",
+    "gatsby-plugin-styled-components": "^3.9.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1",
+    "styled-components": "5.1.1",
     "tailwindcss": "^2.0.1",
-    "twin.macro": "^2.0.8"
+    "twin.macro": "^2.1.0"
   },
   "devDependencies": {
     "prettier": "^2.1.2"
