@@ -46,6 +46,23 @@ Twin and Emotion
 npm install twin.macro @emotion/react @emotion/styled
 ```
 
+<details>
+  <summary>Install with Yarn</summary>
+
+React and Babel
+
+```shell
+yarn add react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros
+```
+
+Twin and Emotion
+
+```shell
+yarn add twin.macro @emotion/react @emotion/styled
+```
+
+</details>
+
 ### Add the global styles
 
 Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
