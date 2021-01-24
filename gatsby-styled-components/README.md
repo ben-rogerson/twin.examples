@@ -17,7 +17,7 @@ Or keep scrolling for installation instructions.
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
-- [Add gatsby-plugin-styled-components to the gatsby config](#add-gatsby-plugin-styled-components-to-the-gatsby-config)
+  - [Add gatsby-plugin-styled-components](#add-gatsby-plugin-styled-components)
   - [Add the twin config](#add-the-twin-config)
   - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
@@ -98,9 +98,9 @@ import Layout from './../components/Layout'
 const App = () => <Layout>{/* ... */}</Layout>
 ```
 
-[](#add-gatsby-plugin-styled-components-to-the-gatsby-config)
+### Add gatsby-plugin-styled-components
 
-## Add gatsby-plugin-styled-components to the gatsby config
+In `gatsby-config.js` register the plugin for styled-components:
 
 ```js
 // gatsby-config.js
