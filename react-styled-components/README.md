@@ -240,6 +240,7 @@ And these props:
 | debugPlugins          | `boolean` | `false`                | Display generated class information in your terminal from your plugins                                                    |
 | debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                 |
 | disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                         |
+| includeClassNames     | `boolean` | `false`                | Look in className props for tailwind classes to convert                                                                   |
 
 ### Tailwind config
 
