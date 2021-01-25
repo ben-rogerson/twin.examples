@@ -12,15 +12,15 @@
   },
   "dependencies": {
     "@babel/core": "7.12.3",
-    "babel-plugin-macros": "^3.0.0",
-    "goober": "^2.0.15",
-    "preact": "^10.5.7",
-    "tailwindcss": "^2.0.1",
-    "twin.macro": "^2.0.1"
+    "babel-plugin-macros": "^3.0.1",
+    "goober": "^2.0.28",
+    "preact": "^10.5.11",
+    "tailwindcss": "^2.0.2",
+    "twin.macro": "^2.1.0"
   },
   "devDependencies": {
     "babel-plugin-transform-goober": "^1.2.0",
     "if-env": "^1.0.4",
-    "preact-cli": "^3.0.3"
+    "preact-cli": "^3.0.5"
   }
 }

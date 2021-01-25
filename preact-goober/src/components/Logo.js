@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import tw, { styled } from 'twin.macro'
 
-const Link = styled.a(tw`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`)
+const Link = tw.a`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`
 
 const Logo = () => (
   <Link
