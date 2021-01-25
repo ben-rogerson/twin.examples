@@ -197,11 +197,7 @@ Add the following to your snowpack config:
 // snowpack.config.json
 {
   "extends": "@snowpack/app-scripts-react",
-  "install": [
-    "@emotion/react",
-    "@emotion/styled",
-    "tailwindcss/dist/base.min.css"
-  ],
+  "install": ["@emotion/react", "@emotion/styled"],
   "plugins": ["@snowpack/plugin-babel"]
 }
 ```

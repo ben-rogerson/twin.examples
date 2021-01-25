@@ -146,7 +146,7 @@ Add the following to your snowpack config:
 // snowpack.config.json
 {
   "extends": "@snowpack/app-scripts-react",
-  "install": ["styled-components", "tailwindcss/dist/base.min.css"],
+  "install": ["styled-components"],
   "plugins": ["@snowpack/plugin-babel"]
 }
 ```
