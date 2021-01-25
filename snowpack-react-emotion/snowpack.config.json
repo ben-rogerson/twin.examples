@@ -1,9 +1,5 @@
 {
   "extends": "@snowpack/app-scripts-react",
-  "install": [
-    "@emotion/react",
-    "@emotion/styled",
-    "tailwindcss/dist/base.min.css"
-  ],
+  "install": ["@emotion/react", "@emotion/styled"],
   "plugins": ["@snowpack/plugin-babel"]
 }
