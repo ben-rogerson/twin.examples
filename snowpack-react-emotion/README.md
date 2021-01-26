@@ -194,11 +194,13 @@ const Input = () => <input css={tw`bg-black`} />
 Add the following to your snowpack config:
 
 ```js
-// snowpack.config.json
-{
-  "extends": "@snowpack/app-scripts-react",
-  "install": ["@emotion/react", "@emotion/styled"],
-  "plugins": ["@snowpack/plugin-babel"]
+// snowpack.config.js
+/** @type {import("snowpack").SnowpackUserConfig } */
+module.exports = {
+  extends: '@snowpack/app-scripts-react',
+  packageOptions: {
+    knownEntrypoints: ['@emotion/react', '@emotion/styled'],
+  },
 }
 ```
 

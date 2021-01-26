@@ -1,5 +1,0 @@
-{
-  "extends": "@snowpack/app-scripts-react",
-  "install": ["@emotion/react", "@emotion/styled"],
-  "plugins": ["@snowpack/plugin-babel"]
-}

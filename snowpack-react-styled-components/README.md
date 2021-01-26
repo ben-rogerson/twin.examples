@@ -144,10 +144,12 @@ Add the following to your snowpack config:
 
 ```js
 // snowpack.config.json
-{
-  "extends": "@snowpack/app-scripts-react",
-  "install": ["styled-components"],
-  "plugins": ["@snowpack/plugin-babel"]
+/** @type {import("snowpack").SnowpackUserConfig } */
+module.exports = {
+  extends: '@snowpack/app-scripts-react',
+  packageOptions: {
+    knownEntrypoints: ['styled-components'],
+  },
 }
 ```
 
