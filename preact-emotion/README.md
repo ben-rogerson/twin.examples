@@ -67,7 +67,7 @@ Choose from one of the following configs:
   npx tailwindcss-cli@latest init --full
   ```
 
-  In the config, twin only reads from the `theme: {}` and the `plugins: []` entries, so strip out the rest.
+  In the config, twin only reads the `darkMode`, `theme` and `plugins` entries, so feel free to remove the rest.
 
 ### Plugins
 
