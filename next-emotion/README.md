@@ -46,7 +46,7 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install @emotion/react @emotion/styled @emotion/css
+npm install @emotion/react @emotion/styled @emotion/css @emotion/server
 npm install -D twin.macro tailwindcss @emotion/babel-plugin babel-plugin-macros
 ```
 
@@ -60,7 +60,7 @@ yarn create next-app
 Install the dependencies
 
 ```shell
-yarn add @emotion/react @emotion/styled @emotion/css
+yarn add @emotion/react @emotion/styled @emotion/css @emotion/server
 yarn add -D twin.macro tailwindcss @emotion/babel-plugin babel-plugin-macros
 ```
 
