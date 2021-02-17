@@ -43,6 +43,7 @@
     "@babel/preset-env": "7.9.6",
     "@babel/preset-react": "7.9.4",
     "@babel/preset-typescript": "7.9.0",
+    "@emotion/babel-plugin": "^11.2.0",
     "@emotion/babel-preset-css-prop": "11.0.0",
     "@nrwl/cli": "11.2.12",
     "@nrwl/cypress": "11.2.12",
@@ -62,6 +63,7 @@
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
     "babel-jest": "26.2.2",
+    "babel-plugin-macros": "^3.0.1",
     "cypress": "^6.0.1",
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
@@ -73,8 +75,10 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "jest": "26.2.2",
     "prettier": "2.2.1",
+    "tailwindcss": "^2.0.3",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
+    "twin.macro": "^2.2.3",
     "typescript": "~4.0.3"
   }
 }

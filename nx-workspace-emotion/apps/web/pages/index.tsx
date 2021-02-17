@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { Button } from '@my-twin-project/shared-ui';
 
 export function Index() {
@@ -11,7 +10,8 @@ export function Index() {
   return (
     <>
       <h2>Shared Resources</h2>
-      <Button>Click me</Button>
+      <Button isPrimary>Primary</Button>
+      <Button isSecondary>Secondary</Button>
     </>
   );
 }

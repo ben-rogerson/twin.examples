@@ -1,4 +1,5 @@
-import tw, { css, styled, theme } from 'twin.macro';
+import styled from '@emotion/styled';
+import tw, { css, theme } from 'twin.macro';
 
 type types = {
   isPrimary?: boolean;
