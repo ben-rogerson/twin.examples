@@ -1,0 +1,57 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "license": "MIT",
+  "module": "dist/components.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "babelMacros": {
+    "twin": {
+      "config": "./../../tailwind.config.js",
+      "preset": "emotion"
+    }
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "build:types": "tsc",
+    "build:js": "rollup -c",
+    "build": "yarn build:types && yarn build:js"
+  },
+  "peerDependencies": {
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
+    "@types/react": "17.0.1",
+    "react": "17.0.1"
+  },
+  "dependencies": {
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
+    "autoprefixer": "10.2.4",
+    "babel-plugin-macros": "3.0.1",
+    "postcss": "8.2.6",
+    "tailwindcss": "2.0.3",
+    "twin.macro": "2.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.16",
+    "@babel/preset-env": "7.12.16",
+    "@babel/preset-react": "7.12.13",
+    "@babel/preset-typescript": "7.12.16",
+    "@emotion/babel-plugin-jsx-pragmatic": "0.1.5",
+    "@emotion/babel-preset-css-prop": "11.2.0",
+    "@types/react": "17.0.1",
+    "@types/react-dom": "17.0.1",
+    "babel-loader": "8.2.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "rollup": "2.38.5",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "typescript": "4.1.5"
+  }
+}
