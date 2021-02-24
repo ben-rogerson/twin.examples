@@ -30,7 +30,7 @@
 
 ### Other
 
-- **Storybook**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-emotion)
+- **Storybook**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-emotion)
 - **Component library with rollup + yarn**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/component-library-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/component-library-emotion)
 
 [](#contributions)
