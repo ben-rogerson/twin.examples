@@ -10,7 +10,7 @@ const IndexPage = () => (
       tw`bg-gradient-to-b from-electric to-ribbon`,
     ]}
   >
-    <div tw="flex flex-col justify-center h-full space-y-5">
+    <div tw="flex flex-col justify-center h-full gap-y-5">
       <Button isPrimary>Send</Button>
       <Button isSecondary>Cancel</Button>
       <Button isSmall>Close</Button>
