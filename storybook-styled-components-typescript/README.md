@@ -1,11 +1,11 @@
-# Storybook + styled-components
+# Storybook + styled-components (ts)
 
 ## Getting started
 
 Either check out the setup in the attached repository or clone this repository with degit:
 
 ```js
-npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-components folder-name
+npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-components-typescript folder-name
 ```
 
 
