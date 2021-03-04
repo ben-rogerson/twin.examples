@@ -1,28 +1,26 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "includeClassNames": true
     }
   },
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^2.31.1",
-    "gatsby-plugin-styled-components": "^3.9.0",
+    "gatsby": "^3.0.1",
+    "gatsby-plugin-styled-components": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "5.1.1",
-    "tailwindcss": "^2.0.1",
-    "twin.macro": "^2.1.0"
+    "styled-components": "5.2.1"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0"
   }
 }

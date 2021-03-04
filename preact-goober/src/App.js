@@ -5,7 +5,7 @@ import { Button, Logo } from './components'
 const Container = tw.div`flex flex-col items-center justify-center h-screen
   bg-gradient-to-b from-electric to-ribbon`
 
-const ButtonList = tw.div`flex flex-col justify-center h-full space-y-5`
+const ButtonList = tw.div`flex flex-col justify-center h-full gap-y-5`
 
 const App = () => (
   <Container>

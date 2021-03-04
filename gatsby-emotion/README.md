@@ -106,7 +106,9 @@ Then in your pages, wrap your content with the layout:
 // src/pages/index.js
 import Layout from './../components/Layout'
 
-const App = () => <Layout>{/* ... */}</Layout>
+const IndexPage = () => <Layout>{/* ... */}</Layout>
+
+export default IndexPage
 ```
 
 ### Add the twin config (optional)

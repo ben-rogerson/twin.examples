@@ -16,7 +16,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "jsxImportSource": "@emotion/react"
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]

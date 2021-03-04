@@ -1,7 +1,8 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "includeClassNames": true
     }
   },
   "scripts": {
@@ -14,12 +15,12 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1",
-    "tailwindcss": "^2.0.2",
-    "twin.macro": "^2.1.1"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@snowpack/app-scripts-react": "^2.0.0",
-    "snowpack": "^3.0.11"
+    "snowpack": "^3.0.13",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0"
   }
 }

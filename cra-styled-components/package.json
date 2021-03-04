@@ -2,44 +2,30 @@
   "babelMacros": {
     "twin": {
       "preset": "styled-components",
-      "styled": {
-        "import": "default",
-        "from": "styled-components"
-      },
-      "css": {
-        "import": "css",
-        "from": "styled-components"
-      }
+      "autoCssProp": true,
+      "includeClassNames": true
     }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.0",
-    "styled-components": "^5.2.1",
-    "tailwindcss": "^2.0.1",
-    "twin.macro": "^2.0.1"
+    "react-scripts": "^4.0.2",
+    "styled-components": "5.2.1"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

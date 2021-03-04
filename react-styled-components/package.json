@@ -1,7 +1,8 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "includeClassNames": true
     }
   },
   "scripts": {
@@ -9,17 +10,17 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@babel/core": "^7.12.16",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "5.1.0",
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.8",
     "autoprefixer": "^10.2.4",
     "parcel-bundler": "^1.12.4",
-    "postcss": "^8.2.6",
-    "react-is": "^17.0.1"
+    "postcss": "^8.2.7",
+    "react-is": "^17.0.1",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0"
   }
 }

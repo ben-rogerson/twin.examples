@@ -1,7 +1,8 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "includeClassNames": true
     }
   },
   "scripts": {
@@ -11,15 +12,15 @@
     "dev": "preact watch"
   },
   "dependencies": {
-    "@babel/core": "7.12.3",
-    "babel-plugin-macros": "^3.0.0",
-    "preact": "^10.5.7",
-    "styled-components": "5.2.1",
-    "tailwindcss": "^2.0.1",
-    "twin.macro": "^2.0.1"
+    "preact": "^10.5.12",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "babel-plugin-macros": "^3.0.1",
     "if-env": "^1.0.4",
-    "preact-cli": "^3.0.3"
+    "preact-cli": "^3.0.5",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0"
   }
 }

@@ -10,7 +10,7 @@ const Button = styled.button(
   ({ isPrimary, isSecondary, isSmall }: ButtonProps) => [
     // The common button styles
     tw`text-lg px-8 py-2 rounded focus:outline-none`,
-    tw`transform transition-transform duration-75`,
+    tw`transform duration-75`,
 
     // Use the variant grouping feature to add variants to multiple classes
     tw`hocus:(scale-105 text-yellow-400)`,

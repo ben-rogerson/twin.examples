@@ -9,7 +9,8 @@
   "babelMacros": {
     "twin": {
       "config": "./../../tailwind.config.js",
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "includeClassNames": true
     }
   },
   "scripts": {
@@ -20,26 +21,27 @@
     "build": "npm run build:types && npm run build:js"
   },
   "peerDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/styled-components": "^5.1.4",
+    "@types/react": "^17.0.1",
+    "@types/styled-components": "^5.1.7",
     "react": "^17.0.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.1",
-    "@babel/preset-typescript": "^7.12.1",
-    "rollup": "^2.32.1",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "rollup": "^2.38.5",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "typescript": "^4.0.5"
+    "typescript": "^4.1.4"
   },
   "browserslist": "> 0.25%, not dead",
   "dependencies": {
-    "core-js": "^3.6.5",
-    "tailwindcss": "^2.0.1"
+    "core-js": "^3.8.3",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.2.3"
   }
 }

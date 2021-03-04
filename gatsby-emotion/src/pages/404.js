@@ -1,4 +1,4 @@
 import React from 'react'
-const ErrorPage = () => <>Not found</>
+const ErrorPage = () => <div>Not found</div>
 
 export default ErrorPage

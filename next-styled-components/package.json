@@ -1,7 +1,8 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "includeClassNames": true
     }
   },
   "scripts": {
@@ -13,8 +14,10 @@
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "5.1.1",
+    "styled-components": "5.1.1"
+  },
+  "devDependencies": {
     "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.2.3"
+    "twin.macro": "^2.3.0"
   }
 }

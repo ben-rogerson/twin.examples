@@ -16,7 +16,8 @@
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
     // Ensure that Babel can safely transpile files in the TypeScript project
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src/**/*.tsx", "types/*.ts"],
   "exclude": ["node_modules", "dist"]

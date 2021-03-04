@@ -96,6 +96,8 @@ Then in your pages, wrap your content with the layout:
 import Layout from './../components/Layout'
 
 const App = () => <Layout>{/* ... */}</Layout>
+
+export default App
 ```
 
 ### Add gatsby-plugin-styled-components

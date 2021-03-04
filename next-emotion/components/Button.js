@@ -3,7 +3,7 @@ import tw, { styled, css, theme } from 'twin.macro'
 const Button = styled.button(({ isPrimary, isSecondary, isSmall }) => [
   // The common button styles added with the tw import
   tw`text-lg px-8 py-2 rounded focus:outline-none`,
-  tw`transform transition-transform duration-75`,
+  tw`transform duration-75`,
 
   // Use the variant grouping feature to add variants to multiple classes
   tw`hocus:(scale-105 text-yellow-400)`,
