@@ -227,34 +227,23 @@ import 'twin.macro'
 import styledImport from '@emotion/styled'
 import { css as cssImport } from '@emotion/react'
 
-// The css prop
-// https://emotion.sh/docs/typescript#css-prop
-import {} from '@emotion/react/types/css-prop'
-
 declare module 'twin.macro' {
   // The styled and css imports
   const styled: typeof styledImport
   const css: typeof cssImport
 }
-
-// The 'as' prop on styled components
-declare global {
-  namespace JSX {
-    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string
-    }
-  }
-}
 ```
 
-Then add the following in `tsconfig.json`:
+Then add the following to your typescript config:
 
 ```typescript
 // tsconfig.json
 {
+  "compilerOptions": {
+    "jsxImportSource": "@emotion/react" // for the css prop
+  },
   "files": ["twin.d.ts"],
-  // or
-  // "include": ["twin.d.ts"],
+  // or "include": ["twin.d.ts"],
 }
 ```
 
