@@ -192,20 +192,19 @@ declare module 'react' {
 declare global {
   namespace JSX {
     interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string
+      as?: string | Element
     }
   }
 }
 ```
 
-Then add the following in `tsconfig.json`:
+Then add the following in your typescript config:
 
 ```typescript
 // tsconfig.json
 {
   "files": ["twin.d.ts"],
-  // or
-  // "include": ["twin.d.ts"],
+  // or "include": ["twin.d.ts"],
 }
 ```
 
