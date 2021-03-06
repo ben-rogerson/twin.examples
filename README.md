@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/dIwewYI.png" alt="twin logo" width="360"><br>
+    <img src="https://i.imgur.com/rXdOJG5.png" alt="twin logo" width="300"><br>
     <br>Packed with examples for different frameworks,<br/>this repo helps you get started with  <a href="https://github.com/ben-rogerson/twin.macro">twin.macro</a> a whole lot faster.<br><br>
     <a href="https://www.npmjs.com/package/twin.macro"><img src="https://img.shields.io/npm/dt/twin.macro.svg" alt="Total Downloads"></a>
     <a href="https://www.npmjs.com/package/twin.macro"><img src="https://img.shields.io/npm/v/twin.macro.svg" alt="Latest Release"></a>
