@@ -290,18 +290,18 @@ And these props:
 
 ### Twin options
 
-| Name                  | Type      | Default                | Description                                                                                                                   |
-| --------------------- | --------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| config                | `string`  | `"tailwind.config.js"` | The path to your Tailwind config                                                                                              |
-| preset                | `string`  | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'.                                     |
-| hasSuggestions        | `boolean` | `true`                 | Display suggestions when a class isn’t found                                                                                  |
-| dataTwProp            | `boolean` | `true`                 | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />`     |
-| debugPlugins          | `boolean` | `false`                | Display generated class information in your terminal from your plugins                                                        |
-| debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                     |
-| disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                             |
-| includeClassNames     | `boolean` | `false`                | Look in className props for tailwind classes to convert                                                                       |
-| dataCsProp            | `boolean` | `true`                 | Add a prop to your elements in development so you can see the original cs prop classes, eg: `<div data-cs="maxWidth[1em]" />` |
-| disableCsProp         | `boolean` | `false`                | Disable twin from reading values specified in the cs prop.                                                                    |
+| Name                  | Type               | Default                | Description                                                                                                                                                         |
+| --------------------- | ------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| config                | `string`           | `"tailwind.config.js"` | The path to your Tailwind config                                                                                                                                    |
+| preset                | `string`           | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'.                                                                           |
+| hasSuggestions        | `boolean`          | `true`                 | Display suggestions when a class isn’t found                                                                                                                        |
+| dataTwProp            | `boolean`/`string` | `true`                 | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />`, add `all` to keep the prop in production |
+| debugPlugins          | `boolean`          | `false`                | Display generated class information in your terminal from your plugins                                                                                              |
+| debug                 | `boolean`          | `false`                | Display information in your terminal about the Tailwind class conversions                                                                                           |
+| disableColorVariables | `boolean`          | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                                                                   |
+| includeClassNames     | `boolean`          | `false`                | Look in className props for tailwind classes to convert                                                                                                             |
+| dataCsProp            | `boolean`          | `true`                 | Add a prop to your elements in development so you can see the original cs prop classes, eg: `<div data-cs="maxWidth[1em]" />`                                       |
+| disableCsProp         | `boolean`          | `false`                | Disable twin from reading values specified in the cs prop.                                                                                                          |
 
 ### Tailwind config
 
