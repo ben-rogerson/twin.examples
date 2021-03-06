@@ -12,6 +12,7 @@ Or keep scrolling for installation instructions.
 
 ## Table of contents
 
+- [Table of contents](#table-of-contents)
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
@@ -19,7 +20,6 @@ Or keep scrolling for installation instructions.
   - [Add the babel config](#add-the-babel-config)
   - [Add the snowpack config](#add-the-snowpack-config)
   - [Add the startup scripts](#add-the-startup-scripts)
-  - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
   - [Twin options](#twin-options)
   - [Tailwind config](#tailwind-config)
@@ -43,7 +43,8 @@ npm install --save-dev snowpack @snowpack/app-scripts-react
 Install the dependencies
 
 ```shell
-npm install react react-dom styled-components twin.macro tailwindcss
+npm install react react-dom styled-components
+npm install --save-dev twin.macro tailwindcss
 ```
 
 <details>
@@ -58,7 +59,8 @@ yarn add snowpack @snowpack/app-scripts-react --dev
 Install the dependencies
 
 ```shell
-yarn add react react-dom styled-components twin.macro tailwindcss
+yarn add react react-dom styled-components
+yarn add twin.macro tailwindcss -D
 ```
 
 </details>
@@ -69,19 +71,29 @@ Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/ba
 
 The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-> Due to an issue in styled-components, global styles get added in the wrong order when using styled-components. This gives the tailwind base styles an incorrect specificity.  
-> Until [the issue](https://github.com/styled-components/styled-components/issues/3146) is fixed, the workaround is to export the styles from another file.
-
-You can import `GlobalStyles` within a new file placed in `components/GlobalStyles.js`:
+You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyles.js`:
 
 ```js
-// src/GlobalStyles.js
+// src/styles/GlobalStyles.js
 import React from 'react'
-import { GlobalStyles } from 'twin.macro'
+import { createGlobalStyle } from 'styled-components'
+import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-export default function GlobalStylesComponent() {
-  return <GlobalStyles />
-}
+const CustomStyles = createGlobalStyle`
+  body {
+    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
+    ${tw`font-sans text-base antialiased`}
+  }
+`
+
+const GlobalStyles = () => (
+  <>
+    <BaseStyles />
+    <CustomStyles />
+  </>
+)
+
+export default GlobalStyles
 ```
 
 Then import the GlobalStyles file in `src/index.js`:
@@ -89,11 +101,11 @@ Then import the GlobalStyles file in `src/index.js`:
 ```js
 // src/index.js
 import React from 'react'
-import { render } from 'react-dom'
-import GlobalStyles from './GlobalStyles'
+import ReactDOM from 'react-dom'
+import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
-render(
+ReactDOM.render(
   <>
     <GlobalStyles />
     <App />
@@ -165,109 +177,25 @@ In `package.json`, add these scripts:
 },
 ```
 
-### Complete the TypeScript setup
-
-If you’re using TypeScript, you’ll need to add the remaining types for your chosen css-in-js framework.
-
-<details>
-  <summary>Setup instructions</summary>
-
-First up, you’ll need to install some types for react and styled-components:
-
-```bash
-npm install -D @types/react @types/styled-components
-// or
-yarn add @types/react @types/styled-components -D
-```
-
-Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
-
-```shell
-Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
-// or
-Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
-// or
-Property 'css' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
-```
-
-To fix this, create a `twin.d.ts` file in your project root (`src/twin.d.ts` with create-react-app) and add these declarations:
-
-```typescript
-// twin.d.ts
-import 'twin.macro'
-import styledImport, { CSSProp, css as cssImport } from 'styled-components'
-
-declare module 'twin.macro' {
-  // The styled and css imports
-  const styled: typeof styledImport
-  const css: typeof cssImport
-}
-
-declare module 'react' {
-  // The css prop
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSProp
-  }
-  // The inline svg css prop
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
-    css?: CSSProp
-  }
-}
-
-// The 'as' prop on styled components
-declare global {
-  namespace JSX {
-    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string | Element
-    }
-  }
-}
-```
-
-Then add the following in your typescript config:
-
-```typescript
-// tsconfig.json
-{
-  "files": ["twin.d.ts"],
-  // or "include": ["twin.d.ts"],
-}
-```
-
-Now that you’ve added the definitions, you can use these imports:
-
-```typescript
-import tw, { css, styled, theme } from 'twin.macro'
-```
-
-And these props:
-
-```typescript
-<div tw="">
-<div css={}>
-```
-
-</details>
-
 [](#customization)
 
 ## Customization
 
 ### Twin options
 
-| Name                  | Type      | Default                | Description                                                                                                                   |
-| --------------------- | --------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| config                | `string`  | `"tailwind.config.js"` | The path to your Tailwind config                                                                                              |
-| preset                | `string`  | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'                                      |
-| autoCssProp           | `boolean` | `true`                 | This code automates the import of 'styled-components/macro' so you can use their css prop                                     |
-| hasSuggestions        | `boolean` | `true`                 | Display class suggestions when a class isn't found                                                                            |
-| dataTwProp            | `boolean` | `true`                 | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />`     |
-| debugPlugins          | `boolean` | `false`                | Display generated class information in your terminal from your plugins                                                        |
-| debug                 | `boolean` | `false`                | Display information in your terminal about the Tailwind class conversions                                                     |
-| disableColorVariables | `boolean` | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                             |
-| includeClassNames     | `boolean` | `false`                | Look in className props for tailwind classes to convert                                                                       |
-| dataCsProp            | `boolean` | `true`                 | Add a prop to your elements in development so you can see the original cs prop classes, eg: `<div data-cs="maxWidth[1em]" />` |
-| disableCsProp         | `boolean` | `false`                | Disable twin from reading values specified in the cs prop.                                                                    |
+| Name                  | Type               | Default                | Description                                                                                                                                                         |
+| --------------------- | ------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| config                | `string`           | `"tailwind.config.js"` | The path to your Tailwind config                                                                                                                                    |
+| preset                | `string`           | `"emotion"`            | The css-in-js library behind the scenes - also supports 'styled-components' and 'goober'                                                                            |
+| autoCssProp           | `boolean`          | `true`                 | This code automates the import of 'styled-components/macro' so you can use their css prop                                                                           |
+| hasSuggestions        | `boolean`          | `true`                 | Display class suggestions when a class isn't found                                                                                                                  |
+| dataTwProp            | `boolean`/`string` | `true`                 | Add a prop to your elements in development so you can see the original tailwind classes, eg: `<div data-tw="bg-black" />`, add `all` to keep the prop in production |
+| debugPlugins          | `boolean`          | `false`                | Display generated class information in your terminal from your plugins                                                                                              |
+| debug                 | `boolean`          | `false`                | Display information in your terminal about the Tailwind class conversions                                                                                           |
+| disableColorVariables | `boolean`          | `false`                | Disable css variables in colors (not gradients) to help support IE11/react native                                                                                   |
+| includeClassNames     | `boolean`          | `false`                | Look in className props for tailwind classes to convert                                                                                                             |
+| dataCsProp            | `boolean`          | `true`                 | Add a prop to your elements in development so you can see the original cs prop classes, eg: `<div data-cs="maxWidth[1em]" />`                                       |
+| disableCsProp         | `boolean`          | `false`                | Disable twin from reading values specified in the cs prop.                                                                                                          |
 
 ### Tailwind config
 
@@ -345,13 +273,3 @@ Learn more about styled-components
 - [The css prop](https://styled-components.com/docs/api#css-prop)
 - [The css import](https://styled-components.com/docs/api#css)
 - [The styled import](https://styled-components.com/docs/api#styled)
-
-View more styled-components examples
-
-- [React](https://github.com/ben-rogerson/twin.examples/tree/master/react-styled-components)
-- [Preact](https://github.com/ben-rogerson/twin.examples/tree/master/preact-styled-components)
-- [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components)
-- [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-styled-components)
-- [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components)
-- Snowpack (current)
-- [Vite (ts)](link.docs.twin.vite.styledComponents)
