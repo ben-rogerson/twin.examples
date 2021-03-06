@@ -1,8 +1,6 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js"><img src="https://i.imgur.com/Uu6f8GU.png" alt="twin, react, styled-components" width="500"></a>
+<p><img src="https://i.imgur.com/zxO2ib2.png" alt="twin, react, styled-components" width="500"></p>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/react-styled-components?file=/src/App.js)**
-
-Or download this example using [degit](https://github.com/Rich-Harris/degit):
+Download this example using [degit](https://github.com/Rich-Harris/degit):
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/react-styled-components folder-name
@@ -67,19 +65,29 @@ Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/ba
 
 The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-> Due to an issue in styled-components, global styles get added in the wrong order when using styled-components. This gives the tailwind base styles an incorrect specificity.  
-> Until [the issue](https://github.com/styled-components/styled-components/issues/3146) is fixed, the workaround is to export the styles from another file.
-
-You can import `GlobalStyles` within a new file placed in `components/GlobalStyles.js`:
+You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyles.js`:
 
 ```js
-// src/GlobalStyles.js
+// src/styles/GlobalStyles.js
 import React from 'react'
-import { GlobalStyles } from 'twin.macro'
+import { createGlobalStyle } from 'styled-components'
+import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-export default function GlobalStylesComponent() {
-  return <GlobalStyles />
-}
+const CustomStyles = createGlobalStyle`
+  body {
+    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
+    ${tw`font-sans text-base antialiased`}
+  }
+`
+
+const GlobalStyles = () => (
+  <>
+    <BaseStyles />
+    <CustomStyles />
+  </>
+)
+
+export default GlobalStyles
 ```
 
 Then import the GlobalStyles file in `src/index.js`:
@@ -87,15 +95,15 @@ Then import the GlobalStyles file in `src/index.js`:
 ```js
 // src/index.js
 import React from 'react'
-import { render } from 'react-dom'
-import GlobalStyles from './GlobalStyles'
+import ReactDOM from 'react-dom'
+import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
-render(
-  <>
+ReactDOM.render(
+  <React.StrictMode>
     <GlobalStyles />
     <App />
-  </>,
+  </React.StrictMode>,
   document.getElementById('root'),
 )
 ```
