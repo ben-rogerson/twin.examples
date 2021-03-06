@@ -1,4 +1,4 @@
-<p><img src="https://i.imgur.com/5MSVZiv.png" alt="twin, vite, styled-components" width="500"></p>
+<p><img src="https://i.imgur.com/qZhmmyM.png" alt="twin, vite, styled-components" width="500"></p>
 
 Download this example using [degit](https://github.com/Rich-Harris/degit):
 
@@ -311,13 +311,3 @@ Learn more about styled-components
 - [The css prop](https://styled-components.com/docs/api#css-prop)
 - [The css import](https://styled-components.com/docs/api#css)
 - [The styled import](https://styled-components.com/docs/api#styled)
-
-View more styled-components examples
-
-- [React](https://github.com/ben-rogerson/twin.examples/tree/master/react-styled-components)
-- [Preact](https://github.com/ben-rogerson/twin.examples/tree/master/preact-styled-components)
-- [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components)
-- [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-styled-components)
-- [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components)
-- [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-styled-components)
-- Vite (ts) (current)

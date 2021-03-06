@@ -12,7 +12,6 @@ Or keep scrolling for installation instructions.
 
 ## Table of contents
 
-- [Table of contents](#table-of-contents)
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
@@ -106,10 +105,10 @@ import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
 ReactDOM.render(
-  <>
+  <React.StrictMode>
     <GlobalStyles />
     <App />
-  </>,
+  </React.StrictMode>,
   document.getElementById('root'),
 )
 ```
