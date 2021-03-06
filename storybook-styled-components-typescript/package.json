@@ -1,5 +1,5 @@
 {
-  "name": "storybook-styled-components",
+  "name": "storybook-styled-components-typescript",
   "version": "1.0.0",
   "license": "MIT",
   "babelMacros": {
