@@ -1,8 +1,6 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra-emotion?file=/src/App.js"><img src="https://i.imgur.com/dn8SdzU.png" alt="twin, cra, emotion" width="500"></a>
+<p><img src="https://i.imgur.com/dn8SdzU.png" alt="twin, cra, emotion" width="500"></p>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/cra-emotion?file=/src/App.js)**
-
-Or download this example using [degit](https://github.com/Rich-Harris/degit):
+Download this example using [degit](https://github.com/Rich-Harris/degit):
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/cra-emotion folder-name

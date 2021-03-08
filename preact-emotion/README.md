@@ -1,8 +1,6 @@
-<a href="https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/preact-emotion?file=/src/App.js"><img src="https://i.imgur.com/x25Owe2.png" alt="twin, preact, emotion" width="500"></a>
+<p><img src="https://i.imgur.com/x25Owe2.png" alt="twin, preact, emotion" width="500"></p>
 
-**[🔥 Demo this example on CodeSandbox →](https://codesandbox.io/embed/github/ben-rogerson/twin.examples/tree/master/preact-emotion?file=/src/App.js)**
-
-Or download this example using [degit](https://github.com/Rich-Harris/degit):
+Download this example using [degit](https://github.com/Rich-Harris/degit):
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/preact-emotion folder-name
