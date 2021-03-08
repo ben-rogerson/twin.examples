@@ -1,8 +1,7 @@
 {
-  "include": ["src", "types"],
   "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
+    "module": "ESNext",
+    "target": "ESNext",
     "moduleResolution": "node",
     "jsx": "preserve",
     "baseUrl": "./",
@@ -16,7 +15,11 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "importsNotUsedAsValues": "error",
-    "jsxImportSource": "@emotion/react"
-  }
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsxImportSource": "@emotion/react" // Add the css prop
+  },
+  "include": ["src", "types"]
 }

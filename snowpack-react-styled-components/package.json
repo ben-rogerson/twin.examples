@@ -1,16 +1,12 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components",
-      "includeClassNames": true
+      "preset": "styled-components"
     }
   },
   "scripts": {
-    "start": "snowpack dev --polyfill-node",
-    "build": "snowpack build",
-    "test": "jest",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
+    "start": "snowpack dev",
+    "build": "snowpack build"
   },
   "dependencies": {
     "react": "^17.0.1",

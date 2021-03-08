@@ -1,17 +1,19 @@
 import React from 'react'
-import { GlobalStyles } from 'twin.macro'
+import GlobalStyles from './../src/styles/GlobalStyles'
+import { theme } from 'twin.macro'
 
 export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  layout: 'centered',
   backgrounds: {
-    default: 'default',
+    default: 'electric-ribbon',
     values: [
       {
-        name: 'default',
-        value: '#F9F9F9',
+        name: 'electric-ribbon',
+        value: `linear-gradient(180deg, ${theme`colors.electric`}, ${theme`colors.ribbon`})`,
       },
     ],
   },
-  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: { expanded: true },
   options: {
     storySort: (a, b) => {

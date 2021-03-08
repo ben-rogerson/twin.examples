@@ -17,8 +17,8 @@
     "emitDeclarationOnly": true,
     // Ensure that Babel can safely transpile files in the TypeScript project
     "isolatedModules": true,
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react" // Add the css prop
   },
-  "include": ["src/**/*.tsx", "types/*.ts"],
+  "include": ["src/**/*.tsx", "types"],
   "exclude": ["node_modules", "dist"]
 }

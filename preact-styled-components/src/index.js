@@ -1,13 +1,13 @@
-import { render } from 'react-dom'
-import GlobalStyles from './GlobalStyles'
+import { Fragment, render, h } from 'preact'
+import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
 if (typeof window !== 'undefined') {
   render(
-    <div>
+    <Fragment>
       <GlobalStyles />
       <App />
-    </div>,
+    </Fragment>,
     document.body,
   )
 }

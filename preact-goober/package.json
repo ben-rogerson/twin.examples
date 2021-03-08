@@ -1,8 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "goober",
-      "includeClassNames": true
+      "preset": "goober"
     }
   },
   "scripts": {

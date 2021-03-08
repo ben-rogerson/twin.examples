@@ -1,8 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "emotion",
-      "includeClassNames": true
+      "preset": "emotion"
     }
   },
   "scripts": {

@@ -80,11 +80,24 @@ You can import `GlobalStyles` within a new file placed in `components/GlobalStyl
 ```js
 // components/GlobalStyles.js
 import React from 'react'
-import { GlobalStyles } from 'twin.macro'
+import { createGlobalStyle } from 'styled-components'
+import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-export default function GlobalStylesComponent() {
-  return <GlobalStyles />
-}
+const CustomStyles = createGlobalStyle`
+  body {
+    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
+    ${tw`antialiased`}
+  }
+`
+
+const GlobalStyles = () => (
+  <>
+    <BaseStyles />
+    <CustomStyles />
+  </>
+)
+
+export default GlobalStyles
 ```
 
 Then import the GlobalStyles file in `page/_app.js`:

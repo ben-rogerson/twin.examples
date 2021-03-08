@@ -1,8 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components",
-      "includeClassNames": true
+      "preset": "styled-components"
     }
   },
   "scripts": {

@@ -4,8 +4,7 @@
   "license": "MIT",
   "babelMacros": {
     "twin": {
-      "preset": "styled-components",
-      "includeClassNames": true
+      "preset": "styled-components"
     }
   },
   "scripts": {
@@ -14,9 +13,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "styled-components": "^5.2.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -29,11 +28,12 @@
     "@storybook/react": "^6.1.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-    "babel-plugin-styled-components": "^1.12.0",
-    "typescript": "^4.2.2",
+    "@types/styled-components": "^5.1.7",
     "autoprefixer": "^10.2.4",
+    "babel-plugin-styled-components": "^1.12.0",
     "postcss": "^8.2.7",
     "tailwindcss": "2.0.3",
-    "twin.macro": "^2.3.0"
+    "twin.macro": "^2.3.0",
+    "typescript": "^4.2.2"
   }
 }

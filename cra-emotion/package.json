@@ -1,16 +1,14 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "emotion",
-      "includeClassNames": true
+      "preset": "emotion"
     }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",

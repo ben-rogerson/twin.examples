@@ -9,8 +9,7 @@
   "babelMacros": {
     "twin": {
       "config": "./../../tailwind.config.js",
-      "preset": "styled-components",
-      "includeClassNames": true
+      "preset": "styled-components"
     }
   },
   "scripts": {

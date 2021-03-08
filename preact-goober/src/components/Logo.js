@@ -1,16 +1,15 @@
 import { h } from 'preact'
-import tw, { styled } from 'twin.macro'
-
-const Link = tw.a`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`
+import 'twin.macro'
 
 const Logo = () => (
-  <Link
+  <a
+    tw="w-32 mb-10 p-5 block opacity-50 hover:opacity-100"
     href="https://github.com/ben-rogerson/twin.macro"
     target="_blank"
     rel="noopener noreferrer"
   >
     <TwinSvg />
-  </Link>
+  </a>
 )
 
 const TwinSvg = () => (

@@ -1,14 +1,12 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "emotion",
-      "includeClassNames": true
+      "preset": "emotion"
     }
   },
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",

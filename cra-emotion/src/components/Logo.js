@@ -1,7 +1,3 @@
-/** @jsx jsx */
-// The pragma above is for CodeSandbox,
-// you'll need to remove it for local development.
-
 import { jsx } from '@emotion/react'
 /** @jsxImportSource @emotion/react */
 

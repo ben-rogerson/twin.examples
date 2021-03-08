@@ -1,8 +1,7 @@
 {
-  "include": ["types", "resources/js"],
   "compilerOptions": {
     // Target latest version of ECMAScript.
-    "target": "ES5",
+    "target": "ESNext",
     // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
     // Process & infer types from .js files.
@@ -15,7 +14,9 @@
     "isolatedModules": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    // Set the jsx to react
-    "jsx": "react"
-  }
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"]
+  },
+  "include": ["types", "resources/js"]
 }

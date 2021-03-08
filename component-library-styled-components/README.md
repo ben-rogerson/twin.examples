@@ -9,24 +9,20 @@ The trick is to use Babel to compile typescript (rather than [rollup-plugin-type
 Clone this repository:
 
 ```shell
-npx degit https://github.com/ben-rogerson/twin.examples/twin-component-library-monorepo folder-name
+npx degit https://github.com/ben-rogerson/twin.examples/component-library-styled-components folder-name
 ```
 
-## Tech
-
 ### Components (packages/components)
-
-- [React](https://reactjs.org/)
-- [styled-components](https://styled-components.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Twin](https://github.com/ben-rogerson/twin.macro)
-- [Parcel](https://parceljs.org/)
-
-### App (packages/app)
 
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [styled-components](https://styled-components.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
-- [Rollup.js](https://rollupjs.org/guide/en/)
+- [rollup.js](https://rollupjs.org/)
+
+### App (packages/app)
+
+- [Typescript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [styled-components](https://styled-components.com/)
+- [Twin](https://github.com/ben-rogerson/twin.macro)
