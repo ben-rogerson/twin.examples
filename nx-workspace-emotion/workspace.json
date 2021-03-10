@@ -99,6 +99,46 @@
           }
         }
       }
+    },
+    "tailwind-config": {
+      "root": "libs/tailwind-config",
+      "sourceRoot": "libs/tailwind-config/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/tailwind-config/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/tailwind-config"
+          ],
+          "options": {
+            "jestConfig": "libs/tailwind-config/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/tailwind-config",
+            "tsConfig": "libs/tailwind-config/tsconfig.lib.json",
+            "packageJson": "libs/tailwind-config/package.json",
+            "main": "libs/tailwind-config/src/index.ts",
+            "assets": [
+              "libs/tailwind-config/*.md"
+            ]
+          }
+        }
+      }
     }
   }
 }

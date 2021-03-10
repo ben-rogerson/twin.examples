@@ -15,5 +15,9 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "web": { "tags": [] }, "shared-ui": { "tags": [] } }
+  "projects": {
+    "web": { "tags": [] },
+    "shared-ui": { "tags": [] },
+    "tailwind-config": { "tags": [] }
+  }
 }

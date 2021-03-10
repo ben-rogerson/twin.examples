@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-twin-project/shared-ui": ["libs/shared-ui/src/index.ts"]
+      "@my-twin-project/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@nx-workspace-emotion/tailwind-config": [
+        "libs/tailwind-config/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

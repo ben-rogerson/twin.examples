@@ -14,7 +14,10 @@ export const Button = styled.button(
     tw`transform transition-transform duration-75`,
 
     // Use the variant grouping feature to add variants to multiple classes
-    tw`hocus:(scale-105 text-yellow-400)`,
+    tw`hover:(scale-105)`,
+
+    // Custom color from custom tailwind config
+    tw`hover:(text-zabadoo)`,
 
     // Use props to conditionally style your components
     isPrimary && tw`bg-black text-white border-black`,
