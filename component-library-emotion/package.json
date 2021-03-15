@@ -2,6 +2,7 @@
   "name": "twin-component-library-emotion-monorepo",
   "private": true,
   "scripts": {
+    "dev": "cd packages/app && yarn dev",
     "start": "cd packages/app && yarn start",
     "build": "cd packages/app && yarn build"
   },
