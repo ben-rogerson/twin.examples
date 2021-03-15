@@ -1,21 +1,18 @@
-# Stitches Example
+# Twin + Next + Stitches (Experimental)
 
-This example shows how to use the [Stitches CSS-in-JS Library](https://github.com/modulz/stitches).
+This example shows how to use the [Stitches CSS-in-JS Library](https://github.com/modulz/stitches) with twin.macro.
 
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-stitches&project-name=with-stitches&repository-name=with-stitches)
-
-## How to use
-
-Execute [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-stitches with-stitches-app
-# or
-yarn create next-app --example with-stitches with-stitches-app
+```shell
+npx degit https://github.com/ben-rogerson/twin.examples/next-stitches folder-name
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### TODO
+
+- [ ] Fix gradients (they don’t respect `disabledColorVariables: true`)
+- [ ] Add `tw.div` syntax
+- [ ] Add `styled.div` syntax
+- [ ] Global styles should be added automatically by Twin
+- [ ] Add support for plugins using `addBase`
+- [ ] Add `styled`/`css` imports through twin
+
+The css/tw props aren’t supported because stitches uses a styled-components syntax (`styled('div', {})`).
