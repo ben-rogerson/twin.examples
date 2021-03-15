@@ -1,0 +1,25 @@
+{
+  "babelMacros": {
+    "twin": {
+      "disableColorVariables": true
+    }
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@stitches/react": "0.0.2",
+    "next": "latest",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "babel-plugin-macros": "^3.0.1",
+    "tailwindcss": "^2.0.3",
+    "twin.macro": "^2.3.0",
+    "typescript": "^4.2.3"
+  }
+}
