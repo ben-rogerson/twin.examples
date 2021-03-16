@@ -1,7 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "disableColorVariables": true
+      "sassyPseudo": true
     }
   },
   "scripts": {
@@ -10,12 +10,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@stitches/react": "0.0.3-canary.1",
+    "@stitches/react": "0.1.0-canary.20",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "@types/node": "^14.14.35",
     "@types/react": "^17.0.3",
     "babel-plugin-macros": "^3.0.1",
     "tailwindcss": "^2.0.3",

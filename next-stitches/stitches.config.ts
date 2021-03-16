@@ -1,12 +1,9 @@
-import { createStyled } from '@stitches/react'
+import { createCss } from '@stitches/react'
 
-export const { styled, css } = createStyled({
+export const { css, styled, global, theme, keyframes, getCssString } = createCss({
   prefix: '',
-  tokens: {},
-  breakpoints: {},
-  utils: {
-    // API change in @stitches/react@0.0.3-canary.1
-    // https://github.com/hauptrolle/stitches-utils/issues/8#issue-698920362
-    // mx: (value, config) => ({})
-  },
+  conditions: {},
+  theme: {},
+  themeMap: {},
+  utils: {},
 })

@@ -1,25 +1,18 @@
 import React from 'react'
-import tw, { theme } from 'twin.macro'
-import { Logo, Button } from './../components'
-import { styled } from './../stitches.config'
+import tw from 'twin.macro'
+import { Logo, Button } from '../components'
+import { styled } from '../stitches.config'
 
-const Container = styled('div', {
+const Container = styled.div({
   ...tw`flex flex-col items-center justify-center h-screen`,
   variants: {
     hasBackground: {
-      true: {
-        // For gradients, use the css and theme imports instead of
-        // tailwind classes until this is patched in twin
-        backgroundImage: `linear-gradient(to bottom, ${[
-          theme`colors.electric`,
-          theme`colors.ribbon`,
-        ].join(', ')})`,
-      },
+      true: tw`bg-gradient-to-b from-electric to-ribbon`,
     },
   },
 })
 
-const ButtonBox = styled('div', tw`flex flex-col justify-center h-full gap-y-5`)
+const ButtonBox = styled.div(tw`flex flex-col justify-center h-full gap-y-5`)
 
 const IndexPage = () => (
   <Container hasBackground>

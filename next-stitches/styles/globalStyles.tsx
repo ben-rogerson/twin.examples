@@ -1,6 +1,6 @@
-import { css } from '../stitches.config'
+import { global } from '../stitches.config'
 
-const globalStyles = css.global({
+const globalStyles = global({
   '*, *::before, *::after': { boxSizing: 'border-box' },
   ':root': { MozTabSize: '4', tabSize: 4 },
   html: {
