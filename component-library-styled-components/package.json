@@ -2,8 +2,10 @@
   "name": "twin-component-library-monorepo",
   "private": true,
   "scripts": {
+    "dev": "yarn build:components && cd packages/app && yarn dev",
     "start": "cd packages/app && yarn start",
-    "build": "cd packages/app && yarn build"
+    "build": "yarn build:components && cd packages/app && yarn build",
+    "build:components": "cd packages/components && yarn build"
   },
   "workspaces": {
     "packages": [
