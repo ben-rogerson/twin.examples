@@ -8,8 +8,12 @@ const Container = styled('div', {
   variants: {
     hasBackground: {
       true: {
-        // TODO: No current support for gradient classes - short term workaround: css + theme import
-        backgroundImage: `linear-gradient(to bottom, ${theme`colors.electric`}, ${theme`colors.ribbon`})`,
+        // For gradients, use the css and theme imports instead of
+        // tailwind classes until this is patched in twin
+        backgroundImage: `linear-gradient(to bottom, ${[
+          theme`colors.electric`,
+          theme`colors.ribbon`,
+        ].join(', ')})`,
       },
     },
   },

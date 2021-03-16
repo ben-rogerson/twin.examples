@@ -1,7 +1,7 @@
 import { css } from '../stitches.config'
 
-css.global({
-  '*,\n  *::before,\n  *::after': { boxSizing: 'border-box' },
+const globalStyles = css.global({
+  '*, *::before, *::after': { boxSizing: 'border-box' },
   ':root': { MozTabSize: '4', tabSize: 4 },
   html: {
     lineHeight: 1.5,
@@ -12,14 +12,14 @@ css.global({
   body: { margin: '0', fontFamily: 'inherit', lineHeight: 'inherit' },
   hr: { height: '0', color: 'inherit', borderTopWidth: '1px' },
   'abbr[title]': { textDecoration: 'underline dotted' },
-  'b,\n  strong': { fontWeight: 'bolder' },
-  'code,\n  kbd,\n  samp,\n  pre': {
+  'b, strong': { fontWeight: 'bolder' },
+  'code, kbd, samp, pre': {
     fontFamily:
       "ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace",
     fontSize: '1em',
   },
   small: { fontSize: '80%' },
-  'sub,\n  sup': {
+  'sub, sup': {
     fontSize: '75%',
     lineHeight: 0,
     position: 'relative',
@@ -32,7 +32,7 @@ css.global({
     borderColor: 'inherit',
     borderCollapse: 'collapse',
   },
-  'button,\n  input,\n  optgroup,\n  select,\n  textarea': {
+  'button, input, optgroup, select, textarea': {
     fontFamily: 'inherit',
     fontSize: '100%',
     lineHeight: 'inherit',
@@ -40,8 +40,8 @@ css.global({
     padding: '0',
     color: 'inherit',
   },
-  'button,\n  select': { textTransform: 'none' },
-  "button,\n  [type='button'],\n  [type='reset'],\n  [type='submit']": {
+  'button, select': { textTransform: 'none' },
+  "button, [type='button'], [type='reset'], [type='submit']": {
     WebkitAppearance: 'button',
   },
   '::-moz-focus-inner': { borderStyle: 'none', padding: '0' },
@@ -49,7 +49,7 @@ css.global({
   ':-moz-ui-invalid': { boxShadow: 'none' },
   legend: { padding: '0' },
   progress: { verticalAlign: 'baseline' },
-  '::-webkit-inner-spin-button,\n  ::-webkit-outer-spin-button': {
+  '::-webkit-inner-spin-button, ::-webkit-outer-spin-button': {
     height: 'auto',
   },
   "[type='search']": { WebkitAppearance: 'textfield', outlineOffset: '-2px' },
@@ -59,7 +59,7 @@ css.global({
     font: 'inherit',
   },
   summary: { display: 'list-item' },
-  'blockquote,\n  dl,\n  dd,\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6,\n  hr,\n  figure,\n  p,\n  pre': {
+  'blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre': {
     margin: '0',
   },
   button: { backgroundColor: 'transparent', backgroundImage: 'none' },
@@ -67,8 +67,8 @@ css.global({
     outline: '1px dotted',
   },
   fieldset: { margin: '0', padding: '0' },
-  'ol,\n  ul': { listStyle: 'none', margin: '0', padding: '0' },
-  '*,\n  ::before,\n  ::after': {
+  'ol, ul': { listStyle: 'none', margin: '0', padding: '0' },
+  '*, ::before, ::after': {
     boxSizing: 'border-box',
     borderWidth: '0',
     borderStyle: 'solid',
@@ -76,22 +76,22 @@ css.global({
   },
   img: { borderStyle: 'solid' },
   textarea: { resize: 'vertical' },
-  'input::placeholder,\n  textarea::placeholder': { color: '#9ca3af' },
-  'button,\n  [role="button"]': { cursor: 'pointer' },
-  'h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6': {
+  'input::placeholder, textarea::placeholder': { color: '#9ca3af' },
+  'button, [role="button"]': { cursor: 'pointer' },
+  'h1, h2, h3, h4, h5, h6': {
     fontSize: 'inherit',
     fontWeight: 'inherit',
   },
   a: { color: 'inherit', textDecoration: 'inherit' },
-  'pre,\n  code,\n  kbd,\n  samp': {
+  'pre, code, kbd, samp': {
     fontFamily:
       'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   },
-  'img,\n  svg,\n  video,\n  canvas,\n  audio,\n  iframe,\n  embed,\n  object': {
+  'img, svg, video, canvas, audio, iframe, embed, object': {
     display: 'block',
     verticalAlign: 'middle',
   },
-  'img,\n  video': { maxWidth: '100%', height: 'auto' },
+  'img, video': { maxWidth: '100%', height: 'auto' },
   '@keyframes spin': { to: { transform: 'rotate(360deg)' } },
   '@keyframes ping': { '75%, 100%': { transform: 'scale(2)', opacity: 0 } },
   '@keyframes pulse': { '50%': { opacity: 0.5 } },
@@ -115,3 +115,5 @@ css.global({
     '--tw-shadow': '0 0 #0000',
   },
 })
+
+export default globalStyles
