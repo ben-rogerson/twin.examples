@@ -53,7 +53,7 @@ or yarn:
 yarn && yarn build && yarn dev
 ```
 
-### TODO
+### Twin integration status
 
 - [ ] Add `tw.div` syntax
 - [ ] Add global styles via the twin GlobalStyles import
