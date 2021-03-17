@@ -13,11 +13,11 @@
     "skipLibCheck": true,
     // Ensure that .d.ts files are created by tsc, but not .js files
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "components-types",
     "emitDeclarationOnly": true,
     // Ensure that Babel can safely transpile files in the TypeScript project
     "isolatedModules": true
   },
-  "include": ["src/**/*.tsx", "types"],
+  "include": ["components/**/*.tsx", "./../../types"],
   "exclude": ["node_modules", "dist"]
 }

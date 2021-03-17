@@ -1,20 +1,15 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "babelMacros": {
-    "twin": {
-      "config": "./../../tailwind.config.js",
-      "preset": "styled-components"
-    }
-  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "components": "file:../components",
     "next": "^10.0.7",
+    "next-plugin-custom-babel-config": "^1.0.4",
+    "next-transpile-modules": "^6.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "5.1.1",

@@ -1,0 +1,14 @@
+{
+  "name": "shared-ui",
+  "version": "1.0.0",
+  "main": "components/index.tsx",
+  "types": "components-types/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "typescript": "^4.2.3"
+  },
+  "license": "MIT"
+}

@@ -1,26 +1,46 @@
 # Component library with styled-components
 
-This setup demonstrates a React app using a typescript component library.
+This setup demonstrates a TypeScript Next.js app (`packages/app`) importing a separate component library (`packages/shared-ui`) using either [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) or [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
 
-The trick is to use Babel to compile typescript (rather than [rollup-plugin-typescript](https://www.npmjs.com/package/rollup-plugin-typescript2) and rely on typescript for type checking and generation of declaration files. You'll receive faster builds and can still use the Babel plugins you're used to.
+## Features
 
-## Getting started
+- Simple workflow: After starting the next app `yarn dev`, you can import the components in `packages/shared-ui` and work on them without having to run or restart a parallel process
+- Component types: `shared-ui` component types generate when starting the next dev server or run `yarn types:watch` for live updates while coding in `shared-ui/components`
+- Shared config files between packages:
+  - `tailwind.config.js`
+  - `babel.config.js`
+  - Twin config in `package.json` and `types`
 
-Clone this repository:
+## Get started
+
+Use degit to pull down this example:
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/component-library-styled-components folder-name
 ```
 
-### Components (packages/components)
+From inside the new folder, start the dev server with yarn:
+
+```bash
+yarn && yarn build && yarn dev
+```
+
+or npm:
+
+```bash
+npm install && npm run build && npm run dev
+```
+
+> npm@7+ is required to use the [workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) feature.<br/>Update to latest with: `npm install -g npm@latest`
+
+## Components (packages/components)
 
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 - [styled-components](https://styled-components.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
-- [rollup.js](https://rollupjs.org/)
 
-### App (packages/app)
+## App (packages/app)
 
 - [Typescript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org/)
