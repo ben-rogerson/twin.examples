@@ -1,15 +1,16 @@
-# Component library with styled-components
+# Component library with yarn/npm workspaces + Next.js
 
 This setup demonstrates a TypeScript Next.js app (`packages/app`) importing a separate component library (`packages/shared-ui`) using either [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) or [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
 
 ## Features
 
-- Simple workflow: After starting the next app `yarn dev`, you can import the components in `packages/shared-ui` and work on them without having to run or restart a parallel process
-- Component types: `shared-ui` component types generate when starting the next dev server or run `yarn types:watch` for live updates while coding in `shared-ui/components`
-- Shared config files between packages:
-  - `tailwind.config.js`
-  - `babel.config.js`
-  - Twin config in `package.json` and `types`
+- **Simple, speedy workflow**<br/>After starting the next app `yarn dev` you can work on the components in `packages/shared-ui` and receive HMR updates in your app
+- **Simple multi-project configs**
+  - Shared styles in `tailwind.config.js`
+  - Shared babel settings in `babel.config.js`
+  - Shared twin config in `package.json` and `types`
+- **Automatic component type generation**<br/>
+  Start live component type updates with `yarn types:watch`
 
 ## Get started
 
@@ -33,16 +34,9 @@ npm install && npm run build && npm run dev
 
 > npm@7+ is required to use the [workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) feature.<br/>Update to latest with: `npm install -g npm@latest`
 
-## Components (packages/components)
+## Resources
 
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
-- [styled-components](https://styled-components.com/)
-- [Twin](https://github.com/ben-rogerson/twin.macro)
-
-## App (packages/app)
-
-- [Typescript](https://www.typescriptlang.org/)
-- [Next.js](https://nextjs.org/)
 - [styled-components](https://styled-components.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
