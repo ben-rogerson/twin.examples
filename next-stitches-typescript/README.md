@@ -41,11 +41,15 @@ Use degit to pull down this example:
 npx degit https://github.com/ben-rogerson/twin.examples/next-stitches folder-name
 ```
 
-From inside the new folder, start the dev server:
+From inside the new folder, start the dev server with npm:
 
 ```bash
 npm install && npm run build && npm run dev
-# or
+```
+
+or yarn:
+
+```bash
 yarn && yarn build && yarn dev
 ```
 
