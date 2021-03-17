@@ -1,5 +1,5 @@
 {
-  "name": "twin-component-library-monorepo",
+  "name": "component-library-styled-components",
   "babelMacros": {
     "twin": {
       "config": "./../../tailwind.config.js",
@@ -17,10 +17,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "**/@tailwindcss",
-      "**/@tailwindcss/**"
     ]
   }
 }
