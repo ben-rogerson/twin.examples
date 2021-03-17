@@ -38,7 +38,7 @@ const Link = styled.div({
 Use degit to pull down this example:
 
 ```shell
-npx degit https://github.com/ben-rogerson/twin.examples/next-stitches folder-name
+npx degit https://github.com/ben-rogerson/twin.examples/next-stitches-typescript folder-name
 ```
 
 From inside the new folder, start the dev server with npm:
