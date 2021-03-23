@@ -42,7 +42,7 @@ const WebsiteLink = () => (
 )
 ```
 
-- Twin’s css and tw props aren’t supported because stitches uses the styled-components syntax
+- Twin’s `css` and `tw` props aren’t supported because stitches uses an alternative syntax
 
 - Stitches has made many improvements lately - make sure you check their [migration guide](https://stitches-site-git-beta.modulz-deploys.com/blog/migrating-from-alpha-to-beta) while their website is getting updated
 
@@ -70,3 +70,4 @@ yarn && yarn build && yarn dev
 
 - [ ] Add global styles via the twin GlobalStyles import
 - [ ] Add support for plugins using `addBase`
+- [ ] Add a stitches preset for use in the twin config
