@@ -1,16 +1,17 @@
 import tw from 'twin.macro'
-import { styled } from '../stitches.config'
+import { css } from '../stitches.config'
 
-const LogoLink = styled.a(tw`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`)
+const LogoLink = css(tw`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`)
 
 const Logo = () => (
-  <LogoLink
+  <a
     href="https://github.com/ben-rogerson/twin.macro"
+    className={LogoLink()}
     target="_blank"
     rel="noopener noreferrer"
   >
     <TwinSvg />
-  </LogoLink>
+  </a>
 )
 
 const TwinSvg = () => (

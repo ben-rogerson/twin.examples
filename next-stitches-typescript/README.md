@@ -14,7 +14,7 @@ import { styled } from '../stitches.config'
 const Link = styled.a(tw`text-red-500 max-width[200px]`)
 
 // Conditional styling
-const Link = styled.div({
+const Link = styled('div', {
   // Spread component base styling in at the top
   ...tw`text-red-500 max-width[200px]`,
   // Add conditional styles with variants from Stitches
@@ -27,11 +27,24 @@ const Link = styled.div({
 })
 ```
 
+Or use `css` to apply styling onto existing elements:
+
+```js
+import tw from 'twin.macro'
+import { css } from '../stitches.config'
+
+const LogoLink = css(tw`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`)
+
+const WebsiteLink = () => (
+  <a href="#" className={LogoLink()}>
+    Visit website
+  </a>
+)
+```
+
 - Twin’s css and tw props aren’t supported because stitches uses the styled-components syntax
 
-- I’ve installed `@stitches/react@0.1.3-canary.20` to fix some [global ssr issues](https://github.com/modulz/stitches/pull/208). Stitches has made other improvements in their canary releases - make sure you check their [migration guide](https://stitches-site-git-beta.modulz-deploys.com/blog/migrating-from-alpha-to-beta)
-
-- I’ll remove the “canary” status after Stitches releases v0.1.3
+- Stitches has made many improvements lately - make sure you check their [migration guide](https://stitches-site-git-beta.modulz-deploys.com/blog/migrating-from-alpha-to-beta) while their website is getting updated
 
 ### Get started
 
@@ -55,7 +68,5 @@ yarn && yarn build && yarn dev
 
 ### Twin integration status
 
-- [ ] Add `tw.div` syntax
 - [ ] Add global styles via the twin GlobalStyles import
 - [ ] Add support for plugins using `addBase`
-- [ ] Add `styled`/`css` imports through twin

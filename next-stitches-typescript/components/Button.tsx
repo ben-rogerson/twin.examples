@@ -1,7 +1,7 @@
 import tw, { theme } from 'twin.macro'
 import { styled } from '../stitches.config'
 
-const Button = styled.button({
+const Button = styled('button', {
   // The common button styles added with the tw import
   ...tw`px-8 py-2 rounded transform duration-75 (outline-none focus:outline-none)`,
 
