@@ -11,16 +11,16 @@
     "dev": "preact watch"
   },
   "dependencies": {
-    "goober": "^2.0.33",
-    "preact": "^10.5.12"
+    "goober": "^2.0.37",
+    "preact": "^10.5.13"
   },
   "devDependencies": {
-    "@babel/core": "7.13.8",
+    "@babel/core": "7.13.15",
     "babel-plugin-macros": "^3.0.1",
     "babel-plugin-transform-goober": "^1.2.0",
     "if-env": "^1.0.4",
     "preact-cli": "^3.0.5",
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.3.0"
+    "tailwindcss": "^2.1.1",
+    "twin.macro": "^2.3.2"
   }
 }
