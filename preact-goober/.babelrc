@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "@agney/babel-plugin-goober-css-prop",
     ["babel-plugin-transform-goober", { "name": "_styled" }],
     [
       "@babel/plugin-transform-react-jsx",

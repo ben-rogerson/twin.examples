@@ -15,6 +15,7 @@
     "preact": "^10.5.13"
   },
   "devDependencies": {
+    "@agney/babel-plugin-goober-css-prop": "0.0.1",
     "@babel/core": "7.13.15",
     "babel-plugin-macros": "^3.0.1",
     "babel-plugin-transform-goober": "^1.2.0",

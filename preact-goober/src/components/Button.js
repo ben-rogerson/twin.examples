@@ -10,7 +10,7 @@ const Button = styled.button(({ variant, isSmall }) => [
   // Use props to conditionally style your components
   variant === 'primary' && tw`bg-black text-white border-black`,
 
-  // Combine regular css with tailwind classes within backticks
+  // Combine regular css with tailwind classes
   variant === 'secondary' && {
     ...tw`border-2 border-yellow-600`,
     boxShadow: '0 0.1em 0 0 rgba(0, 0, 0, 0.25)',
