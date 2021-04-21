@@ -130,9 +130,9 @@ module.exports = {
     css: {
       import: 'css',
       from: 'styled-components',
-    },
-  },
-}
+    }
+  }
+},
 ```
 
 b) Or in `package.json`:
@@ -149,7 +149,7 @@ b) Or in `package.json`:
     "css": {
       "import": "css",
       "from": "styled-components"
-    },
+    }
   }
 },
 ```
