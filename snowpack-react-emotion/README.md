@@ -374,6 +374,11 @@ function paddings({ addComponents, theme }) {
 
 ## Next steps
 
+Learn how to work with twin
+
+- [The prop styling guide](https://github.com/ben-rogerson/twin.macro/blob/master/docs/prop-styling-guide.md) - A must-read guide to level up on prop styling
+- [The styled component guide](https://github.com/ben-rogerson/twin.macro/blob/master/docs/styled-component-guide.md) - A must-read guide on getting productive with styled-components
+
 Learn more about emotion
 
 - [Emotion’s css prop](https://emotion.sh/docs/css-prop)

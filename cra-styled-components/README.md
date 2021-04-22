@@ -23,9 +23,6 @@ Or keep scrolling for installation instructions.
   - [Plugins](#plugins)
     - [External](#external)
     - [Custom classes](#custom-classes)
-- [Usage](#usage)
-  - [Styled props](#styled-props)
-  - [Styled components](#styled-components)
 - [Next steps](#next-steps)
 
 [](#getting-started)
@@ -325,101 +322,14 @@ function paddings({ addComponents, theme }) {
 }
 ```
 
-[](#usage)
-
-## Usage
-
-Twin has a couple of different styling techniques to choose from.
-
-### Styled props
-
-Use Twin’s `tw` prop when you have no conditional styles:
-
-```js
-import 'twin.macro'
-
-const Input = () => <input tw="border hover:border-black" />
-```
-
-Nest Twin’s `tw` import within a css prop to add conditional styles:
-
-```js
-import tw from 'twin.macro'
-
-const stylesInput = ({ hasHover }) => [
-  tw`border`, // Add base styles first
-  hasHover && tw`hover:border-black`, // Then conditional styles
-]
-
-const Input = props => <input css={stylesInput(props)} />
-```
-
-Your can add both `tw` and `css` props on the same element:
-
-```js
-import tw from 'twin.macro'
-
-const Input = ({ hasHover }) => (
-  <input tw="border" css={[hasHover && tw`hover:border-black`]} />
-)
-```
-
-Or mix sass and tw styles with the css import:
-
-```js
-import tw, { css } from 'twin.macro'
-
-const hoverStyles = css`
-  &:hover {
-    ${tw`text-black`}
-  }
-`
-
-const stylesInput = ({ hasHover }) => [
-    tw`border` // Add base styles first,
-    hasHover && hoverStyles // Then conditional styles
-]
-
-const Input = props => <input css={stylesInput(props)} />
-```
-
-> Tip: Prefer booleans over ternaries to reduce your line length and improve scannability.
-
-### Styled components
-
-You can also use the tw import to create and style new components:
-
-```js
-import tw from 'twin.macro'
-
-const Input = tw.input`border hover:border-black`
-```
-
-And clone and style existing components:
-
-```js
-const PurpleInput = tw(Input)`border-purple-500`
-```
-
-Then switch to the styled import to add conditional styling:
-
-```js
-import tw, { styled, css } from 'twin.macro'
-
-const stylesWidth = css`border: 1px solid hotpink`,
-
-const Input = styled.input(({ hasHover }) => [
-    tw`border rounded`, // Add base styles first
-    hasHover && tw`hover:border-black`, // Then conditional styles
-    !hasHover && stylesWidth // Then any css/sass in variables
-])
-
-const Component = () => <Input hasHover />
-```
-
 [](#next-steps)
 
 ## Next steps
+
+Learn how to work with twin
+
+- [The prop styling guide](https://github.com/ben-rogerson/twin.macro/blob/master/docs/prop-styling-guide.md) - A must-read guide to level up on prop styling
+- [The styled component guide](https://github.com/ben-rogerson/twin.macro/blob/master/docs/styled-component-guide.md) - A must-read guide on getting productive with styled-components
 
 Learn more about styled-components
 
