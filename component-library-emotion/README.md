@@ -12,6 +12,18 @@ Clone this repository:
 npx degit https://github.com/ben-rogerson/twin.examples/component-library-emotion folder-name
 ```
 
+Inside the project folder, install the dependencies using yarn workspaces:
+
+```shell
+yarn install
+```
+
+And start the dev server:
+
+```shell
+yarn dev
+```
+
 ### Components (packages/components)
 
 - [Typescript](https://www.typescriptlang.org/)

@@ -5,7 +5,8 @@
     "dev": "yarn build:components && cd packages/app && yarn dev",
     "start": "cd packages/app && yarn start",
     "build": "yarn build:components && cd packages/app && yarn build",
-    "build:components": "cd packages/components && yarn build"
+    "build:components": "yarn workspace components run build",
+    "prepare": "cd packages/components && yarn build:types"
   },
   "workspaces": {
     "packages": [

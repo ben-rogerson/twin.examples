@@ -18,7 +18,7 @@
     "@emotion/server": "^11.0.0",
     "@emotion/styled": "^11.1.5",
     "autoprefixer": "^10.2.4",
-    "components": "file:../components",
+    "components": "file:./../components",
     "next": "^10.0.7",
     "postcss": "^8.2.7",
     "react": "^17.0.1",
