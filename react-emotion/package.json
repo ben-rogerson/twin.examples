@@ -12,7 +12,8 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "twin.macro": "^2.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -21,7 +22,6 @@
     "babel-plugin-macros": "^3.0.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "parcel-bundler": "^1.12.4",
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.3.0"
+    "tailwindcss": "^2.0.3"
   }
 }
