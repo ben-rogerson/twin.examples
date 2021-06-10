@@ -147,7 +147,6 @@ import macrosPlugin from 'vite-plugin-babel-macros'
 export default defineConfig({
   plugins: [reactRefresh(), macrosPlugin()],
   define: {
-    'process.platform': JSON.stringify('win32'),
     'process.env': {},
   },
 })
@@ -158,9 +157,9 @@ export default defineConfig({
 Create a `types/twin.d.ts` file and add these declarations:
 
 ```typescript
-// types/twin.d.ts
 import 'twin.macro'
-import { css as cssImport, CSSObject } from '@emotion/react'
+import { css as cssImport } from '@emotion/react'
+import { CSSInterpolation } from '@emotion/serialize'
 import styledImport from '@emotion/styled'
 
 declare module 'twin.macro' {
@@ -172,27 +171,18 @@ declare module 'twin.macro' {
 declare module 'react' {
   // The css prop
   interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSObject
+    css?: CSSInterpolation
   }
   // The inline svg css prop
   interface SVGProps<T> extends SVGProps<SVGSVGElement> {
-    css?: CSSObject
-  }
-}
-
-// The 'as' prop on styled components
-declare global {
-  namespace JSX {
-    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string | Element
-    }
+    css?: CSSInterpolation
   }
 }
 ```
 
 Then add the following in your typescript config:
 
-```typescript
+```json
 // tsconfig.json
 {
   "include": ["types"]

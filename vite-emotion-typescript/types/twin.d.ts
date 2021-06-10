@@ -1,6 +1,6 @@
 import 'twin.macro'
 import { css as cssImport } from '@emotion/react'
-import { CSSInterpolation } from '@emotion/serialize/types'
+import { CSSInterpolation } from '@emotion/serialize'
 import styledImport from '@emotion/styled'
 
 declare module 'twin.macro' {
