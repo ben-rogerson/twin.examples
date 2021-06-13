@@ -1,6 +1,6 @@
 <p><img src="https://i.imgur.com/AJzYKmM.png" alt="twin, next, stitches" width="500"></p>
 
-This example shows how to use [Stitches (canary)](https://github.com/modulz/stitches) css-in-js library with [twin.macro](https://github.com/ben-rogerson/twin.macro).
+This example shows how to use [Stitches](https://github.com/modulz/stitches) css-in-js library with [twin.macro](https://github.com/ben-rogerson/twin.macro).
 
 ### Usage
 

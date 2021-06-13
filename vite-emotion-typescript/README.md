@@ -15,7 +15,7 @@ Or keep scrolling for installation instructions.
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
-  - [Add the twin config](#add-the-twin-config)
+  - [Add the twin config (optional)](#add-the-twin-config-optional)
   - [Add the vite config](#add-the-vite-config)
   - [Add TypeScript types](#add-typescript-types)
 - [Customization](#customization)
@@ -107,7 +107,7 @@ ReactDOM.render(
 )
 ```
 
-### Add the twin config
+### Add the twin config (optional)
 
 Twin’s config can be added in a couple of different files.
 
@@ -132,6 +132,8 @@ b) Or in `package.json`:
   }
 },
 ```
+
+Note: The preset gets set to 'emotion' by default, so adding the config is only useful if you want to adjust [Twin’s other options](#twin-options).
 
 ### Add the vite config
 
@@ -161,6 +163,7 @@ export default defineConfig({
 Create a `types/twin.d.ts` file and add these declarations:
 
 ```typescript
+// twin.d.ts
 import 'twin.macro'
 import { css as cssImport } from '@emotion/react'
 import { CSSInterpolation } from '@emotion/serialize'

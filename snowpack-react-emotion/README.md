@@ -99,7 +99,7 @@ module.exports = {
 
 b) Or in `package.json`:
 
-```js
+```json
 // package.json
 "babelMacros": {
   "twin": {
@@ -300,12 +300,3 @@ Learn more about emotion
 - [Emotion’s css prop](https://emotion.sh/docs/css-prop)
 - [Emotion’s css import](https://emotion.sh/docs/css-prop#string-styles)
 - [Emotion’s styled import](https://emotion.sh/docs/styled)
-
-View more emotion examples
-
-- [React](https://github.com/ben-rogerson/twin.examples/tree/master/react-emotion)
-- [Preact](https://github.com/ben-rogerson/twin.examples/tree/master/preact-emotion)
-- [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-emotion)
-- [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-emotion)
-- [Next.js](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion)
-- Snowpack (current)

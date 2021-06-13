@@ -21,7 +21,7 @@
 
 - **Create React App**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/cra-emotion)
 - **Snowpack**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-styled-components) / [styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-styled-components-typescript) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion-typescript)
-- **Vite**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/vite-styled-components-typescript) &nbsp;/ [emotion (ts) 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/vite-emotion-typescript)
+- **Vite**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/vite-styled-components-typescript) &nbsp;/ [emotion 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/vite-emotion-typescript)
 
 ### Advanced frameworks
 
