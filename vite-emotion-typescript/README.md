@@ -1,4 +1,4 @@
-# Vite + emotion (ts)
+<p><img src="https://i.imgur.com/hlcYEJg.png" alt="twin, vite, emotion" width="500"></p>
 
 Download this example using [degit](https://github.com/Rich-Harris/degit):
 
@@ -145,6 +145,10 @@ import macrosPlugin from 'vite-plugin-babel-macros'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  esbuild: {
+    jsxFactory: 'jsx',
+    jsxInject: 'import { jsx } from "@emotion/react"',
+  },
   plugins: [reactRefresh(), macrosPlugin()],
   define: {
     'process.env': {},
@@ -210,12 +214,3 @@ Learn more about emotion
 - [Emotion’s css prop](https://emotion.sh/docs/css-prop)
 - [Emotion’s css import](https://emotion.sh/docs/css-prop#string-styles)
 - [Emotion’s styled import](https://emotion.sh/docs/styled)
-
-View more emotion examples
-
-- [React](https://github.com/ben-rogerson/twin.examples/tree/master/react-emotion)
-- [Preact](https://github.com/ben-rogerson/twin.examples/tree/master/preact-emotion)
-- [Create React App](https://github.com/ben-rogerson/twin.examples/tree/master/cra-emotion)
-- [Gatsby](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-emotion)
-- Next.js (current)
-- [Snowpack](https://github.com/ben-rogerson/twin.examples/tree/master/snowpack-react-emotion)

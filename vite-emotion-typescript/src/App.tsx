@@ -12,7 +12,6 @@ const styles = {
 
 const App = () => (
   <div css={styles.container({ hasBackground: true })}>
-    <h1 tw="text-9xl text-red-500">Hello, World!</h1>
     <div tw="flex flex-col justify-center h-full gap-y-5">
       <Button variant="primary">Submit</Button>
       <Button variant="secondary">Cancel</Button>
