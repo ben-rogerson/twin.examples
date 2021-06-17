@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyles } from 'twin.macro'
+import GlobalStyles from './../styles/GlobalStyles'
 
 const Layout = ({ children, ...rest }) => (
   <div {...rest}>
