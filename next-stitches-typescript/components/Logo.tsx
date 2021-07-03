@@ -1,12 +1,10 @@
-import tw from 'twin.macro'
-import { css } from '../stitches.config'
-
-const LogoLink = css(tw`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`)
+import 'twin.macro'
 
 const Logo = () => (
   <a
+    // Use the tw prop to add tailwind styles directly on jsx elements
+    tw="w-32 mb-10 p-5 block opacity-50 hover:opacity-100"
     href="https://github.com/ben-rogerson/twin.macro"
-    className={LogoLink()}
     target="_blank"
     rel="noopener noreferrer"
   >

@@ -1,73 +1,344 @@
 <p><img src="https://i.imgur.com/AJzYKmM.png" alt="twin, next, stitches" width="500"></p>
 
-This example shows how to use [Stitches](https://github.com/modulz/stitches) css-in-js library with [twin.macro](https://github.com/ben-rogerson/twin.macro).
-
-### Usage
-
-Use twin’s `tw` and `theme` imports within the Stitches `styled` function:
-
-```js
-import tw from 'twin.macro'
-import { styled } from '../stitches.config'
-
-// Non-conditional styling
-const Link = styled.a(tw`text-red-500 max-width[200px]`)
-
-// Conditional styling
-const Link = styled('div', {
-  // Spread component base styling in at the top
-  ...tw`text-red-500 max-width[200px]`,
-  // Add conditional styles with variants from Stitches
-  // (it differs from “variants” in tailwind)
-  variants: {
-    hasBackground: {
-      true: tw`bg-gradient-to-b from-electric to-ribbon`,
-    },
-  },
-})
-```
-
-Or use `css` to apply styling onto existing elements:
-
-```js
-import tw from 'twin.macro'
-import { css } from '../stitches.config'
-
-const LogoLink = css(tw`w-32 mb-10 p-5 block opacity-50 hover:opacity-100`)
-
-const WebsiteLink = () => (
-  <a href="#" className={LogoLink()}>
-    Visit website
-  </a>
-)
-```
-
-- Twin’s `css` and `tw` props aren’t supported because stitches uses an alternative syntax
-
-- Stitches has made many improvements lately - make sure you check their [migration guide](https://stitches-site-git-beta.modulz-deploys.com/blog/migrating-from-alpha-to-beta) while their website is getting updated
-
-### Get started
-
-Use degit to pull down this example:
+Download this example using [degit](https://github.com/Rich-Harris/degit):
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/next-stitches-typescript folder-name
 ```
 
-From inside the new folder, start the dev server with npm:
+Or keep reading for installation instructions.
 
-```bash
-npm install && npm run build && npm run dev
+[](#table-of-contents)
+
+## Table of contents
+
+- [Getting started](#getting-started)
+  - [Installation](#installation)
+  - [Add the global styles](#add-the-global-styles)
+  - [Add the babel config](#add-the-babel-config)
+  - [Add the stitches config](#add-the-stitches-config)
+  - [Add the server stylesheet](#add-the-server-stylesheet)
+  - [Complete the TypeScript setup](#complete-the-typescript-setup)
+- [Usage](#usage)
+  - [Styled components](#styled-components)
+  - [Prop styling](#prop-styling)
+- [Customization](#customization)
+- [Next steps](#next-steps)
+
+[](#getting-started)
+
+## Getting started
+
+### Installation
+
+Install Next.js
+
+```shell
+npx create-next-app --typescript
 ```
 
-or yarn:
+Install the dependencies
 
-```bash
-yarn && yarn build && yarn dev
+```shell
+npm install @stitches/react
+npm install -D twin.macro tailwindcss babel-plugin-macros
 ```
 
-### Twin integration status
+<details>
+  <summary>Install with Yarn</summary>
 
-- [ ] Add global styles via the twin GlobalStyles import
-- [ ] Add support for plugins using `addBase`
-- [ ] Add a stitches preset for use in the twin config
+```shell
+yarn create next-app --typescript
+```
+
+Install the dependencies
+
+```shell
+yarn add @stitches/react
+yarn add twin.macro tailwindcss babel-plugin-macros --dev
+```
+
+</details>
+
+### Add the global styles
+
+Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
+
+The `globalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
+
+You can add Twin’s `globalStyles` import in `styles/globalStyles.tsx`:
+
+```ts
+// styles/globalStyles.tsx
+import tw, { theme, globalStyles } from 'twin.macro'
+import { global } from '../stitches.config'
+
+const customStyles = {
+  body: {
+    WebkitTapHighlightColor: theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+}
+
+const styles = () => {
+  global(customStyles)()
+  global(globalStyles)()
+}
+
+export default styles
+```
+
+Then import the global styles in `pages/_app.tsx`:
+
+```ts
+// pages/_app.tsx
+import { AppProps } from 'next/app'
+import globalStyles from '../styles/globalStyles'
+
+const App = ({ Component, pageProps }: AppProps) => {
+  globalStyles()
+  return <Component {...pageProps} />
+}
+
+export default App
+```
+
+### Add the babel config
+
+Add this babel configuration in `.babelrc.js`:
+
+```js
+// In .babelrc.js
+module.exports = {
+  presets: ['next/babel'],
+  plugins: ['babel-plugin-macros'],
+}
+```
+
+### Add the stitches config
+
+Add this stitches configuration in `stitches.config.ts`:
+
+```ts
+// stitches.config.ts
+import { createCss, StitchesCss } from '@stitches/react'
+export type { StitchesVariants } from '@stitches/react'
+
+export const stitches = createCss({
+  prefix: '',
+  theme: {},
+  themeMap: {},
+  utils: {},
+})
+
+export type CSS = StitchesCss<typeof stitches>
+
+export const { css, styled, global, theme, keyframes, getCssString } = stitches
+```
+
+### Add the server stylesheet
+
+To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `pages/_document.js` that gets read by Next.js:
+
+```js
+// pages/_document.js
+import * as React from 'react'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import { getCssString } from './../stitches.config'
+
+export default class Document extends NextDocument {
+  static async getInitialProps(ctx: any) {
+    try {
+      const initialProps = await NextDocument.getInitialProps(ctx)
+
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {/* Stitches CSS for SSR */}
+            <style
+              id="stitches"
+              dangerouslySetInnerHTML={{ __html: getCssString() }}
+            />
+          </>
+        ),
+      }
+    } finally {
+    }
+  }
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+```
+
+### Complete the TypeScript setup
+
+Because twin routes the `styled` and `css`, you’ll need complete the typescript setup.
+
+Create a `types/twin.d.ts` file in your project root and add these declarations:
+
+```typescript
+// types/twin.d.ts
+import 'twin.macro'
+import { css as cssImport } from '@stitches/react'
+import styledImport from '@stitches/react'
+
+// Support a css prop when used with twins styled.div({}) syntax
+type CSSProp<T = AnyIfEmpty<DefaultTheme>> = string | CSSObject
+
+declare module 'react' {
+  // The css prop
+  interface HTMLAttributes<T> extends DOMAttributes<T> {
+    css?: CSSProp
+    tw?: string
+  }
+  // The inline svg css prop
+  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
+    css?: CSSProp
+    tw?: string
+  }
+}
+
+// Support twins styled.div({}) syntax
+type StyledTags = {
+  [Tag in keyof JSX.IntrinsicElements]: CreateStyledComponent<
+    JSX.IntrinsicElements[Tag]
+  >
+}
+
+declare module 'twin.macro' {
+  // The styled and css imports
+  const styled: typeof StyledTags | typeof styledImport
+  const css: typeof cssImport
+}
+```
+
+Then add the following in your typescript config:
+
+```typescript
+// tsconfig.json
+{
+  // Tell typescript about the types folder
+  "types": ["types"]
+  // Recommended settings
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+}
+```
+
+[](#usage)
+
+## Usage
+
+### Styled components
+
+Use the tw import to create and style new components:
+
+```ts
+import tw from 'twin.macro'
+
+const Input = tw.input`border hover:border-black`
+
+;<Input />
+```
+
+Switch to the styled import to add conditional styling:
+
+```ts
+import tw, { styled } from 'twin.macro'
+
+const StyledInput = styled.input({
+  // Spread the base styles
+  ...tw`bg-white max-w-[200px]`,
+  // Add conditional styling in the variants object
+  // https://stitches.dev/docs/variants
+  variants: {
+    hasBorder: { true: tw`border-purple-500` },
+  },
+})
+
+;<StyledInput hasBorder />
+```
+
+### Prop styling
+
+Style jsx elements using the tw prop:
+
+```ts
+import 'twin.macro'
+
+const Input = () => <input tw="border hover:border-black" />
+```
+
+Nest Twin’s `tw` import within a css prop to add conditional styles:
+
+```ts
+import tw from 'twin.macro'
+
+const Input = ({ hasHover }) => (
+  <input
+    css={{
+      // Spread the base styles
+      ...tw`border`,
+      // Add conditionals afterwards
+      ...(hasHover && tw`hover:border-black`),
+    }}
+  />
+)
+```
+
+Or mix sass styles with the css import:
+
+```ts
+import tw, { css } from 'twin.macro'
+
+const hoverStyles = {
+  '&:hover': {
+    'border-color': 'black',
+    ...tw`text-black`,
+  },
+}
+
+const Input = ({ hasHover }) => (
+  <input css={{ ...tw`border`, ...(hasHover && hoverStyles) }} />
+)
+```
+
+[](#customization)
+
+## Customization
+
+- [View the config options →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/options.md)
+- [Customizing the tailwind config →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/customizing-config.md)
+
+[](#next-steps)
+
+## Next steps
+
+For more usage docs, visit the [Stitches docs](https://stitches.dev/docs/introduction)

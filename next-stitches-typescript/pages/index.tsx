@@ -1,9 +1,8 @@
 import React from 'react'
-import tw from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 import { Logo, Button } from '../components'
-import { styled, css } from '../stitches.config'
 
-const Container = styled('div', {
+const Container = styled.div({
   ...tw`flex flex-col items-center justify-center h-screen`,
   variants: {
     hasBackground: {
@@ -12,15 +11,15 @@ const Container = styled('div', {
   },
 })
 
-const ButtonBox = css(tw`flex flex-col justify-center h-full gap-y-5`)
+const ButtonBox = tw.div`flex flex-col justify-center h-full gap-y-5`
 
 const IndexPage = () => (
   <Container hasBackground>
-    <div className={ButtonBox()}>
+    <ButtonBox>
       <Button variant="primary">Submit</Button>
       <Button variant="secondary">Cancel</Button>
       <Button isSmall>Close</Button>
-    </div>
+    </ButtonBox>
     <Logo />
   </Container>
 )
