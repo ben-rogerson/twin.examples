@@ -30,7 +30,7 @@ Or keep scrolling for installation instructions.
 Install Vite
 
 ```shell
-npm init @vitejs/app my-vue-app -- --template react-ts
+npm init @vitejs/app my-vite-app -- --template react-ts
 ```
 
 Install the dependencies
@@ -46,7 +46,7 @@ npm install --save-dev twin.macro vite-plugin-babel-macros tailwindcss
 Install Vite
 
 ```shell
-yarn create @vitejs/app my-vue-app --template react-ts
+yarn create @vitejs/app my-vite-app --template react-ts
 ```
 
 Install the dependencies
