@@ -15,6 +15,7 @@ Or keep reading for installation instructions.
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
+  - [Add the twin config](#add-the-twin-config)
   - [Add the babel config](#add-the-babel-config)
   - [Add the stitches config](#add-the-stitches-config)
   - [Add the server stylesheet](#add-the-server-stylesheet)
@@ -102,6 +103,30 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 export default App
 ```
+### Add the twin config
+Twin’s config can be added in a couple of different files.
+
+a) Either in `babel-plugin-macros.config.js`:
+
+```js
+// babel-plugin-macros.config.js
+module.exports = {
+  twin: {
+    preset: 'stitches',
+  },
+}
+```
+b) Or in `package.json`:
+
+```js
+// package.json
+"babelMacros": {
+  "twin": {
+    "preset": "stitches"
+  }
+},
+```
+
 
 ### Add the babel config
 
@@ -141,13 +166,13 @@ export const { css, styled, global, theme, keyframes, getCssString } = stitches
 To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `pages/_document.js` that gets read by Next.js:
 
 ```js
-// pages/_document.js
+// pages/_document.tsx
 import * as React from 'react'
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { getCssString } from './../stitches.config'
 
 export default class Document extends NextDocument {
-  static async getInitialProps(ctx: any) {
+  static async getInitialProps(ctx: DocumentContext) {
     try {
       const initialProps = await NextDocument.getInitialProps(ctx)
 
@@ -230,7 +255,7 @@ Then add the following in your typescript config:
 // tsconfig.json
 {
   // Tell typescript about the types folder
-  "types": ["types"]
+  "types": ["types"],
   // Recommended settings
   "compilerOptions": {
     "target": "es5",
