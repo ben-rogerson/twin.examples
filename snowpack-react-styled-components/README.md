@@ -6,7 +6,7 @@ Download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/snowpack-react-styled-components folder-name
 ```
 
-Or keep scrolling for installation instructions.
+Or keep reading for installation instructions.
 
 [](#table-of-contents)
 

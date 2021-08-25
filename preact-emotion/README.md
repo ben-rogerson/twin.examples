@@ -6,7 +6,7 @@ Download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/preact-emotion folder-name
 ```
 
-Or keep scrolling for installation instructions.
+Or keep reading for installation instructions.
 
 [](#getting-started)
 

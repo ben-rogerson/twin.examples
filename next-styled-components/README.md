@@ -6,7 +6,7 @@ Download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/next-styled-components folder-name
 ```
 
-Or keep scrolling for installation instructions.
+Or keep reading for installation instructions.
 
 [](#table-of-contents)
 
@@ -292,10 +292,10 @@ Then add the following in your typescript config:
 }
 ```
 
-Now that you’ve added the definitions, you can use these imports:
+These imports will now have their types:
 
 ```typescript
-import tw, { css, styled, theme } from 'twin.macro'
+import { css, styled } from 'twin.macro'
 ```
 
 And these props:
