@@ -65,26 +65,16 @@ yarn add twin.macro tailwindcss babel-plugin-macros --dev
 
 Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
 
-The `globalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
+The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
 You can add Twin’s `globalStyles` import in `styles/globalStyles.tsx`:
 
 ```ts
 // styles/globalStyles.tsx
-import tw, { theme, globalStyles } from 'twin.macro'
+import { globalStyles } from 'twin.macro'
 import { global } from '../stitches.config'
 
-const customStyles = {
-  body: {
-    WebkitTapHighlightColor: theme`colors.purple.500`,
-    ...tw`antialiased`,
-  },
-}
-
-const styles = () => {
-  global(customStyles)()
-  global(globalStyles)()
-}
+const styles = global(globalStyles)
 
 export default styles
 ```
@@ -103,7 +93,9 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 export default App
 ```
+
 ### Add the twin config
+
 Twin’s config can be added in a couple of different files.
 
 a) Either in `babel-plugin-macros.config.js`:
@@ -116,6 +108,7 @@ module.exports = {
   },
 }
 ```
+
 b) Or in `package.json`:
 
 ```js
@@ -126,7 +119,6 @@ b) Or in `package.json`:
   }
 },
 ```
-
 
 ### Add the babel config
 
@@ -163,12 +155,18 @@ export const { css, styled, global, theme, keyframes, getCssString } = stitches
 
 ### Add the server stylesheet
 
-To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `pages/_document.js` that gets read by Next.js:
+To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `pages/_document.tsx` that gets read by Next.js:
 
 ```js
 // pages/_document.tsx
 import * as React from 'react'
-import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import NextDocument, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from 'next/document'
 import { getCssString } from './../stitches.config'
 
 export default class Document extends NextDocument {

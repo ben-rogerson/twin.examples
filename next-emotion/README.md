@@ -18,7 +18,6 @@ Or keep reading for installation instructions.
   - [Extract styling on server (optional)](#extract-styling-on-server-optional)
   - [Add the twin config (optional)](#add-the-twin-config-optional)
   - [Add the babel config](#add-the-babel-config)
-  - [Add the next config](#add-the-next-config)
   - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
 - [Next steps](#next-steps)
@@ -165,47 +164,6 @@ module.exports = {
   plugins: ['@emotion/babel-plugin', 'babel-plugin-macros'],
 }
 ```
-
-### Add the next config
-
-Add this next configuration in `next.config.js` if you aren’t using Webpack 5 yet:
-
-```js
-// next.config.js
-module.exports = {
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Unset client-side javascript that only works server-side
-      // https://github.com/vercel/next.js/issues/7755#issuecomment-508633125
-      config.node = { fs: 'empty', module: 'empty' }
-    }
-
-    return config
-  },
-}
-```
-
-<details>
-<summary>Webpack 5 config</summary>
-
-The API changed slightly in Webpack 5, so use this config instead:
-
-```js
-// next.config.js
-module.exports = {
-  future: { webpack5: true },
-  webpack: config => {
-    // Unset client-side javascript that only works server-side
-    config.resolve.fallback = { fs: false, module: false }
-
-    return config
-  },
-}
-```
-
-</details>
-
-> 'fs' is a server-side dependency which we don’t want added client-side. Adding the code above will make sure we don’t experience errors.
 
 ### Complete the TypeScript setup
 
