@@ -1,13 +1,10 @@
-import { createCss, StitchesCss } from "@stitches/react";
-export type { StitchesVariants } from "@stitches/react";
+import { createStitches, CSS as StitchesCSS } from '@stitches/react'
+export type { CSS } from '@stitches/react/types/css-util'
 
-export const stitches = createCss({
+export const stitches = createStitches({
   prefix: '',
   theme: {},
-  themeMap: {},
   utils: {},
 })
 
-export type CSS = StitchesCss<typeof stitches>;
-
-export const { css, styled, global, theme, keyframes, getCssString } = stitches
+export const { css, styled, globalCss, theme, keyframes, getCssText } = stitches

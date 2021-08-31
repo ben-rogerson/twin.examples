@@ -1,5 +1,7 @@
+import { DefaultThemeMap } from '@stitches/react'
+
 import tw, { theme, globalStyles } from 'twin.macro'
-import { global } from '../stitches.config'
+import { globalCss, CSS } from '../stitches.config'
 
 const customStyles = {
   body: {
@@ -9,8 +11,8 @@ const customStyles = {
 }
 
 const styles = () => {
-  global(customStyles)()
-  global(globalStyles)()
+  globalCss(customStyles)()
+  globalCss(globalStyles as Record<any, any>)()
 }
 
 export default styles
