@@ -197,13 +197,12 @@ declare module 'react' {
 }
 ```
 
-Then add the following to your typescript config:
+Then add the following to your `tsconfig.json`:
 
 ```json
-// tsconfig.json
 {
   "compilerOptions": {
-    "jsxImportSource": "@emotion/react" // for the css prop
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["types"]
 }

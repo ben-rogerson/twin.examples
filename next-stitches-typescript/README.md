@@ -148,7 +148,6 @@ export const stitches = createStitches({
 })
 
 export const { css, styled, globalCss, theme, keyframes, getCssText } = stitches
-
 ```
 
 ### Add the server stylesheet
@@ -194,7 +193,6 @@ export default class Document extends NextDocument {
     )
   }
 }
-
 ```
 
 ### Complete the TypeScript setup
