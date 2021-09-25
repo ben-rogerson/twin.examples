@@ -15,7 +15,7 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
-  - [Extract styling on server (optional)](#extract-styling-on-server-optional)
+  - [SSR styles setup](#ssr-styles-setup)
   - [Add the twin config (optional)](#add-the-twin-config-optional)
   - [Add the babel config](#add-the-babel-config)
 - [Customization](#customization)
@@ -78,21 +78,32 @@ const App = ({ Component, pageProps }) => (
 export default App
 ```
 
-### Extract styling on server (optional)
+### SSR styles setup
 
-If your notice your page flickering on first render, this might fix the problem.
 Creating a `_document.js` file like this will put critical styles in the head of the page.
+Without this step, you’ll notice a difference between the SSR generated styles and the ones that hydrate on the client side.
 
 ```js
+import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { extractCritical } from '@emotion/server'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
-    const page = await ctx.renderPage()
-    const styles = extractCritical(page.html)
-    return { ...initialProps, ...page, ...styles }
+    const critical = extractCritical(initialProps.html)
+    initialProps.html = critical.html
+    initialProps.styles = (
+      <React.Fragment>
+        {initialProps.styles}
+        <style
+          data-emotion-css={critical.ids.join(' ')}
+          dangerouslySetInnerHTML={{ __html: critical.css }}
+        />
+      </React.Fragment>
+    )
+
+    return initialProps
   }
 
   render() {

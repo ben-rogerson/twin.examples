@@ -20,8 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
-    "@emotion/babel-preset-css-prop": "^11.2.0",
     "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.3.0"
+    "twin.macro": "^2.7.0"
   }
 }
