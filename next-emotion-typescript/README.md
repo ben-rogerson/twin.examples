@@ -1,4 +1,4 @@
-## Fork from [ben-rogerson/twin.examples/next-emotion](https://github.com/ben-rogerson/twin.examples/next-emotion)
+# Next + Emotion + TypeScript
 
 Download this example using [degit](https://github.com/Rich-Harris/degit):
 
@@ -6,32 +6,7 @@ Download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/next-emotion-typescript folder-name
 ```
 
-[](#table-of-contents)
-
-## Table of contents
-
-- [Getting started](#getting-started)
-  - [Installation](#installation)
-- [Customization](#customization)
-- [Next steps](#next-steps)
-
-[](#getting-started)
-
-## Getting started
-
-### Installation
-Install the dependencies
-
-```shell
-npm install
-```
-or
-```shell
-yarn
-```
-
-
-[](#customization)
+Installation instructions coming soon...
 
 ## Customization
 
