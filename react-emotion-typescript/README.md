@@ -197,45 +197,47 @@ To avoid red squiggly underlines, you’ll need to add the remaining types for y
 First up, you’ll need to install some types for React:
 
 ```bash
-npm install -D @types/react @emotion/styled
+npm install -D @types/react
 // or
-yarn add @types/react @emotion/styled -D
+yarn add @types/react -D
 ```
 
-Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
-
-```js
-Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
-// or
-Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
-// or
-Property 'css' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
-```
-
-To fix this, create a `twin.d.ts` file in your project root (`types/twin.d.ts` with create-react-app) and add these declarations:
+Then create a file in `types/twin.d.ts` and add these declarations:
 
 ```typescript
 // twin.d.ts
 import 'twin.macro'
 import styledImport from '@emotion/styled'
 import { css as cssImport } from '@emotion/react'
+import { CSSInterpolation } from '@emotion/serialize'
 
 declare module 'twin.macro' {
   // The styled and css imports
   const styled: typeof styledImport
   const css: typeof cssImport
 }
+
+declare module 'react' {
+  // The css prop
+  interface HTMLAttributes<T> extends DOMAttributes<T> {
+    css?: CSSInterpolation
+  }
+  // The inline svg css prop
+  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
+    css?: CSSInterpolation
+  }
+}
 ```
 
 Then add the following to your typescript config:
 
-```typescript
+```json
 // tsconfig.json
 {
   "compilerOptions": {
     "jsxImportSource": "@emotion/react" // for the css prop
   },
-  "include": ["types"],
+  "include": ["types"]
 }
 ```
 

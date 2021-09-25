@@ -1,12 +1,12 @@
 <p><img src="https://i.imgur.com/zqspwBF.png" alt="twin, gatsby, emotion" width="500"></p>
 
-Download this example using [degit](https://github.com/Rich-Harris/degit):
+**Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/gatsby-emotion folder-name
 ```
 
-Or keep reading for installation instructions.
+From within the new folder, run `npm install`, then `npm start` to start the dev server.
 
 [](#table-of-contents)
 
@@ -17,7 +17,6 @@ Or keep reading for installation instructions.
   - [Add gatsby-plugin-emotion](#add-gatsby-plugin-emotion)
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config (optional)](#add-the-twin-config-optional)
-  - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
 - [Next steps](#next-steps)
 
@@ -128,74 +127,6 @@ b) Or in `package.json`:
 ```
 
 Note: The preset gets set to 'emotion' by default, so adding the config is only useful if you want to adjust [Twin’s other options](#twin-options).
-
-### Complete the TypeScript setup
-
-If you’re using TypeScript, you’ll need to add the remaining types for your chosen css-in-js framework.
-
-<details>
-  <summary>Setup instructions</summary>
-
-First up, you’ll need to install some types for React:
-
-```bash
-npm install -D @types/react
-// or
-yarn add @types/react -D
-```
-
-Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
-
-```js
-Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
-// or
-Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
-// or
-Property 'css' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
-```
-
-To fix this, create a `twin.d.ts` file in your project root (`src/twin.d.ts` with create-react-app) and add these declarations:
-
-```typescript
-// twin.d.ts
-import 'twin.macro'
-import styledImport from '@emotion/styled'
-import { css as cssImport } from '@emotion/react'
-
-declare module 'twin.macro' {
-  // The styled and css imports
-  const styled: typeof styledImport
-  const css: typeof cssImport
-}
-```
-
-Then add the following to your typescript config:
-
-```typescript
-// tsconfig.json
-{
-  "compilerOptions": {
-    "jsxImportSource": "@emotion/react" // for the css prop
-  },
-  "files": ["twin.d.ts"],
-  // or "include": ["twin.d.ts"],
-}
-```
-
-Now that you’ve added the definitions, you can use these imports:
-
-```typescript
-import tw, { css, styled, theme } from 'twin.macro'
-```
-
-And these props:
-
-```typescript
-<div tw="">
-<div css={}>
-```
-
-</details>
 
 [](#customization)
 

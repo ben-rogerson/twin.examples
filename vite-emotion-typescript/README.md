@@ -1,12 +1,12 @@
 <p><img src="https://i.imgur.com/hlcYEJg.png" alt="twin, vite, emotion" width="500"></p>
 
-Download this example using [degit](https://github.com/Rich-Harris/degit):
+**Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/vite-emotion-typescript folder-name
 ```
 
-Or keep scrolling for installation instructions.
+From within the new folder, run `npm install`, then `npm start` to start the dev server.
 
 [](#table-of-contents)
 
@@ -17,7 +17,7 @@ Or keep scrolling for installation instructions.
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config (optional)](#add-the-twin-config-optional)
   - [Add the vite config](#add-the-vite-config)
-  - [Add TypeScript types](#add-typescript-types)
+  - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
 - [Next steps](#next-steps)
 
@@ -158,16 +158,26 @@ export default defineConfig({
 })
 ```
 
-### Add TypeScript types
+### Complete the TypeScript setup
 
-Create a `types/twin.d.ts` file and add these declarations:
+To avoid red squiggly underlines, you’ll need to add the remaining types for your chosen css-in-js framework.
+
+First up, you’ll need to install some types for React:
+
+```bash
+npm install -D @types/react
+// or
+yarn add @types/react -D
+```
+
+Then create a file in `types/twin.d.ts` and add these declarations:
 
 ```typescript
 // twin.d.ts
 import 'twin.macro'
+import styledImport from '@emotion/styled'
 import { css as cssImport } from '@emotion/react'
 import { CSSInterpolation } from '@emotion/serialize'
-import styledImport from '@emotion/styled'
 
 declare module 'twin.macro' {
   // The styled and css imports
@@ -187,13 +197,29 @@ declare module 'react' {
 }
 ```
 
-Then add the following in your typescript config:
+Then add the following to your typescript config:
 
 ```json
 // tsconfig.json
 {
+  "compilerOptions": {
+    "jsxImportSource": "@emotion/react" // for the css prop
+  },
   "include": ["types"]
 }
+```
+
+The types are now added for these imports:
+
+```typescript
+import { css, styled } from 'twin.macro'
+```
+
+And these props:
+
+```typescript
+<div tw="">
+<div css={}>
 ```
 
 [](#customization)

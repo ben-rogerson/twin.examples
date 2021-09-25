@@ -1,12 +1,12 @@
 <p><img src="https://i.imgur.com/zxO2ib2.png" alt="twin, react, styled-components" width="500"></p>
 
-Download this example using [degit](https://github.com/Rich-Harris/degit):
+**Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/react-styled-components folder-name
 ```
 
-Or keep reading for installation instructions.
+From within the new folder, run `npm install`, then `npm start` to start the dev server.
 
 [](#table-of-contents)
 
@@ -17,7 +17,6 @@ Or keep reading for installation instructions.
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config](#add-the-twin-config)
   - [Add the babel config](#add-the-babel-config)
-  - [Complete the TypeScript setup](#complete-the-typescript-setup)
 - [Customization](#customization)
 - [Next steps](#next-steps)
 
@@ -141,90 +140,6 @@ b) Or in `package.json`:
   ]
 }
 ```
-
-### Complete the TypeScript setup
-
-If you’re using TypeScript, you’ll need to add the remaining types for your chosen css-in-js framework.
-
-<details>
-  <summary>Setup instructions</summary>
-
-First up, you’ll need to install some types for react and styled-components:
-
-```bash
-npm install -D @types/react @types/styled-components
-// or
-yarn add @types/react @types/styled-components -D
-```
-
-Then twin needs some type declarations added for your chosen css-in-js library, otherwise you’ll see errors like this:
-
-```shell
-Module '"../node_modules/twin.macro/types"' has no exported member 'styled'.
-// or
-Module '"../node_modules/twin.macro/types"' has no exported member 'css'.
-// or
-Property 'css' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
-```
-
-To fix this, create a `twin.d.ts` file in your project root (`src/twin.d.ts` with create-react-app) and add these declarations:
-
-```typescript
-// twin.d.ts
-import 'twin.macro'
-import styledImport, { CSSProp, css as cssImport } from 'styled-components'
-
-declare module 'twin.macro' {
-  // The styled and css imports
-  const styled: typeof styledImport
-  const css: typeof cssImport
-}
-
-declare module 'react' {
-  // The css prop
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSProp
-  }
-  // The inline svg css prop
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
-    css?: CSSProp
-  }
-}
-
-// The 'as' prop on styled components
-declare global {
-  namespace JSX {
-    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string | Element
-    }
-  }
-}
-```
-
-Then add the following in your typescript config:
-
-```typescript
-// tsconfig.json
-{
-  "files": ["twin.d.ts"],
-  // or "include": ["twin.d.ts"],
-}
-```
-
-These imports will now have their types:
-
-```typescript
-import { css, styled } from 'twin.macro'
-```
-
-And these props:
-
-```typescript
-<div tw="">
-<div css={}>
-```
-
-</details>
 
 [](#customization)
 

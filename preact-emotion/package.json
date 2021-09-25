@@ -18,7 +18,7 @@
     "preact": "^10.5.12"
   },
   "devDependencies": {
-    "@babel/core": "7.13.8",
+    "@babel/core": "^7.14.6",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "preact-cli": "^3.0.5",
     "babel-plugin-macros": "^3.0.1",

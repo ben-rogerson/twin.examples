@@ -1,12 +1,12 @@
 <p><img src="https://i.imgur.com/AJzYKmM.png" alt="twin, next, stitches" width="500"></p>
 
-Download this example using [degit](https://github.com/Rich-Harris/degit):
+**Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/next-stitches-typescript folder-name
 ```
 
-Or keep reading for installation instructions.
+From within the new folder, run `npm install`, then `npm start` to start the dev server.
 
 [](#table-of-contents)
 

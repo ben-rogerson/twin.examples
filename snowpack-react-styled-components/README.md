@@ -1,12 +1,12 @@
 <p><img src="https://i.imgur.com/5MSVZiv.png" alt="twin, snowpack, styled-components" width="500"></p>
 
-Download this example using [degit](https://github.com/Rich-Harris/degit):
+**Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/snowpack-react-styled-components folder-name
 ```
 
-Or keep reading for installation instructions.
+From within the new folder, run `npm install`, then `npm start` to start the dev server.
 
 [](#table-of-contents)
 
