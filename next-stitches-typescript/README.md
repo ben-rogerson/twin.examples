@@ -138,19 +138,17 @@ Add this stitches configuration in `stitches.config.ts`:
 
 ```ts
 // stitches.config.ts
-import { createCss, StitchesCss } from '@stitches/react'
-export type { StitchesVariants } from '@stitches/react'
+import { createStitches, CSS as StitchesCSS } from '@stitches/react'
+export type { CSS } from '@stitches/react/types/css-util'
 
-export const stitches = createCss({
+export const stitches = createStitches({
   prefix: '',
   theme: {},
-  themeMap: {},
   utils: {},
 })
 
-export type CSS = StitchesCss<typeof stitches>
+export const { css, styled, globalCss, theme, keyframes, getCssText } = stitches
 
-export const { css, styled, global, theme, keyframes, getCssString } = stitches
 ```
 
 ### Add the server stylesheet
@@ -159,18 +157,11 @@ To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `
 
 ```js
 // pages/_document.tsx
-import * as React from 'react'
-import NextDocument, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from 'next/document'
-import { getCssString } from './../stitches.config'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+import { getCssText } from '../stitches.config'
 
 export default class Document extends NextDocument {
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: any) {
     try {
       const initialProps = await NextDocument.getInitialProps(ctx)
 
@@ -182,7 +173,7 @@ export default class Document extends NextDocument {
             {/* Stitches CSS for SSR */}
             <style
               id="stitches"
-              dangerouslySetInnerHTML={{ __html: getCssString() }}
+              dangerouslySetInnerHTML={{ __html: getCssText() }}
             />
           </>
         ),
@@ -203,6 +194,7 @@ export default class Document extends NextDocument {
     )
   }
 }
+
 ```
 
 ### Complete the TypeScript setup
