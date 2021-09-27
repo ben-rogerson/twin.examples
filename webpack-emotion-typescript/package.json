@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
-    "serve": "npx serve dist"
+    "serve": "npx serve public"
   },
   "dependencies": {
     "@emotion/react": "^11.4.1",
