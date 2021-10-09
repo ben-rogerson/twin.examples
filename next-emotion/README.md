@@ -65,7 +65,7 @@ The `GlobalStyles` import adds these base styles along with some @keyframes for 
 You can add Twin’s `GlobalStyles` import in `pages/_app.js`:
 
 ```js
-// page/_app.js
+// pages/_app.js
 import { GlobalStyles } from 'twin.macro'
 
 const App = ({ Component, pageProps }) => (
@@ -84,6 +84,7 @@ Creating a `_document.js` file like this will put critical styles in the head of
 Without this step, you’ll notice a difference between the SSR generated styles and the ones that hydrate on the client side.
 
 ```js
+// pages/_document.js
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { extractCritical } from '@emotion/server'
