@@ -90,10 +90,10 @@ const GlobalStyles = () => (
 export default GlobalStyles
 ```
 
-Then import the GlobalStyles file in `page/_app.js`:
+Then import the GlobalStyles file in `pages/_app.js`:
 
 ```js
-// page/_app.js
+// pages/_app.js
 import GlobalStyles from './../components/GlobalStyles'
 
 const App = ({ Component, pageProps }) => (
