@@ -12,19 +12,7 @@ npx degit https://github.com/ben-rogerson/twin.examples/storybook-emotion folder
 
 ## Notes
 
-It’s based on the [react-emotion demo](https://github.com/ben-rogerson/twin.examples/tree/master/react-emotion) and uses [@emotion/babel-plugin-jsx-pragmatic](https://github.com/emotion-js/emotion/tree/master/packages/babel-plugin-jsx-pragmatic) to automatically add the css/tw prop with a custom babel configuration.
-
-If you want storybook to use your projects babel configuration then delete `.babelrc` in `.storybook`.
-
-If you’re seeing this error:
-
-```bash
-Module not found: Error: Can’t resolve '@emotion/styled/base' in '...'
-```
-
-This error comes from `@emotion/babel-preset-css-prop` which has issues with Emotion@11+.
-
-Fix: Remove `@emotion/babel-preset-css-prop` only from the .babelrc your storybook uses.
+- Storybook alters the default babel config in .storybook/main.js
 
 ## Links
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import 'twin.macro'
 
 const Logo = () => (
   <a

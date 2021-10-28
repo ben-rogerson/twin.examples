@@ -3,14 +3,14 @@ import Button from './Button'
 export default {
   title: 'Button',
   component: Button,
+  args: {
+    children: 'Button',
+  },
   argTypes: {
     variant: {
       description: 'The type of button',
       type: 'inline-radio',
-      control: {
-        type: 'inline-radio',
-        options: ['primary', 'secondary'],
-      },
+      options: ['primary', 'secondary'],
     },
     isSmall: {
       description: 'A small version of the button',
@@ -18,7 +18,6 @@ export default {
     },
     children: {
       description: 'The button content',
-      defaultValue: 'Button',
       type: { name: 'text', required: true },
     },
   },
