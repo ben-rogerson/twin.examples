@@ -6,7 +6,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "jsx": "preserve",
     "target": "ESNext",
     "module": "ESNext",
     "strict": true,
@@ -16,8 +15,19 @@
     "declarationDir": "components-types",
     "emitDeclarationOnly": true,
     // Ensure that Babel can safely transpile files in the TypeScript project
-    "isolatedModules": true
+    "isolatedModules": true,
+    "jsx": "preserve",
   },
-  "include": ["components/**/*.tsx", "./../../types"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "components/**/*.tsx",
+    "./../../types"
+  ],
+  "typeRoots": [
+    "./../../types",
+    "./../../node_modules/@types"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

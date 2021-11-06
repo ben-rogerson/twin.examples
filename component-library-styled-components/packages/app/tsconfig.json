@@ -5,8 +5,10 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -16,8 +18,20 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "incremental": true,
+    "jsx": "preserve"
   },
-  "exclude": ["node_modules", ".next"],
-  "include": ["**/*.tsx", "./../../types"]
+  "exclude": [
+    "node_modules",
+    ".next"
+  ],
+  "typeRoots": [
+    "./../../types",
+    "./../../node_modules/@types"
+  ],
+  "include": [
+    "**/*.tsx",
+    "./../../types"
+  ]
 }
