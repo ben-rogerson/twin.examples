@@ -71,10 +71,20 @@ You can add Twin’s `globalStyles` import in `styles/globalStyles.tsx`:
 
 ```ts
 // styles/globalStyles.tsx
-import { globalStyles } from 'twin.macro'
-import { global } from '../stitches.config'
+import tw, { theme, globalStyles } from 'twin.macro'
+import { globalCss } from '../stitches.config'
 
-const styles = global(globalStyles)
+const customStyles = {
+  body: {
+    WebkitTapHighlightColor: theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+}
+
+const styles = () => {
+  globalCss(customStyles)()
+  globalCss(globalStyles as Record<any, any>)()
+}
 
 export default styles
 ```
