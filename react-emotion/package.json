@@ -17,11 +17,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
-    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
-    "babel-plugin-twin": "^1.0.2",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
     "babel-plugin-macros": "^3.0.1",
-    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
-    "parcel-bundler": "^1.12.4",
+    "babel-plugin-twin": "^1.0.2",
+    "parcel": "^2.0.1",
     "tailwindcss": "^2.0.3"
   }
 }
