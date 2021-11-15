@@ -15,6 +15,8 @@ type DropdownItems = {
   onClick: () => void
 }
 
+type MenuItemProps = { as?: React.ElementType; disabled?: boolean }
+
 type DropdownProps = {
   items: DropdownItems[][]
   menuProps?: { as?: React.ElementType }
@@ -23,7 +25,7 @@ type DropdownProps = {
     static?: boolean
     unmount?: undefined
   }
-  menuItemProps?: { as?: React.ElementType; disabled?: boolean }
+  menuItemProps?: MenuItemProps
   children: React.ReactNode
 }
 
@@ -51,8 +53,12 @@ export default function Dropdown({
               {...menuItemsProps}
             >
               <Fragment>
-                {items.map((item, index) => (
-                  <ItemGroup key={index} {...item} {...{ menuItemProps }} />
+                {items.map((group, index) => (
+                  <ItemGroup
+                    key={index}
+                    group={group}
+                    menuItemProps={menuItemProps}
+                  />
                 ))}
               </Fragment>
             </Menu.Items>
@@ -63,18 +69,33 @@ export default function Dropdown({
   )
 }
 
-function ItemGroup(group: DropdownItems[], index: number) {
+function ItemGroup({
+  group,
+  menuItemProps,
+}: {
+  group: DropdownItems[]
+  menuItemProps?: MenuItemProps
+}) {
   return (
-    <div tw="p-1" key={index}>
-      {group.map(Item)}
+    <div tw="p-1">
+      {group.map((item, index) => (
+        <Item {...item} key={index} menuItemProps={menuItemProps} />
+      ))}
     </div>
   )
 }
 
-function Item({ label, ...rest }: { label: string }) {
+function Item({
+  label,
+  menuItemProps,
+  ...rest
+}: {
+  label: string
+  menuItemProps?: MenuItemProps
+}) {
   const Icon = (Icons as { [key: string]: any })[label] || Icons['Edit']
   return (
-    <Menu.Item key={label}>
+    <Menu.Item key={label} {...menuItemProps}>
       {({ active }: { active: boolean }) => (
         <button
           css={[
