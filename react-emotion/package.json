@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "babelMacros": {
     "twin": {
       "preset": "emotion"
