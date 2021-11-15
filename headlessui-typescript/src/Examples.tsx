@@ -194,68 +194,58 @@ export default function Examples() {
  * Usage example ends here =====================================================
  */
 
-interface ExampleData {
-  [index: string]: [string, string, TwStyle]
-}
-
-const exampleData: ExampleData = {
-  Dropdown: [
+const exampleData: [string, string, TwStyle][] = [
+  [
     'Menu (Dropdown)',
     'https://headlessui.dev/react/menu',
     tw`to-indigo-500 from-purple-500`,
   ],
-  Select: [
+  [
     'Listbox (Select)',
     'https://headlessui.dev/react/listbox',
     tw`from-amber-300 to-orange-500`,
   ],
-  Toggle: [
+  [
     'Switch (Toggle)',
     'https://headlessui.dev/react/switch',
     tw`from-green-400 to-cyan-500`,
   ],
-  Disclosure: [
+  [
     'Disclosure',
     'https://headlessui.dev/react/disclosure',
     tw`from-fuchsia-500 to-purple-600`,
   ],
-  Modal: [
+  [
     'Dialog (Modal)',
     'https://headlessui.dev/react/dialog',
     tw`from-sky-400 to-indigo-500`,
   ],
-  Popover: [
+  [
     'Popover',
     'https://headlessui.dev/react/popover',
     tw`from-orange-400 to-pink-600`,
   ],
-  RadioGroup: [
+  [
     'Radio Group',
     'https://headlessui.dev/react/radio-group',
     tw`from-cyan-400 to-sky-500`,
   ],
-  TransitionDemo: [
+  [
     'Transition',
     'https://headlessui.dev/react/transition',
     tw`from-pink-500 to-rose-500`,
   ],
-  Tabs: [
-    'Tabs',
-    'https://headlessui.dev/react/tabs',
-    tw`from-sky-400 to-blue-600`,
-  ],
-}
+  ['Tabs', 'https://headlessui.dev/react/tabs', tw`from-sky-400 to-blue-600`],
+]
 
 type ExampleProps = {
   className?: string
   children: React.ReactNode
+  index: number
 }
 
-function Example({ className, children }: ExampleProps) {
-  const componentName = (children as { type: { name: string } }).type.name
-  const [heading, demoUrl, gradientStyles] =
-    (componentName && exampleData[componentName]) || []
-
+function Example({ className, children, index }: ExampleProps) {
+  const [heading, demoUrl, gradientStyles] = exampleData[index] || []
   return (
     <div css={[tw`space-y-4`, gradientStyles]}>
       <h2 tw="text-xl font-bold text-3xl">{heading}</h2>
@@ -285,7 +275,9 @@ function Container({ children }: { children: React.ReactNode[] }) {
     <div tw="flex flex-col items-center py-36">
       <div tw="w-full max-w-[500px] space-y-20">
         {children.map((item, index) => (
-          <Example key={index}>{item}</Example>
+          <Example key={index} index={index}>
+            {item}
+          </Example>
         ))}
       </div>
     </div>
