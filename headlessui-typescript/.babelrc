@@ -1,0 +1,9 @@
+{
+  "presets": [
+    "@emotion/babel-preset-css-prop"
+  ],
+  "plugins": [
+    "babel-plugin-twin",
+    "babel-plugin-macros"
+  ]
+}
