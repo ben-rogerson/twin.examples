@@ -6,7 +6,7 @@
 npx degit https://github.com/ben-rogerson/twin.examples/vite-styled-components-typescript folder-name
 ```
 
-From within the new folder, run `npm install`, then `npm start` to start the dev server.
+From within the new folder, run `yarn`, then `yarn dev` to start the dev server.
 
 [](#table-of-contents)
 
@@ -30,22 +30,6 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
 Install Vite
 
 ```shell
-npm init @vitejs/app my-vite-app -- --template react-ts
-```
-
-Install the dependencies
-
-```shell
-npm install styled-components
-npm install --save-dev twin.macro vite-plugin-babel-macros tailwindcss
-```
-
-<details>
-  <summary>Install with Yarn</summary>
-
-Install Vite
-
-```shell
 yarn create @vitejs/app my-vite-app --template react-ts
 ```
 
@@ -53,7 +37,23 @@ Install the dependencies
 
 ```shell
 yarn add styled-components
-yarn add twin.macro vite-plugin-babel-macros tailwindcss -D
+yarn add twin.macro babel-plugin-styled-components babel-plugin-macros tailwindcss -D
+```
+
+<details>
+  <summary>Install with npm</summary>
+
+Install Vite
+
+```shell
+npm init @vitejs/app my-vite-app -- --template react-ts
+```
+
+Install the dependencies
+
+```shell
+npm install styled-components
+npm install --save-dev twin.macro babel-plugin-styled-components babel-plugin-macros tailwindcss
 ```
 
 </details>
@@ -68,16 +68,15 @@ You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyl
 
 ```js
 // src/styles/GlobalStyles.tsx
-import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-const CustomStyles = createGlobalStyle`
-  body {
-    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
-    ${tw`antialiased`}
-  }
-`
+const CustomStyles = createGlobalStyle({
+  body: {
+    '-webkit-tap-highlight-color': theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+})
 
 const GlobalStyles = () => (
   <>
@@ -118,6 +117,7 @@ a) Either in `babel-plugin-macros.config.js`:
 module.exports = {
   twin: {
     preset: 'styled-components',
+    autoCssProp: false,
   },
 }
 ```
@@ -128,7 +128,8 @@ b) Or in `package.json`:
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": "styled-components"
+    "preset": "styled-components",
+    "autoCssProp": false
   }
 },
 ```
@@ -137,19 +138,20 @@ b) Or in `package.json`:
 
 Add the following to your vite config:
 
-```js
-// vite.config.json
+```typescript
+// vite.config.ts
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import macrosPlugin from 'vite-plugin-babel-macros'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh(), macrosPlugin()],
-  define: {
-    'process.platform': JSON.stringify('win32'),
-    'process.env': {},
-  },
+  plugins: [
+    react({
+      babel: {
+        plugins: ['babel-plugin-macros', 'babel-plugin-styled-components'],
+      },
+    }),
+  ],
 })
 ```
 
@@ -158,13 +160,13 @@ export default defineConfig({
 Install the types for styled-components:
 
 ```bash
-npm install --save-dev @types/styled-components
+yarn add @types/styled-components -D
 ```
 
-or yarn:
+or npm:
 
 ```bash
-yarn add @types/styled-components -D
+npm install --save-dev @types/styled-components
 ```
 
 Create a `types/twin.d.ts` file and add these declarations:
@@ -184,10 +186,12 @@ declare module 'react' {
   // The css prop
   interface HTMLAttributes<T> extends DOMAttributes<T> {
     css?: CSSProp
+    tw?: string
   }
   // The inline svg css prop
   interface SVGProps<T> extends SVGProps<SVGSVGElement> {
     css?: CSSProp
+    tw?: string
   }
 }
 
@@ -206,7 +210,12 @@ Then add the following in your typescript config:
 ```typescript
 // tsconfig.json
 {
-  "include": ["types"]
+  // ...
+  "skipLibCheck": true,
+  "include": [
+    "src",
+    "types"
+  ]
 }
 ```
 
