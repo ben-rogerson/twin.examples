@@ -1,15 +1,28 @@
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import macrosPlugin from 'vite-plugin-babel-macros'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  esbuild: {
-    jsxFactory: 'jsx',
-    jsxInject: 'import { jsx } from "@emotion/react"',
-  },
-  plugins: [reactRefresh(), macrosPlugin()],
-  define: {
-    'process.env': {},
-  },
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          'babel-plugin-macros',
+          [
+            '@emotion/babel-plugin-jsx-pragmatic',
+            {
+              export: 'jsx',
+              import: '__cssprop',
+              module: '@emotion/react',
+            },
+          ],
+          [
+            '@babel/plugin-transform-react-jsx',
+            { pragma: '__cssprop' },
+            'twin.macro',
+          ],
+        ],
+      },
+    }),
+  ],
 })

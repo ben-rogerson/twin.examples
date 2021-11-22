@@ -6,7 +6,7 @@
 npx degit https://github.com/ben-rogerson/twin.examples/vite-emotion-typescript folder-name
 ```
 
-From within the new folder, run `npm install`, then `npm start` to start the dev server.
+From within the new folder, run `yarn`, then `yarn start` to start the dev server.
 
 [](#table-of-contents)
 
@@ -30,22 +30,6 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
 Install Vite
 
 ```shell
-npm init @vitejs/app my-vite-app -- --template react-ts
-```
-
-Install the dependencies
-
-```shell
-npm install @emotion/react @emotion/styled
-npm install --save-dev twin.macro vite-plugin-babel-macros tailwindcss
-```
-
-<details>
-  <summary>Install with Yarn</summary>
-
-Install Vite
-
-```shell
 yarn create @vitejs/app my-vite-app --template react-ts
 ```
 
@@ -53,7 +37,23 @@ Install the dependencies
 
 ```shell
 yarn add @emotion/react @emotion/styled
-yarn add twin.macro vite-plugin-babel-macros tailwindcss -D
+yarn add --dev twin.macro @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros tailwindcss -D
+```
+
+<details>
+  <summary>Install with npm</summary>
+
+Install Vite
+
+```shell
+npm init @vitejs/app my-vite-app -- --template react-ts
+```
+
+Install the dependencies
+
+```shell
+npm install @emotion/react @emotion/styled
+npm install --save-dev twin.macro @emotion/babel-plugin-jsx-pragmatic babel-plugin-macros tailwindcss
 ```
 
 </details>
@@ -72,12 +72,12 @@ import React from 'react'
 import { Global } from '@emotion/react'
 import tw, { css, theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-const customStyles = css`
-  body {
-    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
-    ${tw`antialiased`}
-  }
-`
+const customStyles = css({
+  body: {
+    '-webkit-tap-highlight-color': theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+})
 
 const GlobalStyles = () => (
   <>
@@ -140,21 +140,34 @@ Note: The preset gets set to 'emotion' by default, so adding the config is only 
 Add the following to your vite config:
 
 ```js
-// vite.config.json
+// vite.config.ts
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react-refresh'
-import macrosPlugin from 'vite-plugin-babel-macros'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  esbuild: {
-    jsxFactory: 'jsx',
-    jsxInject: 'import { jsx } from "@emotion/react"',
-  },
-  plugins: [reactRefresh(), macrosPlugin()],
-  define: {
-    'process.env': {},
-  },
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          'babel-plugin-macros',
+          [
+            '@emotion/babel-plugin-jsx-pragmatic',
+            {
+              export: 'jsx',
+              import: '__cssprop',
+              module: '@emotion/react',
+            },
+          ],
+          [
+            '@babel/plugin-transform-react-jsx',
+            { pragma: '__cssprop' },
+            'twin.macro',
+          ],
+        ],
+      },
+    }),
+  ],
 })
 ```
 
@@ -173,11 +186,11 @@ yarn add @types/react -D
 Then create a file in `types/twin.d.ts` and add these declarations:
 
 ```typescript
-// twin.d.ts
+// types/twin.d.ts
 import 'twin.macro'
-import styledImport from '@emotion/styled'
 import { css as cssImport } from '@emotion/react'
 import { CSSInterpolation } from '@emotion/serialize'
+import styledImport from '@emotion/styled'
 
 declare module 'twin.macro' {
   // The styled and css imports
@@ -189,10 +202,12 @@ declare module 'react' {
   // The css prop
   interface HTMLAttributes<T> extends DOMAttributes<T> {
     css?: CSSInterpolation
+    tw?: string
   }
   // The inline svg css prop
   interface SVGProps<T> extends SVGProps<SVGSVGElement> {
     css?: CSSInterpolation
+    tw?: string
   }
 }
 ```
@@ -201,24 +216,14 @@ Then add the following to your `tsconfig.json`:
 
 ```json
 {
+  // ...
   "compilerOptions": {
+    // ...
+    "skipLibCheck": true,
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["types"]
+  "include": ["src", "types"]
 }
-```
-
-The types are now added for these imports:
-
-```typescript
-import { css, styled } from 'twin.macro'
-```
-
-And these props:
-
-```typescript
-<div tw="">
-<div css={}>
 ```
 
 [](#customization)
