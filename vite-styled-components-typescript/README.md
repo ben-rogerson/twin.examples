@@ -207,15 +207,15 @@ declare global {
 
 Then add the following in your typescript config:
 
-```typescript
+```json
 // tsconfig.json
 {
   // ...
-  "skipLibCheck": true,
-  "include": [
-    "src",
-    "types"
-  ]
+  "compilerOptions": {
+    // ...
+    "skipLibCheck": true
+  },
+  "include": ["src", "types"]
 }
 ```
 
