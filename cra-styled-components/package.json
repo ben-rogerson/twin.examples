@@ -1,7 +1,8 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "autoCssProp": false
     }
   },
   "scripts": {
@@ -11,14 +12,14 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.2",
-    "styled-components": "5.2.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "styled-components": "5.3.3"
   },
   "devDependencies": {
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.3.0"
+    "tailwindcss": "^2.2.19",
+    "twin.macro": "^2.8.1"
   },
   "browserslist": [
     ">0.2%",
