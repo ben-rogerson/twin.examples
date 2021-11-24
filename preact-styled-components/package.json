@@ -1,25 +1,27 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components"
+      "preset": "styled-components",
+      "autoCssProp": false
     }
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
-    "serve": "preact build && preact serve",
+    "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch"
   },
   "dependencies": {
-    "preact": "^10.5.12",
-    "styled-components": "^5.2.1"
+    "preact": "^10.6.0",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "babel-plugin-macros": "^3.0.1",
+    "@babel/core": "^7.16.0",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.0.1",
     "if-env": "^1.0.4",
-    "preact-cli": "^3.0.5",
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.3.0"
+    "preact-cli": "^3.3.2",
+    "sirv-cli": "^1.0.14",
+    "tailwindcss": "^2.2.19",
+    "twin.macro": "^2.8.1"
   }
 }
