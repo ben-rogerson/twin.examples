@@ -37,7 +37,7 @@ Install the dependencies
 
 ```shell
 npm install styled-components
-npm install -D twin.macro tailwindcss babel-plugin-styled-components babel-plugin-macros react-is
+npm install -D twin.macro tailwindcss babel-plugin-macros
 ```
 
 <details>
@@ -51,7 +51,7 @@ Install the dependencies
 
 ```shell
 yarn add styled-components
-yarn add twin.macro tailwindcss babel-plugin-styled-components babel-plugin-macros react-is --dev
+yarn add twin.macro tailwindcss babel-plugin-macros --dev
 ```
 
 </details>
@@ -117,6 +117,7 @@ a) Either in `babel-plugin-macros.config.js`:
 module.exports = {
   twin: {
     preset: 'styled-components',
+    autoCssProp: false,
   },
 }
 ```
@@ -127,7 +128,8 @@ b) Or in `package.json`:
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": "styled-components"
+    "preset": "styled-components",
+    "autoCssProp": false
   }
 },
 ```
@@ -140,7 +142,10 @@ Add this babel configuration in `.babelrc.js`:
 // In .babelrc.js
 module.exports = {
   presets: [['next/babel', { 'preset-react': { runtime: 'automatic' } }]],
-  plugins: ['babel-plugin-macros', ['styled-components', { ssr: true }]],
+  plugins: [
+    'babel-plugin-macros',
+    ['babel-plugin-styled-components', { ssr: true }],
+  ],
 }
 ```
 
