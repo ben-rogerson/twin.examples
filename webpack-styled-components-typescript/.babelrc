@@ -1,7 +1,16 @@
 {
   "presets": [
-    ["@babel/preset-react", { "runtime": "automatic" }],
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
     "@babel/preset-typescript"
   ],
-  "plugins": ["babel-plugin-twin", "babel-plugin-macros", "styled-components"]
+  "plugins": [
+    "babel-plugin-twin",
+    "babel-plugin-macros",
+    "babel-plugin-styled-components"
+  ]
 }
