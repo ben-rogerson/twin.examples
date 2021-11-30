@@ -21,6 +21,8 @@ type TransitionProps = {
   children: React.ReactNode
   show?: boolean
   as?: React.ElementType
+  appear?: boolean
+  unmount?: boolean
 } & TransitionEvents
 
 export default function Transition(props: TransitionProps) {
