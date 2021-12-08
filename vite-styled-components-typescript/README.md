@@ -128,8 +128,7 @@ b) Or in `package.json`:
 // package.json
 "babelMacros": {
   "twin": {
-    "preset": "styled-components",
-    "autoCssProp": false
+    "preset": "styled-components"
   }
 },
 ```

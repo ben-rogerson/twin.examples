@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        "babel-plugin-macros",
+        "babel-plugin-styled-components"
+    ],
+    "presets": [
+        [
+            "babel-preset-gatsby",
+            {
+                "targets": {
+                    "browsers": [
+                        ">0.25%",
+                        "not dead"
+                    ]
+                }
+            }
+        ]
+    ]
+}

@@ -1,8 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components",
-      "autoCssProp": false
+      "preset": "styled-components"
     }
   },
   "scripts": {
@@ -22,6 +21,6 @@
     "preact-cli": "^3.3.2",
     "sirv-cli": "^1.0.14",
     "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.1"
+    "twin.macro": "^2.8.2"
   }
 }

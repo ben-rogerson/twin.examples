@@ -1,8 +1,7 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "styled-components",
-      "autoCssProp": false
+      "preset": "styled-components"
     }
   },
   "scripts": {
@@ -19,7 +18,7 @@
   },
   "devDependencies": {
     "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.1"
+    "twin.macro": "^2.8.2"
   },
   "browserslist": [
     ">0.2%",

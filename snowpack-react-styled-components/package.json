@@ -9,14 +9,15 @@
     "build": "snowpack build"
   },
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@snowpack/app-scripts-react": "^2.0.0",
-    "snowpack": "^3.0.13",
-    "tailwindcss": "^2.0.3",
-    "twin.macro": "^2.3.0"
+    "@snowpack/app-scripts-react": "^2.0.1",
+    "babel-plugin-styled-components": "^2.0.2",
+    "snowpack": "^3.8.8",
+    "tailwindcss": "^2.2.19",
+    "twin.macro": "^2.8.2"
   }
 }
