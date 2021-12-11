@@ -60,9 +60,33 @@ yarn add -D twin.macro tailwindcss @emotion/babel-plugin babel-plugin-macros
 
 Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
 
-The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
+The `GlobalStyles` import adds these base styles, some @keyframes for animations, and some global css variables.
 
-You can add Twin’s `GlobalStyles` import in `pages/_app.js`:
+You can import `GlobalStyles` within a new file placed in `styles/GlobalStyles.js`:
+
+```js
+// styles/GlobalStyles.js
+import { Global, css } from '@emotion/react'
+import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
+
+const customStyles = css({
+  body: {
+    WebkitTapHighlightColor: theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+})
+
+const GlobalStyles = () => (
+  <>
+    <BaseStyles />
+    <Global styles={customStyles} />
+  </>
+)
+
+export default GlobalStyles
+```
+
+Then import the GlobalStyles file in `pages/_app.js`:
 
 ```js
 // pages/_app.js
