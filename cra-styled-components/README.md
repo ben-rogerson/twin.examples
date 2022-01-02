@@ -4,18 +4,15 @@ This example shows how to use CRA with twin.
 
 **Important**
 
-To use the css or tw props for styling (opposed to strictly style component styling), you’ll need to import styled components in every file. This is the technique this example repo uses.
+To use the css or tw props for styling (opposed to strictly style component styling), you’ll need to import styled components in every file. This is the technique this example repo uses:
 
 ```js
 import 'styled-components/macro'
 ```
 
-But to avoid this import annoyance, you can install [`babel-plugin-styled-components`](https://github.com/styled-components/babel-plugin-styled-components) and add it to your babel config. By default, CRA doesn't allow us to change the babel config, so here are some options:
+To avoid this import annoyance, you can install [`babel-plugin-styled-components`](https://github.com/styled-components/babel-plugin-styled-components) and add it to your babel config... but there’s a catch. 
 
-**Option 1:** Turn off the autoCssProp in your Twin config: `{ autoCssProp: false }`
-Add an import to every file using twin: `import 'styled-components/macro'`
-
-**Option 2:** Use a cra plugin that lets you adjust the babel config without ejecting:
+By default, CRA doesn't allow us to change the babel config but we can install a cra plugin to allow a custom babel config without ejecting:
 [craco](https://github.com/gsoft-inc/craco) / [react-app-rewired](https://github.com/timarney/react-app-rewired).
 Once that's setup, add `babel-plugin-styled-components` to your babel config.
 
