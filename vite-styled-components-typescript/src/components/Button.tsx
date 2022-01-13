@@ -10,7 +10,7 @@ const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
   tw`px-8 py-2 rounded focus:outline-none transform duration-75`,
 
   // Use the variant grouping feature to add variants to multiple classes
-  tw`hocus:(scale-105 text-yellow-400)`,
+  tw`focus:(scale-105 text-yellow-400)`,
 
   // Use props to conditionally style your components
   variant === 'primary' && tw`bg-black text-white border-black`,
