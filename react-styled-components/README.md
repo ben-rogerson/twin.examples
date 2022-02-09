@@ -1,12 +1,14 @@
 <p><img src="https://i.imgur.com/zxO2ib2.png" alt="twin, react, styled-components" width="500"></p>
 
+This example uses [Parcel 2](https://parceljs.org/) to build a [React](https://reactjs.org/) App styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [styled-components](https://styled-components.com/).
+
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/react-styled-components folder-name
 ```
 
-From within the new folder, run `npm install`, then `npm start` to start the dev server.
+From within the new folder, install run `npm install`/`yarn`, then `npm start`/`yarn start` to start the dev server.
 
 [](#table-of-contents)
 
@@ -26,29 +28,17 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
 
 ### Installation
 
-React and Babel
-
 ```shell
-npm install react react-dom @babel/core @babel/plugin-transform-react-jsx
-```
-
-Twin and styled-components
-
-```shell
-npm install twin.macro tailwindcss styled-components
+npm install react react-dom styled-components
+npm install -D @babel/core @babel/plugin-transform-react-jsx twin.macro tailwindcss babel-plugin-styled-components
 ```
 
 <details>
   <summary>Install with Yarn</summary>
 
 ```shell
-yarn add react react-dom @babel/core @babel/plugin-transform-react-jsx
-```
-
-Twin and styled-components
-
-```shell
-yarn add twin.macro tailwindcss styled-components
+yarn add react react-dom styled-components
+yarn add @babel/core @babel/plugin-transform-react-jsx twin.macro tailwindcss babel-plugin-styled-components -D
 ```
 
 </details>
@@ -67,12 +57,12 @@ import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-const CustomStyles = createGlobalStyle`
-  body {
-    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
-    ${tw`antialiased`}
-  }
-`
+const CustomStyles = createGlobalStyle({
+  body: {
+    WebkitTapHighlightColor: theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+})
 
 const GlobalStyles = () => (
   <>
@@ -136,6 +126,7 @@ b) Or in `package.json`:
 {
   "plugins": [
     "babel-plugin-macros",
+    "babel-plugin-styled-components",
     "@babel/plugin-transform-react-jsx",
   ]
 }
