@@ -6,7 +6,7 @@
     }
   },
   "scripts": {
-    "dev": "NODE_ENV=development vite",
+    "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
