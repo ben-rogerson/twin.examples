@@ -3,7 +3,7 @@ import { css as cssImport } from '@stitches/react'
 import styledImport from '@stitches/react'
 
 // Support a css prop when used with twins styled.div({}) syntax
-type CSSProp<T = AnyIfEmpty<DefaultTheme>> = string | CSSObject;
+type CSSProp<T = AnyIfEmpty<DefaultTheme>> = string | CSSObject
 
 declare module 'react' {
   // The css prop
@@ -27,6 +27,7 @@ type StyledTags = {
 
 declare module 'twin.macro' {
   // The styled and css imports
-  const styled: typeof StyledTags | typeof styledImport 
+  const styled: StyledTags & typeof styledImport
   const css: typeof cssImport
 }
+
