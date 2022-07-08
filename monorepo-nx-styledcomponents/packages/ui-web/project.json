@@ -1,0 +1,60 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ui-web",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "packages/ui-web",
+        "outputPath": "dist/packages/ui-web"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ui-web:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ui-web:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "ui-web:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "ui-web:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/ui-web"],
+      "options": {
+        "jestConfig": "packages/ui-web/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/ui-web/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}
