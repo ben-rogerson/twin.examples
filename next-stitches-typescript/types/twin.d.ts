@@ -1,5 +1,6 @@
 import 'twin.macro'
 import { css as cssImport } from '@stitches/react'
+import type { CSS as StitchesCSS } from '@stitches/react'
 import type StyledComponent from '@stitches/react/types/styled-component'
 import type Util from '@stitches/react/types/util'
 import type CSSUtil from '@stitches/react/types/css-util'
@@ -10,7 +11,7 @@ import {
 } from '../stitches.config'
 
 // Support a css prop when used with twins styled.div({}) syntax
-type CSSProp<T = AnyIfEmpty<DefaultTheme>> = string | CSSObject
+type CSSProp = StitchesCSS<typeof config>
 
 type Media = typeof config.media
 type Theme = typeof config.theme
