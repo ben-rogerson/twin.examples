@@ -2,7 +2,14 @@
 
 The example is a monorepo using Nx, Typescript, Next for the package `ui-web` (the website that can use TailwindCSS) and the components package using Styled Components, TailwindCSS and Twin (npm package called `twin.macro`).
 
-## Steps
+## Run the example
+
+1. Go inside the folder `monorepo-nx-styledcomponents`. 
+2. Install the packages with `npm i`.
+3. Run the web with `npm run web` to run the local Nx. If you have Nx installed globally, you can run `nx run ui-web:serve`.
+4. Open a new tab on your browser with the URL `localhost:4200`.
+
+## Steps to do it yourself
 
 ### Installation 
 1. Install Nx globally with `npm i -g nx@latest` to run the NX scripts for this example.
