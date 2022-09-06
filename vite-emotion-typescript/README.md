@@ -94,16 +94,17 @@ Then import the GlobalStyles file in `src/main.tsx`:
 ```typescript
 // src/main.tsx
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container!)
+root.render(
   <React.StrictMode>
     <GlobalStyles />
     <App />
   </React.StrictMode>,
-  document.getElementById('root'),
 )
 ```
 
@@ -146,6 +147,15 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2020',
+    },
+  },
+  esbuild: {
+    // https://github.com/vitejs/vite/issues/8644#issuecomment-1159308803
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  },
   plugins: [
     react({
       babel: {
@@ -189,8 +199,8 @@ Then create a file in `types/twin.d.ts` and add these declarations:
 // types/twin.d.ts
 import 'twin.macro'
 import { css as cssImport } from '@emotion/react'
-import { CSSInterpolation } from '@emotion/serialize'
 import styledImport from '@emotion/styled'
+import { CSSInterpolation } from '@emotion/serialize'
 
 declare module 'twin.macro' {
   // The styled and css imports
@@ -199,15 +209,9 @@ declare module 'twin.macro' {
 }
 
 declare module 'react' {
-  // The css prop
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSInterpolation
+  interface DOMAttributes<T> {
     tw?: string
-  }
-  // The inline svg css prop
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
     css?: CSSInterpolation
-    tw?: string
   }
 }
 ```
@@ -216,9 +220,7 @@ Then add the following to your `tsconfig.json`:
 
 ```json
 {
-  // ...
   "compilerOptions": {
-    // ...
     "skipLibCheck": true,
     "jsxImportSource": "@emotion/react"
   },

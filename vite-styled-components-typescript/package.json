@@ -11,20 +11,20 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "@types/styled-components": "^5.1.17",
-    "@vitejs/plugin-react": "^1.1.1",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
+    "@vitejs/plugin-react": "^2.1.0",
     "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-styled-components": "^2.0.2",
-    "tailwindcss": "^2.2.19",
-    "twin.macro": "2.8.2",
-    "typescript": "^4.5.2",
-    "vite": "^2.7.1"
+    "babel-plugin-styled-components": "^2.0.7",
+    "tailwindcss": "^3.1.8",
+    "twin.macro": "^2.8.2",
+    "typescript": "^4.8.2",
+    "vite": "^3.1.0"
   }
 }

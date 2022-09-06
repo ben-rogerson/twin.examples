@@ -93,16 +93,17 @@ Then import the GlobalStyles file in `src/main.tsx`:
 ```js
 // src/main.tsx
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container!)
+root.render(
   <React.StrictMode>
     <GlobalStyles />
     <App />
   </React.StrictMode>,
-  document.getElementById('root'),
 )
 ```
 
@@ -117,7 +118,6 @@ a) Either in `babel-plugin-macros.config.js`:
 module.exports = {
   twin: {
     preset: 'styled-components',
-    autoCssProp: false,
   },
 }
 ```
@@ -144,6 +144,15 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2020',
+    },
+  },
+  esbuild: {
+    // https://github.com/vitejs/vite/issues/8644#issuecomment-1159308803
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  },
   plugins: [
     react({
       babel: {
@@ -209,9 +218,7 @@ Then add the following in your typescript config:
 ```json
 // tsconfig.json
 {
-  // ...
   "compilerOptions": {
-    // ...
     "skipLibCheck": true
   },
   "include": ["src", "types"]

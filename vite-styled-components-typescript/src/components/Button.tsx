@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
   // The common button styles
-  tw`px-8 py-2 rounded focus:outline-none transform duration-75`,
+  tw`px-8 py-2 rounded transform duration-75`,
 
   // Use the variant grouping feature to add variants to multiple classes
   tw`hocus:(scale-105 text-yellow-400)`,
