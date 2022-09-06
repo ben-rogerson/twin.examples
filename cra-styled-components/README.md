@@ -10,7 +10,7 @@ To use the css or tw props for styling (opposed to strictly style component styl
 import 'styled-components/macro'
 ```
 
-To avoid this import annoyance, you can install [`babel-plugin-styled-components`](https://github.com/styled-components/babel-plugin-styled-components) and add it to your babel config... but there’s a catch. 
+To avoid this import annoyance, you can install [`babel-plugin-styled-components`](https://github.com/styled-components/babel-plugin-styled-components) and add it to your babel config... but there’s a catch.
 
 By default, CRA doesn't allow us to change the babel config but we can install a cra plugin to allow a custom babel config without ejecting:
 [craco](https://github.com/gsoft-inc/craco) / [react-app-rewired](https://github.com/timarney/react-app-rewired).
@@ -108,16 +108,17 @@ Then import the GlobalStyles file in `src/index.js`:
 ```js
 // src/index.js
 import React from 'react'
-import ReactDOM from 'react-dom'
 import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
+import { createRoot } from 'react-dom/client'
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container)
+root.render(
   <React.StrictMode>
     <GlobalStyles />
     <App />
   </React.StrictMode>,
-  document.getElementById('root'),
 )
 ```
 
@@ -132,7 +133,6 @@ a) Either in `babel-plugin-macros.config.js`:
 module.exports = {
   twin: {
     preset: 'styled-components',
-    autoCssProp: false,
   },
 }
 ```

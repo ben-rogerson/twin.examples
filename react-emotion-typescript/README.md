@@ -78,21 +78,22 @@ const GlobalStyles = () => (
 export default GlobalStyles
 ```
 
-Then import the GlobalStyles file in `src/main.tsx`:
+Then import the GlobalStyles file in `src/index.tsx`:
 
 ```typescript
-// src/main.tsx
+// src/index.tsx
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import GlobalStyles from './styles/GlobalStyles'
 import App from './App'
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container!)
+root.render(
   <React.StrictMode>
     <GlobalStyles />
     <App />
   </React.StrictMode>,
-  document.getElementById('root'),
 )
 ```
 
@@ -205,10 +206,10 @@ yarn add @types/react -D
 Then create a file in `types/twin.d.ts` and add these declarations:
 
 ```typescript
-// twin.d.ts
+// types/twin.d.ts
 import 'twin.macro'
-import styledImport from '@emotion/styled'
 import { css as cssImport } from '@emotion/react'
+import styledImport from '@emotion/styled'
 import { CSSInterpolation } from '@emotion/serialize'
 
 declare module 'twin.macro' {
@@ -218,12 +219,9 @@ declare module 'twin.macro' {
 }
 
 declare module 'react' {
-  // The css prop
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSInterpolation
-  }
-  // The inline svg css prop
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
+  // The tw and css prop
+  interface DOMAttributes<T> {
+    tw?: string
     css?: CSSInterpolation
   }
 }
@@ -243,7 +241,7 @@ Then add the following to your `tsconfig.json`:
 The types are now added for these imports:
 
 ```typescript
-import { css, styled } from 'twin.macro'
+import tw, { css, styled } from 'twin.macro'
 ```
 
 And these props:

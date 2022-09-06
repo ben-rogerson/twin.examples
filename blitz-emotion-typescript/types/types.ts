@@ -1,5 +1,5 @@
-import { DefaultCtx } from "blitz"
+import { Ctx as BlitzCtx } from 'blitz'
 
-declare module "blitz" {
-  export interface Ctx extends DefaultCtx {}
+declare module 'blitz' {
+  export interface Ctx extends BlitzCtx {}
 }

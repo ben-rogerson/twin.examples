@@ -9,21 +9,21 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-0",
-    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
-    "@types/react": "^17.0.21",
-    "@types/react-dom": "^17.0.9",
+    "@babel/core": "^7.19.0",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
-    "parcel-bundler": "^1.12.4",
-    "tailwindcss": "^2.2.15",
-    "twin.macro": "^2.7.0",
-    "typescript": "^4.4.3"
+    "parcel-bundler": "^1.12.5",
+    "tailwindcss": "^3.1.8",
+    "twin.macro": "^2.8.2",
+    "typescript": "^4.8.2"
   }
 }

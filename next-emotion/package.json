@@ -10,17 +10,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/css": "^11.5.0",
-    "@emotion/react": "^11.5.0",
-    "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/css": "^11.10.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.4",
     "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.1"
+    "@babel/core": "^7.19.0",
+    "tailwindcss": "^3.1.8",
+    "twin.macro": "^2.8.2"
   }
 }

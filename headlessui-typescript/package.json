@@ -9,24 +9,25 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "@headlessui/react": "^1.4.2",
-    "@heroicons/react": "^1.0.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-use": "^17.3.1"
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use": "^17.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@emotion/babel-preset-css-prop": "^11.2.0",
-    "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.11",
+    "@babel/core": "^7.19.0",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
-    "parcel": "^2.0.1",
-    "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.1",
-    "typescript": "^4.4.4"
+    "parcel": "^2.7.0",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.1.8",
+    "twin.macro": "^2.8.2",
+    "typescript": "^4.8.2"
   }
 }

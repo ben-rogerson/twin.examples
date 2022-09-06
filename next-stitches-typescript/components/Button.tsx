@@ -2,7 +2,7 @@ import tw, { styled, theme } from 'twin.macro'
 
 const Button = styled.button({
   // Add classes with the tw import and spread syntax
-  ...tw`px-8 py-2 rounded transform duration-75 outline-none focus:outline-none`,
+  ...tw`px-8 py-2 rounded transform duration-75`,
 
   // Use the variant grouping feature to add variants to multiple classes
   ...tw`hocus:(scale-105 text-yellow-300)`, // hocus = hover + focus

@@ -10,20 +10,21 @@
     "start": "blitz start"
   },
   "dependencies": {
-    "@emotion/react": "11.7.0",
-    "@emotion/server": "11.4.0",
-    "@emotion/styled": "11.6.0",
-    "blitz": "0.44.3",
-    "react": "18.0.0-beta-149b420f6-20211119",
-    "react-dom": "18.0.0-alpha-5ca4b0433-20211020"
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.4",
+    "blitz": "2.0.0-beta.3",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@emotion/babel-preset-css-prop": "^11.2.0",
-    "@emotion/css": "^11.5.0",
-    "@types/react": "17.0.37",
-    "babel-plugin-macros": "3.1.0",
-    "babel-plugin-twin": "1.0.2",
-    "twin.macro": "2.8.2",
-    "typescript": "~4.5"
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@emotion/css": "^11.10.0",
+    "@types/react": "^18.0.18",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-twin": "^1.0.2",
+    "twin.macro": "^2.8.2",
+    "typescript": "~4.8.2"
   }
 }
