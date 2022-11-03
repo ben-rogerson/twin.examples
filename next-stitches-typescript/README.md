@@ -205,6 +205,20 @@ export default class Document extends NextDocument {
 }
 ```
 
+If you are using NextJS version 13 you the `_document.tsx` file looks slightly different to the above example. To get this to work as expected you want to make sure the first few lines look like the below example. 
+
+
+```typescript
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { getCssText } from '../stitches.config'
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: any) {
+    try {
+      const initialProps = await Document.getInitialProps(ctx)
+```
+
+
 ### Complete the TypeScript setup
 
 Because twin routes the `styled` and `css`, you’ll need complete the typescript setup.
