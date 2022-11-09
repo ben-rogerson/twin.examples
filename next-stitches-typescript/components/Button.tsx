@@ -23,8 +23,8 @@ const Button = styled.button({
         border-2 border-yellow-500
         focus:(ring-2 ring-purple-400)
 
-        // Use short css to combine tailwind classes with regular css
-        box-shadow[0 0.1em 0 0 rgba(0, 0, 0, 0.25)]
+        // Use arbitrary properties for any custom css
+        [box-shadow:0 0.15em 0 0 rgba(0, 0, 0, 0.25)]
       `,
     },
     // Boolean props can be styled too, eg: <div isSmall /> / <div isSmall={false} />

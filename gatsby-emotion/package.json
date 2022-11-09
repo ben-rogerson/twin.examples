@@ -12,15 +12,15 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "gatsby": "^4.22.0",
-    "gatsby-plugin-emotion": "^7.22.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "gatsby": "^4.24.7",
+    "gatsby-plugin-emotion": "^7.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "tailwindcss": "^3.1.8",
-    "twin.macro": "^2.8.2"
+    "tailwindcss": "^3.2.2",
+    "twin.macro": "^3.0.0"
   }
 }

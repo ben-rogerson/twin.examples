@@ -13,18 +13,18 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@types/react": "^18.0.18",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-react": "^2.1.0",
+    "@vitejs/plugin-react": "^2.2.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.0.7",
-    "tailwindcss": "^3.1.8",
-    "twin.macro": "^2.8.2",
-    "typescript": "^4.8.2",
-    "vite": "^3.1.0"
+    "tailwindcss": "^3.2.2",
+    "twin.macro": "^3.0.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.3"
   }
 }

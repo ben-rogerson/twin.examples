@@ -26,7 +26,7 @@ Install the dependencies
 
 ```shell
 npm install @emotion/react @emotion/styled @emotion/server
-npm install -D twin.macro babel-plugin-macros @emotion/babel-preset-css-prop
+npm install -D twin.macro tailwindcss babel-plugin-macros @emotion/babel-preset-css-prop
 ```
 
 <details>
@@ -34,7 +34,7 @@ npm install -D twin.macro babel-plugin-macros @emotion/babel-preset-css-prop
 
 ```shell
 yarn add @emotion/react @emotion/styled @emotion/server
-yarn add twin.macro babel-plugin-macros @emotion/babel-preset-css-prop -D
+yarn add twin.macro tailwindcss babel-plugin-macros @emotion/babel-preset-css-prop -D
 ```
 
 </details>

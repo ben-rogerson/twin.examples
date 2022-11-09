@@ -24,7 +24,8 @@
     "@types/react": "^18.0.18",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
-    "twin.macro": "^2.8.2",
+    "tailwindcss": "^3.2.2",
+    "twin.macro": "^3.0.0",
     "typescript": "~4.8.2"
   }
 }

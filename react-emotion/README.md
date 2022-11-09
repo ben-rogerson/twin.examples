@@ -35,7 +35,7 @@ npm install react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babe
 Twin and Emotion
 
 ```shell
-npm install twin.macro @emotion/react @emotion/styled
+npm install twin.macro tailwindcss @emotion/react @emotion/styled
 ```
 
 <details>
@@ -50,7 +50,7 @@ yarn add react react-dom @babel/core @emotion/babel-plugin-jsx-pragmatic babel-p
 Twin and Emotion
 
 ```shell
-yarn add twin.macro @emotion/react @emotion/styled
+yarn add twin.macro tailwindcss @emotion/react @emotion/styled
 ```
 
 </details>
