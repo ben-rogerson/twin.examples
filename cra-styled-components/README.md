@@ -16,6 +16,20 @@ By default, CRA doesn't allow us to change the babel config but we can install a
 [craco](https://github.com/gsoft-inc/craco) / [react-app-rewired](https://github.com/timarney/react-app-rewired).
 Once that's setup, add `babel-plugin-styled-components` to your babel config.
 
+Note: Make sure it's added after `babel-plugin-macros`:
+
+```js
+// .babelrc
+{
+  // ...
+  "plugins": [
+    // "babel-plugin-twin", // < If using
+    "babel-plugin-macros",
+    "babel-plugin-styled-components"
+  ]
+}
+```
+
 ---
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
