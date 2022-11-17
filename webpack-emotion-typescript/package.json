@@ -1,7 +1,8 @@
 {
   "babelMacros": {
     "twin": {
-      "preset": "emotion"
+      "preset": "emotion",
+      "hasLogColors": false
     }
   },
   "scripts": {
