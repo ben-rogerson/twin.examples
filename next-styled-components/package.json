@@ -1,22 +1,25 @@
 {
-  "babelMacros": {
-    "twin": {
-      "preset": "styled-components"
-    }
-  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "export": "next build && next start"
   },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
   "dependencies": {
-    "next": "latest",
+    "next": "^13.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "5.3.6"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.18.6",
+    "@babel/plugin-syntax-typescript": "^7.20.0",
+    "babel-loader": "^9.1.0",
     "babel-plugin-macros": "^3.1.0",
     "tailwindcss": "^3.2.2",
     "twin.macro": "^3.0.0"
