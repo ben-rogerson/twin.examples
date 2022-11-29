@@ -1,27 +1,27 @@
 import tw from 'twin.macro'
 import React, { Fragment, useState } from 'react'
-import { Listbox } from '@headlessui/react'
+import { Combobox } from '@headlessui/react'
 import Icons from './Icons'
 import Transition from './Transition'
 
 /**
- * HeadlessUI "Listbox (Select)"
+ * HeadlessUI "Combobox (Autocomplete)"
  * Customized for twin.macro + typescript
- * https://headlessui.dev/react/listbox
+ * https://headlessui.com/react/combobox
  */
 
-type ListboxOption = { name: string }
+type ComboboxOption = { name: string }
 
 type SelectProps = {
-  items: ListboxOption[]
-  listboxProps?: {
+  items: ComboboxOption[]
+  ComboboxProps?: {
     as?: React.ElementType
     disabled?: boolean
     value?: string
     onChange?: () => void
     horizontal?: boolean
   }
-  listboxOptionsProps?: {
+  ComboboxOptionsProps?: {
     as?: React.ElementType
     static?: boolean
     unmount?: undefined
@@ -36,58 +36,78 @@ type OptionProps = {
 
 export default function Select({
   items,
-  listboxProps,
-  listboxOptionsProps,
+  ComboboxProps,
+  ComboboxOptionsProps,
 }: SelectProps) {
   const [selected, setSelected] = useState(items[0])
+  const [query, setQuery] = useState('')
 
   if (items.length === 0) return null
 
+  const filteredItems =
+    query === ''
+      ? items
+      : items.filter(item =>
+          item.name
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .includes(query.toLowerCase().replace(/\s+/g, '')),
+        )
+
   return (
-    <Listbox
+    <Combobox
       value={selected}
       tw="focus-within:z-10 relative"
       onChange={setSelected}
-      {...listboxProps}
+      {...ComboboxProps}
     >
       {({ open }) => (
-        <div>
-          <Label text={selected?.name} open={open} />
-          <Transition {...transitionProps}>
-            {items.length > 0 && (
-              <Listbox.Options
+        <div tw="relative mt-1">
+          <Label open={open} setQuery={setQuery} />
+          <Transition {...transitionProps} afterLeave={() => setQuery('')}>
+            {filteredItems.length > 0 && (
+              <Combobox.Options
                 tw="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-                {...listboxOptionsProps}
+                {...ComboboxOptionsProps}
               >
-                {items.map(ListboxOption)}
-              </Listbox.Options>
+                {filteredItems.map(ComboboxOption)}
+              </Combobox.Options>
             )}
           </Transition>
         </div>
       )}
-    </Listbox>
+    </Combobox>
   )
 }
 
-function ListboxOption(item: ListboxOption, index: number) {
+function ComboboxOption(item: ComboboxOption, index: number) {
   return (
-    <Listbox.Option as={Fragment} key={index} value={item}>
+    <Combobox.Option as={Fragment} key={index} value={item}>
       {props => <Option label={item.name} {...props} />}
-    </Listbox.Option>
+    </Combobox.Option>
   )
 }
 
-function Label({ text }: { text: string; open: boolean }) {
+function Label({
+  setQuery,
+}: {
+  open: boolean
+  setQuery: (query: string) => void
+}) {
   return (
-    <Listbox.Button tw="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:(ring-2 ring-opacity-75 ring-white ring-offset-orange-300 ring-offset-2 border-indigo-500) sm:text-sm">
-      <span tw="block truncate">{text}</span>
-      <span tw="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+    <div tw="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+      <Combobox.Input
+        tw="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:(outline-none ring-0)"
+        displayValue={(i: ComboboxOption) => i.name}
+        onChange={event => setQuery(event.target.value)}
+      />
+      <Combobox.Button tw="absolute inset-y-0 right-0 flex items-center pr-2">
         <Icons.ChevronUpDownIcon
-          tw="w-5 h-5 text-gray-400"
+          tw="h-5 w-5 text-gray-400"
           aria-hidden="true"
         />
-      </span>
-    </Listbox.Button>
+      </Combobox.Button>
+    </div>
   )
 }
 
@@ -100,7 +120,7 @@ const Option = React.forwardRef(
       <div
         css={[
           tw`cursor-default select-none relative py-2 pl-10 pr-4`,
-          active ? tw`text-amber-900 bg-amber-100` : tw`text-gray-900`,
+          active ? tw`bg-teal-600 text-white` : tw`text-gray-900`,
         ]}
         ref={ref}
         {...rest}
@@ -117,7 +137,7 @@ const Option = React.forwardRef(
           <span
             css={[
               tw`absolute inset-y-0 left-0 flex items-center pl-3`,
-              active ? tw`text-amber-600` : tw`text-amber-600`,
+              active ? tw`text-white` : tw`text-teal-600`,
             ]}
           >
             <Icons.CheckIcon tw="w-5 h-5" aria-hidden="true" />

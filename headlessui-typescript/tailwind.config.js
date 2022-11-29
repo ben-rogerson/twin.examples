@@ -1,11 +1,9 @@
-const colors = require('tailwindcss/colors')
-delete colors['lightBlue'] // Fix deprecation warning
-
+// @ts-check
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     extend: {
-      colors: colors,
-      ringOffset: colors,
+      // ...
     },
   },
 }

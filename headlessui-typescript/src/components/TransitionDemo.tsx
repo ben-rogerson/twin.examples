@@ -27,7 +27,7 @@ export default function TransitionDemo() {
           setIsShowing(false)
           resetIsShowing()
         }}
-        tw="flex items-center px-3 py-2 mt-8 text-sm font-medium text-white transition transform bg-black rounded-full backface-visibility[hidden] active:bg-opacity-40 hover:(scale-105 bg-opacity-30) focus:outline-none bg-opacity-20"
+        tw="flex items-center px-3 py-2 mt-8 text-sm font-medium text-white transition transform bg-black rounded-full [backface-visibility:hidden] active:bg-opacity-40 hover:(scale-105 bg-opacity-30) focus:outline-none bg-opacity-20"
       >
         <svg viewBox="0 0 20 20" fill="none" tw="w-5 h-5 opacity-70">
           <path

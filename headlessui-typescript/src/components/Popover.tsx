@@ -1,7 +1,7 @@
 import tw from 'twin.macro'
 import React, { Fragment } from 'react'
 import { Popover as HeadlessPopover } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import Icons from './Icons'
 import Transition from './Transition'
 
 /**
@@ -117,7 +117,7 @@ function Trigger({ label, open }: TriggerProps) {
       ]}
     >
       <span>{label}</span>
-      <ChevronDownIcon
+      <Icons.ChevronDown
         css={[
           tw`ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition ease-in-out duration-150`,
           open && 'text-opacity-70',

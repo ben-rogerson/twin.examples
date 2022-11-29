@@ -3,6 +3,7 @@ import tw, { TwStyle } from 'twin.macro'
 import {
   Dropdown,
   Select,
+  Autocomplete,
   Toggle,
   Disclosure,
   Modal,
@@ -37,6 +38,17 @@ export default function Examples() {
       </Dropdown>
 
       <Select
+        items={[
+          { name: 'Wade Cooper' },
+          { name: 'Arlene Mccoy' },
+          { name: 'Devon Webb' },
+          { name: 'Tom Cook' },
+          { name: 'Tanya Fox' },
+          { name: 'Hellen Schmidt' },
+        ]}
+      />
+
+      <Autocomplete
         items={[
           { name: 'Wade Cooper' },
           { name: 'Arlene Mccoy' },
@@ -204,6 +216,11 @@ const exampleData: [string, string, TwStyle][] = [
     'Listbox (Select)',
     'https://headlessui.dev/react/listbox',
     tw`from-amber-300 to-orange-500`,
+  ],
+  [
+    'Combobox (Autocomplete)',
+    'https://headlessui.com/react/combobox',
+    tw`from-teal-400 to-cyan-400`,
   ],
   [
     'Switch (Toggle)',

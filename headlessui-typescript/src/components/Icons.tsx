@@ -1,11 +1,11 @@
 import 'twin.macro'
 import {
   CheckIcon,
-  SelectorIcon,
+  ChevronUpDownIcon,
   ChevronDownIcon,
   ChevronUpIcon,
   ChevronRightIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/20/solid'
 
 const IconsDropdown = {
   ChevronUp: ({ ariaHidden = true, ...rest }) => (
@@ -195,7 +195,10 @@ const IconsDropdown = {
   ),
 }
 
-const IconsSelect = { CheckIcon: CheckIcon, SelectorIcon }
+const IconsSelect = {
+  CheckIcon: CheckIcon,
+  ChevronUpDownIcon: ChevronUpDownIcon,
+}
 
 const Icons = { ...IconsDropdown, ...IconsSelect }
 

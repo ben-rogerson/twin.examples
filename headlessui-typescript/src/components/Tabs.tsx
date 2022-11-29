@@ -67,10 +67,10 @@ export default function Tabs({ items, tabGroupProps }: TabsProps) {
 
 function item(item: TabItem) {
   return (
-    <li key={item.id} tw="relative p-3 rounded-md hover:bg-coolGray-100">
+    <li key={item.id} tw="relative p-3 rounded-md hover:bg-gray-100">
       <h3 tw="text-sm font-medium leading-5">{item.title}</h3>
 
-      <ul tw="flex mt-1 space-x-1 text-xs font-normal leading-4 text-coolGray-500">
+      <ul tw="flex mt-1 space-x-1 text-xs font-normal leading-4 text-gray-500">
         <li>{item.date}</li>
         <li>&middot;</li>
         <li>{item.commentCount} comments</li>
