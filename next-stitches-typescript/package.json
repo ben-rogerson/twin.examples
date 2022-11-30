@@ -17,8 +17,10 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-typescript": "^7.20.0",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
+    "babel-loader": "^9.1.0",
     "babel-plugin-macros": "^3.1.0",
     "tailwindcss": "^3.2.2",
     "twin.macro": "^3.0.0",

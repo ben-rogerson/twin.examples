@@ -6,8 +6,6 @@ Download this example using [degit](https://github.com/Rich-Harris/degit):
 npx degit https://github.com/ben-rogerson/twin.examples/next-emotion-typescript folder-name
 ```
 
-Installation instructions coming soon...
-
 ## Customization
 
 - [View the config options →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/options.md)

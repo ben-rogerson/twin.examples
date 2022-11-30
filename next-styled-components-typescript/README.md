@@ -38,7 +38,7 @@ Install the dependencies
 
 ```shell
 npm install styled-components
-npm install -D twin.macro tailwindcss babel-plugin-macros @types/styled-components
+npm install -D twin.macro tailwindcss babel-plugin-macros @types/styled-components babel-loader @babel/plugin-syntax-typescript
 ```
 
 <details>
@@ -52,7 +52,7 @@ Install the dependencies
 
 ```shell
 yarn add styled-components
-yarn add twin.macro tailwindcss babel-plugin-macros @types/styled-components --dev
+yarn add twin.macro tailwindcss babel-plugin-macros @types/styled-components babel-loader @babel/plugin-syntax-typescript --dev
 ```
 
 </details>
@@ -186,19 +186,88 @@ declare global {
 }
 ```
 
-### Add the babel config
+### Add the next + babel config
 
-Add this babel configuration in `.babelrc.js`:
+Create a new file either in the root or in a `config`
+subfolder:
 
 ```js
-// In .babelrc.js
-module.exports = {
-  presets: [['next/babel', { 'preset-react': { runtime: 'automatic' } }]],
-  plugins: [
-    'babel-plugin-macros',
-    ['babel-plugin-styled-components', { ssr: true }],
-  ],
+// withTwin.js
+const path = require('path')
+
+// The folders containing files importing twin.macro
+const includedDirs = [
+  path.resolve(__dirname, 'components'),
+  path.resolve(__dirname, 'pages'),
+  path.resolve(__dirname, 'styles'),
+]
+
+module.exports = function withTwin(nextConfig) {
+  return {
+    ...nextConfig,
+    webpack(config, options) {
+      const { dev, isServer } = options
+      config.module = config.module || {}
+      config.module.rules = config.module.rules || []
+      config.module.rules.push({
+        test: /\.(tsx|ts)$/,
+        include: includedDirs,
+        use: [
+          options.defaultLoaders.babel,
+          {
+            loader: 'babel-loader',
+            options: {
+              sourceMaps: dev,
+              plugins: [
+                require.resolve('babel-plugin-macros'),
+                [
+                  require.resolve('babel-plugin-styled-components'),
+                  { ssr: true, displayName: true },
+                ],
+                [
+                  require.resolve('@babel/plugin-syntax-typescript'),
+                  { isTSX: true },
+                ],
+              ],
+            },
+          },
+        ],
+      })
+
+      if (!isServer) {
+        config.resolve.fallback = {
+          ...(config.resolve.fallback || {}),
+          fs: false,
+          module: false,
+          path: false,
+          os: false,
+          crypto: false,
+        }
+      }
+
+      if (typeof nextConfig.webpack === 'function') {
+        return nextConfig.webpack(config, options)
+      } else {
+        return config
+      }
+    },
+  }
 }
+```
+
+Then in your `next.config.js`, import and wrap the main export with `withTwin(...)`:
+
+```js
+// next.config.js
+const withTwin = require('./withTwin.js')
+
+/**
+ * @type {import('next').NextConfig}
+ */
+module.exports = withTwin({
+  reactStrictMode: true, // < Recommended by Next
+  // ...
+})
 ```
 
 ### Add the server stylesheet

@@ -37,7 +37,7 @@ Install the dependencies
 
 ```shell
 npm install styled-components
-npm install -D twin.macro tailwindcss babel-plugin-macros
+npm install -D twin.macro tailwindcss babel-plugin-macros babel-loader
 ```
 
 <details>
@@ -51,7 +51,7 @@ Install the dependencies
 
 ```shell
 yarn add styled-components
-yarn add twin.macro tailwindcss babel-plugin-macros --dev
+yarn add twin.macro tailwindcss babel-plugin-macros babel-loader --dev
 ```
 
 </details>
@@ -204,6 +204,9 @@ Then in your `next.config.js`, import and wrap the main export with `withTwin(..
 // next.config.js
 const withTwin = require('./withTwin.js')
 
+/**
+ * @type {import('next').NextConfig}
+ */
 module.exports = withTwin({
   reactStrictMode: true, // < Recommended by Next
   // ...

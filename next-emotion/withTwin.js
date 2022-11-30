@@ -15,7 +15,7 @@ module.exports = function withTwin(nextConfig) {
       config.module = config.module || {}
       config.module.rules = config.module.rules || []
       config.module.rules.push({
-        test: /\.(jsx|js)$/,
+        test: /\.js$/,
         include: includedDirs,
         use: [
           options.defaultLoaders.babel,
@@ -23,12 +23,15 @@ module.exports = function withTwin(nextConfig) {
             loader: 'babel-loader',
             options: {
               sourceMaps: dev,
+              presets: [
+                [
+                  '@babel/preset-react',
+                  { runtime: 'automatic', importSource: '@emotion/react' },
+                ],
+              ],
               plugins: [
                 require.resolve('babel-plugin-macros'),
-                [
-                  require.resolve('babel-plugin-styled-components'),
-                  { ssr: true, displayName: true },
-                ],
+                require.resolve('@emotion/babel-plugin'),
               ],
             },
           },
