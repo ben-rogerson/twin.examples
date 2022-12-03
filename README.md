@@ -27,19 +27,20 @@
 - **Preact**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/preact-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/preact-emotion) / [goober](https://github.com/ben-rogerson/twin.examples/tree/master/preact-goober)
 - **Create React App**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/cra-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/cra-emotion)
 - **Vite**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/vite-styled-components-typescript) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/vite-emotion-typescript)
+- **Jest / React Testing Library**<br/>[styled-components (ts) / emotion (ts) 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/jest-testing-next-typescript)
 
 ### Advanced frameworks
 
 - **Gatsby**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-styled-components) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/gatsby-emotion)
-- **Next.js**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components) / [styled-components (ts) 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion) / [emotion (ts) 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion-typescript) / [stitches (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/next-stitches-typescript)
-- **Blitz.js**<br/>[emotion (ts) 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/blitz-emotion-typescript)
+- **Next.js**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components) / [styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/next-styled-components-typescript) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion) / [emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/next-emotion-typescript) / [stitches (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/next-stitches-typescript)
+- **Blitz.js**<br/>[emotion (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/blitz-emotion-typescript)
 
 ### Component libraries
 
 - **Storybook**<br/>[styled-components (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-styled-components-typescript) / [emotion](https://github.com/ben-rogerson/twin.examples/tree/master/storybook-emotion)
 - **yarn/npm workspaces + Next.js + shared ui components**<br/>[styled-components](https://github.com/ben-rogerson/twin.examples/tree/master/component-library-styled-components)
 - **Yarn workspaces + Rollup**<br/>[emotion](https://github.com/ben-rogerson/twin.examples/tree/master/component-library-emotion)
-- [**HeadlessUI** (ts) 🎉](https://github.com/ben-rogerson/twin.examples/tree/master/headlessui-typescript)
+- [**HeadlessUI** (ts)](https://github.com/ben-rogerson/twin.examples/tree/master/headlessui-typescript)
 
 🎉&nbsp;: Fresh example
 
