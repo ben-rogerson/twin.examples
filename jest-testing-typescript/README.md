@@ -1,10 +1,10 @@
-# Jest + React Testing Library + Next.js + TypeScript
+# Jest + React Testing Library + TypeScript
 
 This repo shows a minimal example of how to test a Next.js app with Jest and React Testing Library.
 
-By default, `nextJest` will use the `swc` jest transformer to run over our files - we override this with `babel-jest`.
+This setup can also be used outside Next.js - just remove the next-specific parts from the config.
 
-This setup can also be used outside next - just remove the next-specific parts from the config.
+By default, `nextJest` will use the `swc` jest transformer to run over our files - we override this with `babel-jest`.
 
 ## Key files
 
