@@ -17,7 +17,7 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
   - [Add the global styles](#add-the-global-styles)
   - [SSR styles setup](#ssr-styles-setup)
   - [Add the twin config (optional)](#add-the-twin-config-optional)
-  - [Add the babel config](#add-the-babel-config)
+  - [Add the next babel config](#add-the-next-babel-config)
 - [Customization](#customization)
 - [Next steps](#next-steps)
 
@@ -180,7 +180,7 @@ b) Or in `package.json`:
 
 Note: The preset gets set to 'emotion' by default, so adding the config is only useful if you want to adjust [Twin’s other options](#twin-options).
 
-### Add the next + babel config
+### Add the next babel config
 
 Create a new file either in the root or in a `config`
 subfolder:

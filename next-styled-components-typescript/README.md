@@ -17,7 +17,7 @@ From within the new folder, run `npm install`, then `npm run dev` to start the d
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config](#add-the-twin-config)
   - [Add the TypeScript types](#add-typescript-types)
-  - [Add the babel config](#add-the-babel-config)
+  - [Add the next babel config](#add-the-next-babel-config)
   - [Add the server stylesheet](#add-the-server-stylesheet)
 - [Customization](#customization)
 - [Next steps](#next-steps)
@@ -186,7 +186,7 @@ declare global {
 }
 ```
 
-### Add the next + babel config
+### Add the next babel config
 
 Create a new file either in the root or in a `config`
 subfolder:

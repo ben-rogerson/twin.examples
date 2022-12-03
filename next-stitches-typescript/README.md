@@ -16,7 +16,7 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config](#add-the-twin-config)
-  - [Add the babel config](#add-the-babel-config)
+  - [Add the next babel config](#add-the-next-babel-config)
   - [Add the stitches config](#add-the-stitches-config)
   - [Add the server stylesheet](#add-the-server-stylesheet)
   - [Complete the TypeScript setup](#complete-the-typescript-setup)
@@ -130,16 +130,84 @@ b) Or in `package.json`:
 },
 ```
 
-### Add the babel config
+### Add the next babel config
 
-Add this babel configuration in `.babelrc.js`:
+Create a new file either in the root or in a `config`
+subfolder:
 
 ```js
-// In .babelrc.js
-module.exports = {
-  presets: ['next/babel'],
-  plugins: ['babel-plugin-macros'],
+// withTwin.js
+const path = require('path')
+
+// The folders containing files importing twin.macro
+const includedDirs = [
+  path.resolve(__dirname, 'components'),
+  path.resolve(__dirname, 'pages'),
+  path.resolve(__dirname, 'styles'),
+]
+
+module.exports = function withTwin(nextConfig) {
+  return {
+    ...nextConfig,
+    webpack(config, options) {
+      const { dev, isServer } = options
+      config.module = config.module || {}
+      config.module.rules = config.module.rules || []
+      config.module.rules.push({
+        test: /\.(tsx|ts)$/,
+        include: includedDirs,
+        use: [
+          options.defaultLoaders.babel,
+          {
+            loader: 'babel-loader',
+            options: {
+              sourceMaps: dev,
+              plugins: [
+                require.resolve('babel-plugin-macros'),
+                [
+                  require.resolve('@babel/plugin-syntax-typescript'),
+                  { isTSX: true },
+                ],
+              ],
+            },
+          },
+        ],
+      })
+
+      if (!isServer) {
+        config.resolve.fallback = {
+          ...(config.resolve.fallback || {}),
+          fs: false,
+          module: false,
+          path: false,
+          os: false,
+          crypto: false,
+        }
+      }
+
+      if (typeof nextConfig.webpack === 'function') {
+        return nextConfig.webpack(config, options)
+      } else {
+        return config
+      }
+    },
+  }
 }
+```
+
+Then in your `next.config.js`, import and wrap the main export with `withTwin(...)`:
+
+```js
+// next.config.js
+const withTwin = require('./withTwin.js')
+
+/**
+ * @type {import('next').NextConfig}
+ */
+module.exports = withTwin({
+  reactStrictMode: true, // < Recommended by Next
+  // ...
+})
 ```
 
 ### Add the stitches config

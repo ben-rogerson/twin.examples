@@ -16,7 +16,7 @@ From within the new folder, run `npm install`, then `npm start` to start the dev
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
   - [Add the twin config](#add-the-twin-config)
-  - [Add the babel config](#add-the-babel-config)
+  - [Add the next babel config](#add-the-next-babel-config)
   - [Add the server stylesheet](#add-the-server-stylesheet)
 - [Customization](#customization)
 - [Next steps](#next-steps)
@@ -132,7 +132,7 @@ b) Or in `package.json`:
 },
 ```
 
-### Add the next + babel config
+### Add the next babel config
 
 Create a new file either in the root or in a `config`
 subfolder:
