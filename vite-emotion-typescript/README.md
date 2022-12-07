@@ -30,7 +30,7 @@ From within the new folder, run `yarn`, then `yarn start` to start the dev serve
 Install Vite
 
 ```shell
-yarn create @vitejs/app my-vite-app --template react-ts
+yarn create vite my-vite-app --template react-ts
 ```
 
 Install the dependencies
@@ -46,7 +46,7 @@ yarn add --dev twin.macro @emotion/babel-plugin-jsx-pragmatic babel-plugin-macro
 Install Vite
 
 ```shell
-npm init @vitejs/app my-vite-app -- --template react-ts
+npm create vite@latest my-vite-app -- --template react-ts
 ```
 
 Install the dependencies
