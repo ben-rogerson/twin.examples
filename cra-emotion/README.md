@@ -1,4 +1,7 @@
-<p><img src="https://i.imgur.com/dn8SdzU.png" alt="twin, cra, emotion" width="500"></p>
+# Twin + Create React App + Emotion
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://create-react-app.dev/" target="_blank"><img src="../.github/create-react-app.svg" alt="Create React App" width="60" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a>
+</p>
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 

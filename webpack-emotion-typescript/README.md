@@ -1,8 +1,9 @@
-[](#webpack--emotion--typescript)
+# Twin + Webpack + Emotion + TypeScript
 
-# Webpack + Emotion + TypeScript
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://webpack.js.org/" target="_blank"><img src="../.github/webpack.svg" alt="Webpack" width="60" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a><a href="https://www.typescriptlang.org/" target="_blank"><img src="../.github/typescript.svg" alt="TypeScript" width="60" height="70"></a>
+</p>
 
-This example uses [Webpack 5](https://webpack.js.org/) to build a [React](https://reactjs.org/) App written in [TypeScript](https://www.typescriptlang.org/) and styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [Emotion](https://emotion.sh/).
+This example uses [Webpack](https://webpack.js.org/) to build a [React](https://reactjs.org/) App written in [TypeScript](https://www.typescriptlang.org/) and styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [Emotion](https://emotion.sh/).
 
 - To add the css prop, we use [@emotion/babel-preset-css-prop](https://emotion.sh/docs/@emotion/babel-preset-css-prop) and set the [jsxImportSource in tsconfig.json](https://github.com/ben-rogerson/twin.examples/blob/master/webpack-emotion-typescript/tsconfig.json).
 - The [react preset](https://github.com/ben-rogerson/twin.examples/blob/master/webpack-emotion-typescript/.babelrc) uses the automatic runtime that doesn’t require a react import to use jsx.

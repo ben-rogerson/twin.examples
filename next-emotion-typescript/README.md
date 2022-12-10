@@ -1,10 +1,15 @@
-# Next + Emotion + TypeScript
+# Twin + Next.js + Emotion + TypeScript
 
-Download this example using [degit](https://github.com/Rich-Harris/degit):
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://nextjs.org#gh-light-mode-only" target="_blank"><img src="../.github/next-light.svg" alt="Next.js" width="80" height="70"></a><a href="https://nextjs.org#gh-dark-mode-only" target="_blank"><img src="../.github/next-dark.svg" alt="Next.js" width="80" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a><a href="https://www.typescriptlang.org/" target="_blank"><img src="../.github/typescript.svg" alt="TypeScript" width="60" height="70"></a>
+</p>
+
+**Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
 ```shell
 npx degit https://github.com/ben-rogerson/twin.examples/next-emotion-typescript folder-name
 ```
+
+From within the new folder, run `npm install`, then `npm run dev` to start the dev server.
 
 ## Customization
 

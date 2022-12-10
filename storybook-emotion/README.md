@@ -1,4 +1,7 @@
-<a href="#"><img src="https://i.imgur.com/x9LMZVI.png" alt="twin, storybook, emotion" width="550"></a>
+# Twin + Storybook + Emotion
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://storybook.js.org/" target="_blank"><img src="../.github/storybook.svg" alt="Storybook" width="50" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a>
+</p>
 
 This repository demonstrates a Storybook setup with Emotion in React.
 

@@ -1,4 +1,7 @@
-# HeadlessUI Typescript
+# Twin + HeadlessUI + Typescript
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://headlessui.com/" target="_blank"><img src="../.github/headlessui.svg" alt="HeadessUI" width="50" height="70"></a><a href="https://www.typescriptlang.org/" target="_blank"><img src="../.github/typescript.svg" alt="TypeScript" width="60" height="70"></a>
+</p>
 
 This example includes customized [HeadlessUI components](https://headlessui.dev/) to copy into your twin.macro styled project.
 
@@ -8,7 +11,7 @@ This example includes customized [HeadlessUI components](https://headlessui.dev/
 
 - Usage examples are in `src/Examples.tsx`
 - Component files are in `src/components/*`
-- Used: [Parcel@v2](https://github.com/parcel-bundler/parcel), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/)
+- Used: [Parcel](https://github.com/parcel-bundler/parcel), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Emotion](https://emotion.sh/)
 - Emotion’s css prop is added with [babel-preset-css-prop](https://emotion.sh/docs/@emotion/babel-preset-css-prop)
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**

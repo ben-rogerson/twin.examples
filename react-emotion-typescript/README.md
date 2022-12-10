@@ -1,6 +1,9 @@
-<p><img src="https://i.imgur.com/oroIh1L.png" alt="twin, react, emotion, typescript" width="500"></p>
+# Twin + Parcel + Emotion + TypeScript
 
-This example uses [Parcel@v1](https://github.com/parcel-bundler/parcel) to build a [React](https://reactjs.org/) App written in [TypeScript](https://www.typescriptlang.org/) and styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [emotion](https://emotion.sh/).
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://parceljs.org/" target="_blank"><img src="../.github/parcel.svg" alt="Parcel" width="60" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a><a href="https://www.typescriptlang.org/" target="_blank"><img src="../.github/typescript.svg" alt="TypeScript" width="60" height="70"></a>
+</p>
+
+This example uses [Parcel](https://github.com/parcel-bundler/parcel) to build a [React](https://reactjs.org/) App written in [TypeScript](https://www.typescriptlang.org/) and styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [emotion](https://emotion.sh/).
 
 - To add the css prop, we pass a pragma export from [@emotion/babel-plugin-jsx-pragmatic](https://github.com/emotion-js/emotion/tree/main/packages/babel-plugin-jsx-pragmatic) into jsx via [@babel/plugin-transform-react-jsx](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx) - This avoids having to add a [JSX Pragma](https://emotion.sh/docs/css-prop) at the top of each file. The alternative is to use [@emotion/babel-preset-css-prop](https://emotion.sh/docs/@emotion/babel-preset-css-prop) but that has [issues in Parcel@v1](https://github.com/parcel-bundler/parcel/issues/2237) and will be fixed in Parcel@v2.
 - Included is the twin companion plugin, [babel-plugin-twin](https://github.com/ben-rogerson/babel-plugin-twin) which enables the tw prop without having to import twin (optional).

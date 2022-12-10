@@ -1,4 +1,7 @@
-<p><img src="https://i.imgur.com/zqspwBF.png" alt="twin, gatsby, emotion" width="500"></p>
+# Twin + Gatsby + Emotion
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://www.gatsbyjs.com/" target="_blank"><img src="../.github/gatsby.svg" alt="Gatsby" width="60" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a>
+</p>
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 

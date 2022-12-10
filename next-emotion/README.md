@@ -1,4 +1,7 @@
-<p><img src="https://i.imgur.com/rmQeDT3.png" alt="twin, next, emotion" width="500"></p>
+# Twin + Next.js + Emotion
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://nextjs.org#gh-light-mode-only" target="_blank"><img src="../.github/next-light.svg" alt="Next.js" width="80" height="70"></a><a href="https://nextjs.org#gh-dark-mode-only" target="_blank"><img src="../.github/next-dark.svg" alt="Next.js" width="80" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a>
+</p>
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
@@ -6,7 +9,7 @@
 npx degit https://github.com/ben-rogerson/twin.examples/next-emotion folder-name
 ```
 
-From within the new folder, run `npm install`, then `npm start` to start the dev server.
+From within the new folder, run `npm install`, then `npm run dev` to start the dev server.
 
 [](#table-of-contents)
 

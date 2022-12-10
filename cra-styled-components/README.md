@@ -1,6 +1,7 @@
-<p><img src="https://i.imgur.com/rgCyAUm.png" alt="twin, cra, styled-components" width="500"></p>
+# Twin + Create React App + Styled Components
 
-This example shows how to use CRA with twin.
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://create-react-app.dev/" target="_blank"><img src="../.github/create-react-app.svg" alt="Create React App" width="60" height="70"></a><a href="https://styled-components.com#gh-light-mode-only" target="_blank"><img src="../.github/styled-components-light.svg" alt="Styled components" width="105" height="70"></a><a href="https://styled-components.com#gh-dark-mode-only" target="_blank"><img src="../.github/styled-components-dark.svg" alt="Styled components" width="105" height="70"></a>
+</p>
 
 **Important**
 

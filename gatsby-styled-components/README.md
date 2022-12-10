@@ -1,4 +1,7 @@
-<p><img src="https://i.imgur.com/NF4lbSx.png" alt="twin, gatsby, styled-components" width="500"></p>
+# Twin + Gatsby + Styled Components
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://www.gatsbyjs.com/" target="_blank"><img src="../.github/gatsby.svg" alt="Gatsby" width="60" height="70"></a><a href="https://styled-components.com#gh-light-mode-only" target="_blank"><img src="../.github/styled-components-light.svg" alt="Styled components" width="105" height="70"></a><a href="https://styled-components.com#gh-dark-mode-only" target="_blank"><img src="../.github/styled-components-dark.svg" alt="Styled components" width="105" height="70"></a>
+</p>
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 

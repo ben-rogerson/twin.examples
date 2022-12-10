@@ -1,4 +1,7 @@
-<p><img src="https://i.imgur.com/AJzYKmM.png" alt="twin, next, stitches" width="500"></p>
+# Twin + Next.js + Stitches + TypeScript
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://nextjs.org#gh-light-mode-only" target="_blank"><img src="../.github/next-light.svg" alt="Next.js" width="80" height="70"></a><a href="https://nextjs.org#gh-dark-mode-only" target="_blank"><img src="../.github/next-dark.svg" alt="Next.js" width="80" height="70"></a><a href="https://stitches.dev#gh-light-mode-only" target="_blank"><img src="../.github/stitches-light.svg" alt="Stitches" width="60" height="70"></a><a href="https://stitches.dev#gh-dark-mode-only" target="_blank"><img src="../.github/stitches-dark.svg" alt="Stitches" width="60" height="70"></a><a href="https://www.typescriptlang.org/" target="_blank"><img src="../.github/typescript.svg" alt="TypeScript" width="60" height="70"></a>
+</p>
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 
@@ -6,7 +9,7 @@
 npx degit https://github.com/ben-rogerson/twin.examples/next-stitches-typescript folder-name
 ```
 
-From within the new folder, run `npm install`, then `npm start` to start the dev server.
+From within the new folder, run `npm install`, then `npm run dev` to start the dev server.
 
 [](#table-of-contents)
 

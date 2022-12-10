@@ -1,6 +1,9 @@
-<p><img src="https://i.imgur.com/zxO2ib2.png" alt="twin, react, styled-components" width="500"></p>
+# Twin + Parcel + Styled Components
 
-This example uses [Parcel 2](https://parceljs.org/) to build a [React](https://reactjs.org/) App styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [styled-components](https://styled-components.com/).
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://parceljs.org/" target="_blank"><img src="../.github/parcel.svg" alt="Parcel" width="60" height="70"></a><a href="https://styled-components.com#gh-light-mode-only" target="_blank"><img src="../.github/styled-components-light.svg" alt="Styled components" width="105" height="70"></a><a href="https://styled-components.com#gh-dark-mode-only" target="_blank"><img src="../.github/styled-components-dark.svg" alt="Styled components" width="105" height="70"></a>
+</p>
+
+This example uses [Parcel](https://parceljs.org/) to build a [React](https://reactjs.org/) App styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [styled-components](https://styled-components.com/).
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 

@@ -1,4 +1,7 @@
-<p><img src="https://i.imgur.com/TpGU8St.png" alt="twin, blitz.js, emotion, typescript" width="500"></p>
+# Twin + Blitz.js + Emotion + TypeScript
+
+<p><a href="https://github.com/ben-rogerson/twin.macro#gh-light-mode-only" target="_blank"><img src="../.github/twin-light.svg" alt="Twin" width="60" height="70"></a><a href="https://github.com/ben-rogerson/twin.macro#gh-dark-mode-only" target="_blank"><img src="../.github/twin-dark.svg" alt="Twin" width="60" height="70"></a><a href="https://blitzjs.com/" target="_blank"><img src="../.github/blitz.svg" alt="Blitz" width="51" height="70"></a><a href="https://emotion.sh/docs/introduction" target="_blank"><img src="../.github/emotion.svg" alt="Emotion" width="60" height="70"></a><a href="https://www.typescriptlang.org/" target="_blank"><img src="../.github/typescript.svg" alt="TypeScript" width="60" height="70"></a>
+</p>
 
 This example uses [Blitz.js](https://github.com/blitz-js/blitz) to build a [Next.js](https://nextjs.org/) App written in [TypeScript](https://www.typescriptlang.org/) and styled with [Twin](https://github.com/ben-rogerson/twin.macro) + [emotion](https://emotion.sh/).
 
