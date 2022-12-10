@@ -1,25 +1,35 @@
 const nextJest = require('next/jest')
 
-// const babelConfigEmotion = {
-//   presets: [
-//     [
-//       '@babel/preset-react',
-//       { runtime: 'automatic', importSource: '@emotion/react' },
-//     ],
-//   ],
+const babelConfigEmotion = {
+  presets: [
+    [
+      'next/babel',
+      {
+        'preset-react': {
+          runtime: 'automatic',
+          importSource: '@emotion/react',
+        },
+      },
+    ],
+  ],
+  plugins: [
+    require.resolve('babel-plugin-macros'),
+    require.resolve('@emotion/babel-plugin'),
+  ],
+}
+
+// const babelConfigStyledComponents = {
+//   presets: [['next/babel', { 'preset-react': { runtime: 'automatic' } }]],
 //   plugins: [
-//     require.resolve('babel-plugin-macros'),
-//     require.resolve('@emotion/babel-plugin'),
+//     'babel-plugin-macros',
+//     ['babel-plugin-styled-components', { ssr: true }],
 //   ],
 // }
 
-const babelConfigStyledComponents = {
-  presets: [['next/babel', { 'preset-react': { runtime: 'automatic' } }]],
-  plugins: [
-    'babel-plugin-macros',
-    ['babel-plugin-styled-components', { ssr: true }],
-  ],
-}
+// const babelConfigStitches = {
+//   presets: [['next/babel', { 'preset-react': { runtime: 'automatic' } }]],
+//   plugins: ['babel-plugin-macros'],
+// }
 
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 const customJestConfig = {
@@ -30,7 +40,7 @@ const customJestConfig = {
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
   },
   transform: {
-    '^.+\\.(js|jsx|ts|tsx|mjs)$': ['babel-jest', babelConfigStyledComponents],
+    '^.+\\.(js|jsx|ts|tsx|mjs)$': ['babel-jest', babelConfigEmotion],
   },
 }
 

@@ -3,7 +3,7 @@ import Test from '@/components/Test'
 
 describe('Test', () => {
   it('finds the word test', () => {
-    render(<Test />)
+    render(<Test text="test" />)
 
     const text = screen.getByText(/test/i)
 

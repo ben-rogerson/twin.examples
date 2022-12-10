@@ -20,10 +20,10 @@
     "incremental": true,
     "paths": {
       "@/components/*": [
-        "components/*"
+        "./components/*"
       ],
       "@/pages/*": [
-        "pages/*"
+        "./pages/*"
       ],
     }
   },

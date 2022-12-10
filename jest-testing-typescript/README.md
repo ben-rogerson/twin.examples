@@ -11,7 +11,7 @@ By default, `nextJest` will use the `swc` jest transformer, but here we override
 
 ## Key files
 
-- `jest.config.js`<br/>The main config - you'll see options for both `styled-components` and `emotion`.
+- `jest.config.js`<br/>The main config - you'll see options for `styled-components`, `emotion` and `stitches`.
 - `components/Test.test.tsx`<br/>A test example.
 
 ## Getting started
