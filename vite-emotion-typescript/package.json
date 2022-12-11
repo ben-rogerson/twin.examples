@@ -1,5 +1,6 @@
 {
   "name": "vite-emotion-typescript",
+  "type": "module",
   "babelMacros": {
     "twin": {
       "preset": "emotion"
