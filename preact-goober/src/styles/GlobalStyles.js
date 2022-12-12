@@ -1,18 +1,14 @@
 import { createGlobalStyles } from 'goober/global'
-import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
+import tw, { theme, globalStyles } from 'twin.macro'
+import merge from 'lodash.merge'
 
-const CustomStyles = createGlobalStyles({
+const customStyles = {
   body: {
     WebkitTapHighlightColor: theme`colors.purple.500`,
     ...tw`antialiased`,
   },
-})
+}
 
-const GlobalStyles = () => (
-  <>
-    <BaseStyles />
-    <CustomStyles />
-  </>
-)
+const GlobalStyles = createGlobalStyles(merge(globalStyles, customStyles))
 
 export default GlobalStyles

@@ -10,17 +10,17 @@
     "dev": "preact watch"
   },
   "dependencies": {
-    "preact": "^10.6.0",
-    "styled-components": "^5.3.3"
+    "preact": "^10.11.3",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
+    "@babel/core": "^7.20.5",
     "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-styled-components": "^2.0.1",
+    "babel-plugin-styled-components": "^2.0.7",
     "if-env": "^1.0.4",
-    "preact-cli": "^3.3.2",
-    "sirv-cli": "^1.0.14",
-    "tailwindcss": "^2.2.19",
-    "twin.macro": "^2.8.2"
+    "preact-cli": "^3.4.1",
+    "sirv-cli": "^2.0.2",
+    "tailwindcss": "^3.2.4",
+    "twin.macro": "^3.1.0"
   }
 }
