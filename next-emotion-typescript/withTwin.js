@@ -30,6 +30,7 @@ module.exports = function withTwin(nextConfig) {
                 ],
               ],
               plugins: [
+                require.resolve('babel-plugin-twin'),
                 require.resolve('babel-plugin-macros'),
                 require.resolve('@emotion/babel-plugin'),
                 [

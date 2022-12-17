@@ -24,6 +24,7 @@ module.exports = function withTwin(nextConfig) {
             options: {
               sourceMaps: dev,
               plugins: [
+                require.resolve('babel-plugin-twin'),
                 require.resolve('babel-plugin-macros'),
                 [
                   require.resolve('@babel/plugin-syntax-typescript'),
