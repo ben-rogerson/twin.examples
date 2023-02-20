@@ -40,7 +40,7 @@ Install the dependencies
 
 ```shell
 yarn add @emotion/react @emotion/styled
-yarn add --dev twin.macro @emotion/babel-plugin-jsx-pragmatic @babel/plugin-transform-react-jsx babel-plugin-macros tailwindcss -D
+yarn add twin.macro @emotion/babel-plugin-jsx-pragmatic @babel/plugin-transform-react-jsx babel-plugin-macros tailwindcss --dev
 ```
 
 <details>
