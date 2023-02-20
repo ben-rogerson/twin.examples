@@ -39,7 +39,7 @@ npx create-next-app
 Install the dependencies
 
 ```shell
-npm install @emotion/react @emotion/styled @emotion/css @emotion/server
+npm install @emotion/react @emotion/styled
 npm install -D twin.macro tailwindcss @emotion/babel-plugin babel-plugin-macros @babel/preset-react babel-loader babel-plugin-macros
 ```
 
@@ -53,7 +53,7 @@ yarn create next-app
 Install the dependencies
 
 ```shell
-yarn add @emotion/react @emotion/styled @emotion/css @emotion/server
+yarn add @emotion/react @emotion/styled
 yarn add -D twin.macro tailwindcss @emotion/babel-plugin babel-plugin-macros
 ```
 
@@ -98,61 +98,13 @@ import { CacheProvider } from '@emotion/react'
 import GlobalStyles from './../styles/GlobalStyles'
 
 const App = ({ Component, pageProps }) => (
-  <CacheProvider value={cache}>
+  <>
     <GlobalStyles />
     <Component {...pageProps} />
-  </CacheProvider>
+  </>
 )
 
 export default App
-```
-
-### SSR styles setup
-
-Creating a `_document.js` file like this will put critical styles in the head of the page.
-Without this step, you’ll notice a difference between the SSR generated styles and the ones that hydrate on the client side.
-
-```js
-// pages/_document.js
-import React from 'react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { extractCritical } from '@emotion/server'
-
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    const critical = extractCritical(initialProps.html)
-    initialProps.html = critical.html
-    initialProps.styles = (
-      <React.Fragment>
-        {initialProps.styles}
-        <style
-          data-emotion-css={critical.ids.join(' ')}
-          dangerouslySetInnerHTML={{ __html: critical.css }}
-        />
-      </React.Fragment>
-    )
-
-    return initialProps
-  }
-
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <style
-            data-emotion-css={this.props.ids.join(' ')}
-            dangerouslySetInnerHTML={{ __html: this.props.css }}
-          />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
-}
 ```
 
 ### Add the twin config (optional)
