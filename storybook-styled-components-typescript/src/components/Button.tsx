@@ -1,7 +1,6 @@
 import tw, { styled, css, theme } from 'twin.macro'
 
-// Export interface for Button.stories.tsx
-export interface ButtonProps {
+type ButtonProps = {
   variant?: 'primary' | 'secondary'
   isSmall?: boolean
 }

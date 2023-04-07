@@ -1,5 +1,4 @@
 import React from 'react'
-import 'twin.macro'
 
 const TwinSvg = () => (
   <svg fill="black" viewBox="0 0 100 35" xmlns="http://www.w3.org/2000/svg">

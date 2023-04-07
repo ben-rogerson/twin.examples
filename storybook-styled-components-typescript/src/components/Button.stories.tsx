@@ -1,38 +1,33 @@
-import React from 'react'
-import { Story } from '@storybook/react/types-6-0'
+import type { Meta, StoryObj } from '@storybook/react'
 import Button from './Button'
 
-export default {
+const meta: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
   argTypes: {
     variant: {
       description: 'The type of button',
-      type: 'inline-radio',
-      control: {
-        type: 'inline-radio',
-        options: ['primary', 'secondary'],
-      },
+      control: 'inline-radio',
+      options: ['primary', 'secondary'],
     },
     isSmall: {
       description: 'A small version of the button',
       type: 'boolean',
     },
-    children: {
-      description: 'The button content',
-      defaultValue: 'Button',
-      type: { name: 'text', required: true },
-    },
   },
 }
 
-const Template: Story = props => <Button {...props} />
+export default meta
+type Story = StoryObj<typeof Button>
 
-export const Primary = Template.bind({})
-Primary.args = { variant: 'primary' }
+export const Primary: Story = {
+  args: { variant: 'primary', children: 'Primary' },
+}
 
-export const Secondary = Template.bind({})
-Secondary.args = { variant: 'secondary' }
+export const Secondary: Story = {
+  args: { variant: 'secondary', children: 'Secondary' },
+}
 
-export const Small = Template.bind({})
-Small.args = { isSmall: true }
+export const Small: Story = {
+  args: { isSmall: true, children: 'Small' },
+}
