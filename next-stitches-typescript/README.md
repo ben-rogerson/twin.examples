@@ -37,6 +37,8 @@ From within the new folder, run `npm install`, then `npm run dev` to start the d
 
 Install Next.js
 
+Choose "Yes" for the `src/` directory option when prompted.
+
 ```shell
 npx create-next-app --typescript
 ```
@@ -50,6 +52,8 @@ npm install -D twin.macro tailwindcss babel-plugin-macros
 
 <details>
   <summary>Install with Yarn</summary>
+
+Choose "Yes" for the `src/` directory option when prompted.
 
 ```shell
 yarn create next-app --typescript
@@ -70,10 +74,10 @@ Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/ba
 
 The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 
-You can add Twin’s `globalStyles` import in `styles/globalStyles.tsx`:
+You can add Twin’s `globalStyles` import in `src/styles/globalStyles.tsx`:
 
 ```ts
-// styles/globalStyles.tsx
+// src/styles/globalStyles.tsx
 import tw, { theme, globalStyles } from 'twin.macro'
 import { globalCss } from '../stitches.config'
 
@@ -92,10 +96,10 @@ const styles = () => {
 export default styles
 ```
 
-Then import the global styles in `pages/_app.tsx`:
+Then import the global styles in `src/pages/_app.tsx`:
 
 ```ts
-// pages/_app.tsx
+// src/pages/_app.tsx
 import { AppProps } from 'next/app'
 import globalStyles from '../styles/globalStyles'
 
@@ -143,11 +147,7 @@ subfolder:
 const path = require('path')
 
 // The folders containing files importing twin.macro
-const includedDirs = [
-  path.resolve(__dirname, 'components'),
-  path.resolve(__dirname, 'pages'),
-  path.resolve(__dirname, 'styles'),
-]
+const includedDirs = [path.resolve(__dirname, 'src')]
 
 module.exports = function withTwin(nextConfig) {
   return {
@@ -208,8 +208,7 @@ const withTwin = require('./withTwin.js')
  * @type {import('next').NextConfig}
  */
 module.exports = withTwin({
-  reactStrictMode: true, // < Recommended by Next
-  // ...
+  reactStrictMode: true,
 })
 ```
 
@@ -233,10 +232,10 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } = stitches
 
 ### Add the server stylesheet
 
-To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `pages/_document.tsx` that gets read by Next.js:
+To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `src/pages/_document.tsx` that gets read by Next.js:
 
 ```js
-// pages/_document.tsx
+// src/pages/_document.tsx
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { getCssText } from '../stitches.config'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { Button, Logo } from './../components'
+import { Button, Logo } from '../components'
 
 const styles = {
   // Move long class sets out of jsx to keep it scannable

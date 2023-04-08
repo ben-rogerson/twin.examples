@@ -33,6 +33,8 @@ From within the new folder, run `npm install`, then `npm run dev` to start the d
 
 Install Next.js
 
+Choose "Yes" for the `src/` directory option when prompted.
+
 ```shell
 npx create-next-app --ts
 ```
@@ -46,6 +48,8 @@ npm install -D twin.macro tailwindcss babel-plugin-macros @types/styled-componen
 
 <details>
   <summary>Install with Yarn</summary>
+
+Choose "Yes" for the `src/` directory option when prompted.
 
 ```shell
 yarn create next-app --typescript
@@ -69,10 +73,10 @@ The `GlobalStyles` import adds these base styles along with some @keyframes for 
 > Due to an issue in styled-components, global styles get added in the wrong order when using styled-components. This gives the tailwind base styles an incorrect specificity.  
 > Until [the issue](https://github.com/styled-components/styled-components/issues/3146) is fixed, the workaround is to export the styles from another file.
 
-You can import `GlobalStyles` within a new file placed in `styles/GlobalStyles.tsx`:
+You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyles.tsx`:
 
 ```js
-// styles/GlobalStyles.tsx
+// src/styles/GlobalStyles.tsx
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
@@ -94,10 +98,10 @@ const GlobalStyles = () => (
 export default GlobalStyles
 ```
 
-Then import the GlobalStyles file in `pages/_app.tsx`:
+Then import the GlobalStyles file in `src/pages/_app.tsx`:
 
 ```js
-// pages/_app.tsx
+// src/pages/_app.tsx
 import type { AppProps } from 'next/app'
 import GlobalStyles from '../styles/GlobalStyles'
 
@@ -199,11 +203,7 @@ subfolder:
 const path = require('path')
 
 // The folders containing files importing twin.macro
-const includedDirs = [
-  path.resolve(__dirname, 'components'),
-  path.resolve(__dirname, 'pages'),
-  path.resolve(__dirname, 'styles'),
-]
+const includedDirs = [path.resolve(__dirname, 'src')]
 
 module.exports = function withTwin(nextConfig) {
   return {
@@ -268,17 +268,16 @@ const withTwin = require('./withTwin.js')
  * @type {import('next').NextConfig}
  */
 module.exports = withTwin({
-  reactStrictMode: true, // < Recommended by Next
-  // ...
+  reactStrictMode: true,
 })
 ```
 
 ### Add the server stylesheet
 
-To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `pages/_document.tsx` that gets read by Next.js:
+To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `src/pages/_document.tsx` that gets read by Next.js:
 
 ```js
-// pages/_document.tsx
+// src/pages/_document.tsx
 import React from 'react'
 import Document, { DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
