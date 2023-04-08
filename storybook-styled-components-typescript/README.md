@@ -13,6 +13,6 @@ npx degit https://github.com/ben-rogerson/twin.examples/storybook-styled-compone
 ## Links
 
 - [Storybook](https://storybook.js.org/)
-- [StyledComponents](https://styled-components.com/)
+- [styled-components](https://styled-components.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Twin](https://github.com/ben-rogerson/twin.macro)
