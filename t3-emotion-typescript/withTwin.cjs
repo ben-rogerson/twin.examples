@@ -8,7 +8,7 @@ const includedDirs = [
 ]
 
 module.exports = function withTwin(
-  /** @type {{ reactStrictMode?: boolean; i18n?: { locales: string[]; defaultLocale: string; }; webpack?: any; }} */ nextConfig,
+  /** @type {import("next").NextConfig}} */ nextConfig,
 ) {
   return {
     ...nextConfig,
