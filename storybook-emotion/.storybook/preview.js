@@ -1,5 +1,7 @@
 import React from 'react'
-import { GlobalStyles, theme } from 'twin.macro'
+import { theme } from 'twin.macro' //what is GlobalStyles in twin.macro for? Wasn't able to find out. But it's not
+                                   // these GlobalStyles we need here for the example to work
+import GlobalStyles from '../src/styles/GlobalStyles' //that was one of the probs the example didn't work
 import { CacheProvider } from '@emotion/react'
 import createCache from '@emotion/cache'
 
