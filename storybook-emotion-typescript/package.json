@@ -26,7 +26,6 @@
     "@storybook/blocks": "^7.0.7",
     "@storybook/nextjs": "^7.0.7",
     "@storybook/react": "^7.0.7",
-    "@storybook/testing-library": "^0.1.0",
     "@types/react": "^18.2.0",
     "babel-plugin-twin": "^1.1.0",
     "storybook": "^7.0.7",
