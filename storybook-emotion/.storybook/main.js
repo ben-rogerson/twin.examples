@@ -1,39 +1,28 @@
-const path = require('path')
-const fs = require('fs')
-
-module.exports = {
+const config = {
+  // https://storybook.js.org/docs/react/configure/frameworks#which-frameworks-are-supported
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
   stories: [
     '../src/components/**/*.stories.mdx',
     '../src/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-links'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+  ],
+  core: {
+    disableTelemetry: true,
+  },
+  // Twin recommends adding the babel config here as Next.js disables SWC when .babelrc is added to the root.
   babel: async options => {
-    options.plugins.unshift('babel-plugin-twin')
-    options.presets.push('@emotion/babel-preset-css-prop')
-    return options
-  },
-  webpackFinal: async config => {
-    config.resolve.alias = {
-      '@emotion/core': getPackageDir('@emotion/react'),
-      '@emotion/styled': getPackageDir('@emotion/styled'),
+    return {
+      ...options,
+      presets: [...options.presets, '@emotion/babel-preset-css-prop'],
+      plugins: [...options.plugins, 'babel-plugin-twin', 'babel-plugin-macros'],
     }
-    return config
   },
 }
-
-// Fix for package resolution
-function getPackageDir(filepath) {
-  let currDir = path.dirname(require.resolve(filepath))
-  while (true) {
-    if (fs.existsSync(path.join(currDir, 'package.json'))) {
-      return currDir
-    }
-    const { dir, root } = path.parse(currDir)
-    if (dir === root) {
-      throw new Error(
-        `Could not find package.json in the parent directories starting from ${filepath}.`,
-      )
-    }
-    currDir = dir
-  }
-}
+export default config

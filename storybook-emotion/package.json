@@ -6,26 +6,27 @@
   },
   "scripts": {
     "start": "npm run storybook",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@emotion/babel-preset-css-prop": "^11.2.0",
-    "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/react": "^6.3.12",
-    "babel-loader": "^8.2.2",
+    "@babel/core": "^7.21.4",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@storybook/addon-essentials": "^7.0.7",
+    "@storybook/addon-interactions": "^7.0.7",
+    "@storybook/addon-links": "^7.0.7",
+    "@storybook/nextjs": "^7.0.7",
+    "@storybook/react": "^7.0.7",
     "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-twin": "^1.0.2",
-    "react-is": "^17.0.2",
-    "tailwindcss": "^2.2.7",
-    "twin.macro": "^2.6.2"
+    "babel-plugin-twin": "^1.1.0",
+    "storybook": "^7.0.7",
+    "tailwindcss": "^3.3.2",
+    "twin.macro": "^3.3.1"
   }
 }

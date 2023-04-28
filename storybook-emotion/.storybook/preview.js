@@ -1,30 +1,35 @@
-import React from 'react'
-import { GlobalStyles, theme } from 'twin.macro'
-import { CacheProvider } from '@emotion/react'
-import createCache from '@emotion/cache'
+import GlobalStyles from './../src/styles/GlobalStyles'
+import { theme } from 'twin.macro'
 
-const cache = createCache({ prepend: true, key: 'twin' })
-
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  layout: 'centered',
-  backgrounds: {
-    default: 'electric-ribbon',
-    values: [
-      {
-        name: 'electric-ribbon',
-        value: `linear-gradient(180deg, ${theme`colors.electric`}, ${theme`colors.ribbon`})`,
+const preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
       },
-    ],
+      expanded: true,
+    },
+    layout: 'centered',
+    backgrounds: {
+      default: 'electric-ribbon',
+      values: [
+        {
+          name: 'electric-ribbon',
+          value: `linear-gradient(180deg, ${theme`colors.electric`}, ${theme`colors.ribbon`})`,
+        },
+      ],
+    },
   },
-  controls: { expanded: true },
+  decorators: [
+    Story => (
+      <>
+        <GlobalStyles />
+        <Story />
+      </>
+    ),
+  ],
 }
 
-export const decorators = [
-  Story => (
-    <CacheProvider value={cache}>
-      <GlobalStyles />
-      <Story />
-    </CacheProvider>
-  ),
-]
+export default preview
