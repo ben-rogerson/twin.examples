@@ -12,8 +12,15 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
+    "noImplicitAny": true,
     // Ensure that Babel can safely transpile files in the TypeScript project
     "isolatedModules": true
   },
-  "include": ["src", "types"]
+  "include": [
+    "src",
+    "types"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
