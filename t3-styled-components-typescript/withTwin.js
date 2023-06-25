@@ -1,45 +1,50 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require("path");
+const path = require('path')
 
 // The folders containing files importing twin.macro
-const includedDirs = [path.resolve(__dirname, "src")];
+const includedDirs = [
+  path.resolve(__dirname, 'app'),
+  path.resolve(__dirname, 'src'),
+]
 
-module.exports = function withTwin(nextConfig) {
+module.exports = function withTwin(
+  /** @type {import("next").NextConfig} */ nextConfig,
+) {
   return {
     ...nextConfig,
-
+    /**
+     * @param {{ module: { rules?: any; }; resolve: { fallback: any; }; }} config
+     * @param {{ dir: string; dev: boolean; isServer: boolean; buildId: string; config: any; defaultLoaders: { babel: any }; totalPages: number; webpack: any;nextRuntime?: 'nodejs' | 'edge'; }} options
+     */
     webpack(config, options) {
-      const { dev, isServer } = options;
-      config.module = config.module || {};
-      config.module.rules = config.module.rules || [];
+      const { dev, isServer } = options
+      config.module = config.module || {}
+      config.module.rules = config.module.rules || []
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
         include: includedDirs,
         use: [
           options.defaultLoaders.babel,
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               sourceMaps: dev,
               plugins: [
-                [require.resolve("babel-plugin-twin"), { debug: true }],
-                require.resolve("babel-plugin-macros"),
+                require.resolve('babel-plugin-twin'),
+                require.resolve('babel-plugin-macros'),
                 [
-                  require.resolve("babel-plugin-styled-components"),
+                  require.resolve('babel-plugin-styled-components'),
                   { ssr: true, displayName: true },
                 ],
                 [
-                  require.resolve("@babel/plugin-syntax-typescript"),
+                  require.resolve('@babel/plugin-syntax-typescript'),
                   { isTSX: true },
                 ],
               ],
             },
           },
         ],
-      });
+      })
 
       if (!isServer) {
         config.resolve.fallback = {
@@ -49,14 +54,14 @@ module.exports = function withTwin(nextConfig) {
           path: false,
           os: false,
           crypto: false,
-        };
+        }
       }
 
-      if (typeof nextConfig.webpack === "function") {
-        return nextConfig.webpack(config, options);
+      if (typeof nextConfig.webpack === 'function') {
+        return nextConfig.webpack(config, options)
       } else {
-        return config;
+        return config
       }
     },
-  };
-};
+  }
+}
