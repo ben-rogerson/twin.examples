@@ -1,6 +1,6 @@
 # Create T3 App with Emotion and Twin.macro
 
-This example uses the [create-t3-app](https://create.t3.gg/) CLI to create a new T3 app and then Emotion and Twin.macro are added.
+This example uses the [create-t3-app](https://create.t3.gg/) CLI to create a new T3 app with Emotion and twin.macro added.
 
 **Download this example using [degit](https://github.com/Rich-Harris/degit)**
 

@@ -1,5 +1,5 @@
 import { type AppType } from 'next/app'
-import GlobalStyles from '../styles/GlobalStyles'
+import GlobalStyles from '~/styles/GlobalStyles'
 
 import { api } from '~/utils/api'
 

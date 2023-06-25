@@ -14,7 +14,7 @@ module.exports = function withTwin(
     ...nextConfig,
     /**
      * @param {{ module: { rules?: any; }; resolve: { fallback: any; }; }} config
-     * @param {{ defaultLoaders?: any; dev?: any; isServer?: any; }} options
+     * @param {{ dir: string; dev: boolean; isServer: boolean; buildId: string; config: any; defaultLoaders: { babel: any }; totalPages: number; webpack: any;nextRuntime?: 'nodejs' | 'edge'; }} options
      */
     webpack(config, options) {
       const { dev, isServer } = options
