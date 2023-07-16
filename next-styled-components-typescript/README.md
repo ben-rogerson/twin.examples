@@ -66,7 +66,7 @@ yarn add twin.macro tailwindcss babel-plugin-macros @types/styled-components bab
 
 ### Add the global styles
 
-Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
+Twin uses the same preflight base styles as Tailwind to smooth over cross-browser inconsistencies.
 
 The `GlobalStyles` import adds these base styles along with some @keyframes for the animation classes and some global css that makes the [ring classes](https://tailwindcss.com/docs/ring-width) and box-shadows work.
 

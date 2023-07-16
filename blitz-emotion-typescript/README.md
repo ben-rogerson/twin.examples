@@ -44,7 +44,7 @@ yarn add twin.macro tailwindcss babel-plugin-macros @emotion/babel-preset-css-pr
 
 ### Add the global styles
 
-Twin uses the same [preflight base styles](https://unpkg.com/tailwindcss/dist/base.css) as Tailwind to smooth over cross-browser inconsistencies.
+Twin uses the same preflight base styles as Tailwind to smooth over cross-browser inconsistencies.
 
 The `GlobalStyles` import adds these base styles, some @keyframes for animations, and some global css variables.
 
