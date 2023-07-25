@@ -53,7 +53,7 @@ yarn create gatsby-site
 Install the dependencies
 
 ```shell
-yarn add twin.macro styled-components gatsby-plugin-styled-components
+yarn add twin.macro tailwindcss styled-components gatsby-plugin-styled-components
 ```
 
 </details>

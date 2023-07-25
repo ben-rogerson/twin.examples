@@ -2,16 +2,15 @@
   "name": "component-library-styled-components",
   "babelMacros": {
     "twin": {
-      "config": "./../../tailwind.config.js",
       "preset": "styled-components"
     }
   },
   "scripts": {
-    "dev": "yarn build:types && cd packages/app && yarn dev",
-    "start": "cd packages/app && yarn start",
-    "build": "yarn build:types && cd packages/app && yarn build",
-    "build:types": "cd packages/shared-ui && yarn build",
-    "watch:types": "cd packages/shared-ui && yarn watch"
+    "dev": "npm run build:types && cd packages/app && npm run dev",
+    "start": "cd packages/app && npm run start",
+    "build": "npm run build:types && cd packages/app && npm run build",
+    "build:types": "cd packages/shared-ui && npm run build",
+    "watch:types": "cd packages/shared-ui && npm run watch"
   },
   "private": true,
   "workspaces": {

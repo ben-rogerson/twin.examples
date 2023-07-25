@@ -8,13 +8,18 @@ module.exports = function withTwin(nextConfig) {
     ...nextConfig,
     webpack(config, options) {
       const { dev, isServer } = options
+      // Make the loader work with the new app directory
+      const patchedDefaultLoaders = options.defaultLoaders.babel
+      patchedDefaultLoaders.options.hasServerComponents = false
+      patchedDefaultLoaders.options.hasReactRefresh = false
+
       config.module = config.module || {}
       config.module.rules = config.module.rules || []
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
         include: includedDirs,
         use: [
-          options.defaultLoaders.babel,
+          patchedDefaultLoaders,
           {
             loader: 'babel-loader',
             options: {

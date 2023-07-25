@@ -24,9 +24,9 @@ const Home: NextPage = () => {
       </Head>
       <div css={styles.container({ hasBackground: true })}>
         <div tw="flex flex-col justify-center h-full gap-y-5">
-          <Button variant="primary">Submit</Button>
-          <Button variant="secondary">Cancel</Button>
-          <Button isSmall>Close</Button>
+          <Button $variant="primary">Submit</Button>
+          <Button $variant="secondary">Cancel</Button>
+          <Button $isSmall>Close</Button>
           <p className="text-2xl text-white text-center w-full">
             {hello.data ? hello.data.greeting : 'Loading...'}
           </p>

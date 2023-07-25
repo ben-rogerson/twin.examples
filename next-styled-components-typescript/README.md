@@ -18,10 +18,10 @@ From within the new folder, run `npm install`, then `npm run dev` to start the d
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
+  - [Add the server stylesheet](#add-the-server-stylesheet)
   - [Add the twin config](#add-the-twin-config)
   - [Add the TypeScript types](#add-typescript-types)
   - [Add the next babel config](#add-the-next-babel-config)
-  - [Add the server stylesheet](#add-the-server-stylesheet)
 - [Customization](#customization)
 - [Next steps](#next-steps)
 
@@ -36,14 +36,14 @@ Install Next.js
 Choose "Yes" for the `src/` directory option when prompted.
 
 ```shell
-npx create-next-app --ts
+npx create-next-app@latest --typescript
 ```
 
 Install the dependencies
 
 ```shell
 npm install styled-components
-npm install -D twin.macro tailwindcss babel-plugin-macros @types/styled-components babel-loader @babel/plugin-syntax-typescript
+npm install -D twin.macro tailwindcss babel-plugin-macros babel-loader @babel/plugin-syntax-typescript babel-plugin-styled-components
 ```
 
 <details>
@@ -59,7 +59,7 @@ Install the dependencies
 
 ```shell
 yarn add styled-components
-yarn add twin.macro tailwindcss babel-plugin-macros @types/styled-components babel-loader @babel/plugin-syntax-typescript --dev
+yarn add twin.macro tailwindcss babel-plugin-macros babel-loader @babel/plugin-syntax-typescript babel-plugin-styled-components --dev
 ```
 
 </details>
@@ -98,23 +98,67 @@ const GlobalStyles = () => (
 export default GlobalStyles
 ```
 
-Then import the GlobalStyles file in `src/pages/_app.tsx`:
+Then import the GlobalStyles file in `src/app/layout`:
 
 ```js
-// src/pages/_app.tsx
-import type { AppProps } from 'next/app'
-import GlobalStyles from '../styles/GlobalStyles'
+// src/app/layout.tsx
+import type { Metadata } from 'next'
+import GlobalStyles from '@/styles/GlobalStyles'
+import StyledComponentsRegistry from '@/lib/registry'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode,
+}) {
   return (
-    <>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </>
+    <html lang="en">
+      <body>
+        <StyledComponentsRegistry>
+          <GlobalStyles />
+          {children}
+        </StyledComponentsRegistry>
+      </body>
+    </html>
   )
 }
+```
 
-export default MyApp
+### Add the server stylesheet
+
+To avoid the ugly Flash Of Unstyled Content (FOUC), add the following in `lib/registry.js`:
+
+```typescript
+// lib/registry.js
+// From https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components
+'use client'
+import React, { useState } from 'react'
+import { useServerInsertedHTML } from 'next/navigation'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+
+export default function StyledComponentsRegistry({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
+
+  useServerInsertedHTML(() => {
+    const styles = styledComponentsStyleSheet.getStyleElement()
+    styledComponentsStyleSheet.instance.clearTag()
+    return <>{styles}</>
+  })
+
+  if (typeof window !== 'undefined') return <>{children}</>
+
+  return (
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+      {children}
+    </StyleSheetManager>
+  )
+}
 ```
 
 ### Add the twin config
@@ -145,51 +189,19 @@ b) Or in `package.json`:
 
 ### Add TypeScript types
 
-Install the types for styled-components:
+Create a `types/twin.d.ts` file with the declarations from the example:
 
-```bash
-yarn add @types/styled-components -D
+```shell
+mkdir types && cd $_ && curl -o twin.d.ts -L https://github.com/ben-rogerson/twin.examples/raw/master/next-styled-components-typescript/types/twin.d.ts
 ```
 
-or npm:
+Then add the `types` folder to the include array in your typescript config:
 
-```bash
-npm install --save-dev @types/styled-components
-```
-
-Create a `types/twin.d.ts` file and add these declarations:
-
-```typescript
-// types/twin.d.ts
-import 'twin.macro'
-import styledImport, { CSSProp, css as cssImport } from 'styled-components'
-
-declare module 'twin.macro' {
-  // The styled and css imports
-  const styled: typeof styledImport
-  const css: typeof cssImport
-}
-
-declare module 'react' {
-  // The css prop
-  interface HTMLAttributes<T> extends DOMAttributes<T> {
-    css?: CSSProp
-    tw?: string
-  }
-  // The inline svg css prop
-  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
-    css?: CSSProp
-    tw?: string
-  }
-}
-
-// The 'as' prop on styled components
-declare global {
-  namespace JSX {
-    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string | Element
-    }
-  }
+```json
+// tsconfig.json
+{
+  // ...
+  "include": ["src", "types"]
 }
 ```
 
@@ -210,13 +222,18 @@ module.exports = function withTwin(nextConfig) {
     ...nextConfig,
     webpack(config, options) {
       const { dev, isServer } = options
+      // Make the loader work with the new app directory
+      const patchedDefaultLoaders = options.defaultLoaders.babel
+      patchedDefaultLoaders.options.hasServerComponents = false
+      patchedDefaultLoaders.options.hasReactRefresh = false
+
       config.module = config.module || {}
       config.module.rules = config.module.rules || []
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
         include: includedDirs,
         use: [
-          options.defaultLoaders.babel,
+          patchedDefaultLoaders,
           {
             loader: 'babel-loader',
             options: {
@@ -270,43 +287,6 @@ const withTwin = require('./withTwin.js')
 module.exports = withTwin({
   reactStrictMode: true,
 })
-```
-
-### Add the server stylesheet
-
-To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `src/pages/_document.tsx` that gets read by Next.js:
-
-```js
-// src/pages/_document.tsx
-import React from 'react'
-import Document, { DocumentContext } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
-
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
-        })
-      const initialProps = await Document.getInitialProps(ctx)
-
-      return {
-        ...initialProps,
-        styles: [
-          <React.Fragment key="styles">
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </React.Fragment>,
-        ],
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
-}
 ```
 
 [](#customization)

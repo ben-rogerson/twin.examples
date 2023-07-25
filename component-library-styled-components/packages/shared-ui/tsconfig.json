@@ -20,10 +20,10 @@
   },
   "include": [
     "components/**/*.tsx",
-    "./../../types"
+    "types"
   ],
   "typeRoots": [
-    "./../../types",
+    "types",
     "./../../node_modules/@types"
   ],
   "exclude": [

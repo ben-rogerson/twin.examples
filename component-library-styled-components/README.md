@@ -7,8 +7,7 @@ This setup demonstrates a TypeScript Next.js app (`packages/app`) importing a se
 - **Simple, speedy workflow**<br/>After starting the next app `yarn dev` you can work on the components in `packages/shared-ui` and receive HMR updates in your app
 - **Simple multi-project configs**
   - Shared styles in `tailwind.config.js`
-  - Shared babel settings in `babel.config.js`
-  - Shared twin config in `package.json` and `types`
+  - Shared twin config in `package.json`
 - **Automatic component type generation**<br/>
   Start live component type updates with `yarn types:watch`
 

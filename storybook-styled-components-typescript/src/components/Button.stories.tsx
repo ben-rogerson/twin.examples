@@ -5,12 +5,12 @@ const meta: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
   argTypes: {
-    variant: {
+    $variant: {
       description: 'The type of button',
       control: 'inline-radio',
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', ''],
     },
-    isSmall: {
+    $isSmall: {
       description: 'A small version of the button',
       type: 'boolean',
     },
@@ -21,13 +21,13 @@ export default meta
 type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
-  args: { variant: 'primary', children: 'Primary' },
+  args: { $variant: 'primary', children: 'Primary' },
 }
 
 export const Secondary: Story = {
-  args: { variant: 'secondary', children: 'Secondary' },
+  args: { $variant: 'secondary', children: 'Secondary' },
 }
 
 export const Small: Story = {
-  args: { isSmall: true, children: 'Small' },
+  args: { $isSmall: true, children: 'Small' },
 }

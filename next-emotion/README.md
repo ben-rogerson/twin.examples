@@ -35,7 +35,7 @@ Install Next.js
 Choose "Yes" for the `src/` directory option when prompted.
 
 ```shell
-npx create-next-app
+npx create-next-app@latest --javascript
 ```
 
 Install the dependencies

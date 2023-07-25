@@ -18,9 +18,9 @@ From within the new folder, run `npm install`, then `npm run dev` to start the d
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Add the global styles](#add-the-global-styles)
+  - [Add the server stylesheet](#add-the-server-stylesheet)
   - [Add the twin config](#add-the-twin-config)
   - [Add the next babel config](#add-the-next-babel-config)
-  - [Add the server stylesheet](#add-the-server-stylesheet)
 - [Customization](#customization)
 - [Next steps](#next-steps)
 
@@ -35,7 +35,7 @@ Install Next.js
 Choose "Yes" for the `src/` directory option when prompted.
 
 ```shell
-npx create-next-app
+npx create-next-app@latest --javascript
 ```
 
 Install the dependencies
@@ -72,20 +72,20 @@ The `GlobalStyles` import adds these base styles along with some @keyframes for 
 > Due to an issue in styled-components, global styles get added in the wrong order when using styled-components. This gives the tailwind base styles an incorrect specificity.  
 > Until [the issue](https://github.com/styled-components/styled-components/issues/3146) is fixed, the workaround is to export the styles from another file.
 
-You can import `GlobalStyles` within a new file placed in `src/components/GlobalStyles.js`:
+You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyles.js`:
 
 ```js
-// src/components/GlobalStyles.js
-import React from 'react'
+// src/styles/GlobalStyles.js
+'use client'
 import { createGlobalStyle } from 'styled-components'
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-const CustomStyles = createGlobalStyle`
-  body {
-    -webkit-tap-highlight-color: ${theme`colors.purple.500`};
-    ${tw`antialiased`}
-  }
-`
+const CustomStyles = createGlobalStyle({
+  body: {
+    WebkitTapHighlightColor: theme`colors.purple.500`,
+    ...tw`antialiased`,
+  },
+})
 
 const GlobalStyles = () => (
   <>
@@ -97,20 +97,58 @@ const GlobalStyles = () => (
 export default GlobalStyles
 ```
 
-Then import the GlobalStyles file in `src/pages/_app.js`:
+Then import the GlobalStyles file in `src/app/layout.js`:
 
 ```js
-// src/pages/_app.js
-import GlobalStyles from './../components/GlobalStyles'
+// src/app/layout.js
+import GlobalStyles from '../styles/GlobalStyles'
+import StyledComponentsRegistry from '../lib/registry'
 
-const App = ({ Component, pageProps }) => (
-  <div>
-    <GlobalStyles />
-    <Component {...pageProps} />
-  </div>
-)
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <StyledComponentsRegistry>
+          <GlobalStyles />
+          {children}
+        </StyledComponentsRegistry>
+      </body>
+    </html>
+  )
+}
+```
 
-export default App
+### Add the server stylesheet
+
+To avoid the ugly Flash Of Unstyled Content (FOUC), add the following in `lib/registry.js`:
+
+```js
+// src/pages/_document.js
+// From https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components
+'use client'
+import React, { useState } from 'react'
+import { useServerInsertedHTML } from 'next/navigation'
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
+
+export default function StyledComponentsRegistry({ children }) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
+
+  useServerInsertedHTML(() => {
+    const styles = styledComponentsStyleSheet.getStyleElement()
+    styledComponentsStyleSheet.instance.clearTag()
+    return <>{styles}</>
+  })
+
+  if (typeof window !== 'undefined') return <>{children}</>
+
+  return (
+    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+      {children}
+    </StyleSheetManager>
+  )
+}
 ```
 
 ### Add the twin config
@@ -156,20 +194,24 @@ module.exports = function withTwin(nextConfig) {
     ...nextConfig,
     webpack(config, options) {
       const { dev, isServer } = options
+      // Make the loader work with the new app directory
+      const patchedDefaultLoaders = options.defaultLoaders.babel
+      patchedDefaultLoaders.options.hasServerComponents = false
+      patchedDefaultLoaders.options.hasReactRefresh = false
+
       config.module = config.module || {}
       config.module.rules = config.module.rules || []
       config.module.rules.push({
         test: /\.(jsx|js)$/,
         include: includedDirs,
         use: [
-          options.defaultLoaders.babel,
+          patchedDefaultLoaders,
           {
             loader: 'babel-loader',
             options: {
               sourceMaps: dev,
               plugins: [
                 require.resolve('babel-plugin-macros'),
-                require.resolve('@babel/plugin-syntax-jsx'),
                 [
                   require.resolve('babel-plugin-styled-components'),
                   { ssr: true, displayName: true },
@@ -213,42 +255,6 @@ const withTwin = require('./withTwin.js')
 module.exports = withTwin({
   reactStrictMode: true,
 })
-```
-
-### Add the server stylesheet
-
-To avoid the ugly Flash Of Unstyled Content (FOUC), add a server stylesheet in `src/pages/_document.js` that gets read by Next.js:
-
-```js
-// src/pages/_document.js
-import Document from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
-
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
-        })
-      const initialProps = await Document.getInitialProps(ctx)
-
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
-}
 ```
 
 [](#customization)

@@ -11,8 +11,7 @@
     "@stitches/react": "^1.2.8",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "^7.20.0",
@@ -24,12 +23,11 @@
     "@testing-library/user-event": "14.4.3",
     "@types/jest": "^29.2.3",
     "@types/react": "18.0.25",
-    "@types/styled-components": "^5.1.26",
     "babel-plugin-macros": "^3.1.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "29.3.1",
     "tailwindcss": "^3.2.4",
     "ts-jest": "^29.0.3",
-    "twin.macro": "^3.0.1"
+    "twin.macro": "^3.4.0"
   }
 }

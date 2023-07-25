@@ -12,17 +12,17 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^5.2.0",
-    "gatsby-plugin-styled-components": "^6.2.0",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-styled-components": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6",
-    "twin.macro": "^3.1.0"
+    "styled-components": "^6.0.4",
+    "twin.macro": "^3.4.0"
   },
   "devDependencies": {
     "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-styled-components": "^2.0.7",
+    "babel-plugin-styled-components": "^2.1.4",
     "babel-plugin-twin": "^1.1.0",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.3.3"
   }
 }

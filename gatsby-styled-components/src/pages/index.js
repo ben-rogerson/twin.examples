@@ -14,9 +14,9 @@ const IndexPage = () => (
   <Layout>
     <div css={styles.container({ hasBackground: true })}>
       <div tw="flex flex-col justify-center h-full gap-y-5">
-        <Button variant="primary">Submit</Button>
-        <Button variant="secondary">Cancel</Button>
-        <Button isSmall>Close</Button>
+        <Button $variant="primary">Submit</Button>
+        <Button $variant="secondary">Cancel</Button>
+        <Button $isSmall>Clsose</Button>
       </div>
       <Logo />
     </div>
