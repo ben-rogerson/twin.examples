@@ -1,5 +1,5 @@
+/** @jsxImportSource @emotion/react */
 'use client'
-
 import 'twin.macro'
 
 const Logo = () => (

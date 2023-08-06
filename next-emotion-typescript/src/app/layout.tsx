@@ -1,4 +1,4 @@
-'use server'
+import GlobalStyles from '@/styles/GlobalStyles'
 
 export const metadata = {
   title: 'Twin',
@@ -12,7 +12,10 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <GlobalStyles />
+        {children}
+      </body>
     </html>
   )
 }
