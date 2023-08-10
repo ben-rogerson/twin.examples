@@ -26,7 +26,8 @@
   },
   "include": [
     "src",
-    "types"
+    "types",
+    "tailwind.config.js"
   ],
   "references": [
     {
