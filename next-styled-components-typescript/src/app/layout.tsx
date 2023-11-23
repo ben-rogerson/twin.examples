@@ -1,13 +1,8 @@
-import type { Metadata } from 'next'
+'use client'
 import GlobalStyles from '@/styles/GlobalStyles'
 import StyledComponentsRegistry from '@/lib/registry'
 
-export const metadata: Metadata = {
-  title: 'Twin example',
-  description: '',
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
