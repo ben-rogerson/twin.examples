@@ -20,4 +20,4 @@ const TwinSvg = () => (
   </svg>
 )
 
-export default Logo
+export { Logo }

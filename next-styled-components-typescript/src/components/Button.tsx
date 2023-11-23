@@ -32,4 +32,4 @@ const Button = styled.button<ButtonProps>(({ $variant, $isSmall }) => [
   `,
 ])
 
-export default Button
+export { Button }
