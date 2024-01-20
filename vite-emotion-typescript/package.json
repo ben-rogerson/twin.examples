@@ -12,20 +12,20 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.21.0",
-    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.0",
-    "@types/react": "^18.0.38",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^4.0.0",
-    "tailwindcss": "^3.3.1",
-    "twin.macro": "^3.3.1",
-    "typescript": "^5.0.4",
-    "vite": "^4.3.1"
+    "@babel/plugin-transform-react-jsx": "^7.23.4",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.2.1",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tailwindcss": "^3.4.1",
+    "twin.macro": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12"
   }
 }
