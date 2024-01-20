@@ -11,6 +11,8 @@ npx degit https://github.com/ben-rogerson/twin.examples/next-emotion-typescript 
 
 From within the new folder, run `npm install`, then `npm run dev` to start the dev server.
 
+**TIP**: This example uses the app folder which is "server first". We add styles to the lower components and keep styles out of `app/page.tsx` and `app/layout.tsx`. This will ensure only lower components will need to be marked as client components with `use client`.
+
 ## Customization
 
 - [View the config options →](https://github.com/ben-rogerson/twin.macro/blob/master/docs/options.md)
