@@ -1,6 +1,6 @@
 import tw, { styled, theme } from 'twin.macro'
 
-const Button = styled.button({
+export const Button = styled.button({
   // Add classes with the tw import and spread syntax
   ...tw`px-8 py-2 rounded transform duration-75`,
 
@@ -31,5 +31,3 @@ const Button = styled.button({
     isSmall: { true: tw`text-sm`, false: tw`text-lg` },
   },
 })
-
-export default Button

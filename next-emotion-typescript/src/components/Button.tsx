@@ -1,4 +1,5 @@
 'use client'
+
 import tw, { styled, css, theme } from 'twin.macro'
 
 interface ButtonProps {
@@ -6,7 +7,7 @@ interface ButtonProps {
   isSmall?: boolean
 }
 
-const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
+export const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
   // The common button styles added with the tw import
   tw`px-8 py-2 rounded transform duration-75`,
 
@@ -32,5 +33,3 @@ const Button = styled.button(({ variant, isSmall }: ButtonProps) => [
     color: ${theme`colors.white`};
   `,
 ])
-
-export default Button

@@ -1,8 +1,8 @@
-const withTwin = require('./withTwin.js')
+import withTwin from './withTwin.mjs'
 
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withTwin({
+export default withTwin({
   reactStrictMode: true,
 })

@@ -1,4 +1,3 @@
-'use client'
 import GlobalStyles from '../styles/GlobalStyles'
 import StyledComponentsRegistry from '../lib/registry'
 

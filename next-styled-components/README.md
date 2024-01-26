@@ -77,6 +77,7 @@ You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyl
 ```js
 // src/styles/GlobalStyles.js
 'use client'
+
 import { createGlobalStyle } from 'styled-components'
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
@@ -126,6 +127,7 @@ To avoid the ugly Flash Of Unstyled Content (FOUC), add the following in `lib/re
 // src/pages/_document.js
 // From https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components
 'use client'
+
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
@@ -183,76 +185,74 @@ Create a new file either in the root or in a `config`
 subfolder:
 
 ```js
-// withTwin.js
-const path = require('path')
+// withTwin.mjs
+import babelPluginMacros from 'babel-plugin-macros'
+import babelPluginStyledComponents from 'babel-plugin-styled-components'
+import * as path from 'path'
+import * as url from 'url'
+// import babelPluginTwin from 'babel-plugin-twin'
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
 // The folders containing files importing twin.macro
 const includedDirs = [path.resolve(__dirname, 'src')]
 
-module.exports = function withTwin(nextConfig) {
+/** @returns {import('next').NextConfig} */
+export default function withTwin(
+  /** @type {import('next').NextConfig} */
+  nextConfig,
+) {
   return {
     ...nextConfig,
-    webpack(config, options) {
-      const { dev, isServer } = options
-      // Make the loader work with the new app directory
-      const patchedDefaultLoaders = options.defaultLoaders.babel
-      patchedDefaultLoaders.options.hasServerComponents = false
-      patchedDefaultLoaders.options.hasReactRefresh = false
-
+    compiler: {
+      ...nextConfig.compiler,
+      styledComponents: true,
+    },
+    webpack(
+      /** @type {import('webpack').Configuration} */
+      config,
+      options,
+    ) {
       config.module = config.module || {}
       config.module.rules = config.module.rules || []
+
       config.module.rules.push({
         test: /\.(jsx|js)$/,
         include: includedDirs,
         use: [
-          patchedDefaultLoaders,
           {
             loader: 'babel-loader',
             options: {
-              sourceMaps: dev,
+              sourceMaps: options.dev,
               plugins: [
-                require.resolve('babel-plugin-macros'),
-                [
-                  require.resolve('babel-plugin-styled-components'),
-                  { ssr: true, displayName: true },
-                ],
+                // babelPluginTwin, // Optional
+                babelPluginMacros,
+                [babelPluginStyledComponents, { ssr: true, displayName: true }],
               ],
             },
           },
         ],
       })
 
-      if (!isServer) {
-        config.resolve.fallback = {
-          ...(config.resolve.fallback || {}),
-          fs: false,
-          module: false,
-          path: false,
-          os: false,
-          crypto: false,
-        }
-      }
-
-      if (typeof nextConfig.webpack === 'function') {
+      if (typeof nextConfig.webpack === 'function')
         return nextConfig.webpack(config, options)
-      } else {
-        return config
-      }
+
+      return config
     },
   }
 }
 ```
 
-Then in your `next.config.js`, import and wrap the main export with `withTwin(...)`:
+Then in your `next.config.mjs`, import and wrap the main export with `withTwin(...)`:
 
 ```js
-// next.config.js
-const withTwin = require('./withTwin.js')
+// next.config.mjs
+import withTwin from './withTwin.mjs'
 
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withTwin({
+export default withTwin({
   reactStrictMode: true,
 })
 ```

@@ -1,5 +1,5 @@
-import { Button } from '@/components'
-import Container from '@/components/Container'
+import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
 
 const App = () => (
   <Container hasBackground>

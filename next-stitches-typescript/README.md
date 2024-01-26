@@ -143,71 +143,70 @@ Create a new file either in the root or in a `config`
 subfolder:
 
 ```js
-// withTwin.js
-const path = require('path')
+// withTwin.mjs
+import babelPluginTypescript from '@babel/plugin-syntax-typescript'
+import babelPluginMacros from 'babel-plugin-macros'
+import * as path from 'path'
+import * as url from 'url'
+// import babelPluginTwin from 'babel-plugin-twin'
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 
 // The folders containing files importing twin.macro
 const includedDirs = [path.resolve(__dirname, 'src')]
 
-module.exports = function withTwin(nextConfig) {
+/** @returns {import('next').NextConfig} */
+export default function withTwin(
+  /** @type {import('next').NextConfig} */
+  nextConfig,
+) {
   return {
     ...nextConfig,
-    webpack(config, options) {
-      const { dev, isServer } = options
+    webpack(
+      /** @type {import('webpack').Configuration} */
+      config,
+      options,
+    ) {
       config.module = config.module || {}
       config.module.rules = config.module.rules || []
+
       config.module.rules.push({
         test: /\.(tsx|ts)$/,
         include: includedDirs,
         use: [
-          options.defaultLoaders.babel,
           {
             loader: 'babel-loader',
             options: {
-              sourceMaps: dev,
+              sourceMaps: options.dev,
               plugins: [
-                require.resolve('babel-plugin-macros'),
-                [
-                  require.resolve('@babel/plugin-syntax-typescript'),
-                  { isTSX: true },
-                ],
+                // babelPluginTwin, // Optional
+                babelPluginMacros,
+                [babelPluginTypescript, { isTSX: true }],
               ],
             },
           },
         ],
       })
 
-      if (!isServer) {
-        config.resolve.fallback = {
-          ...(config.resolve.fallback || {}),
-          fs: false,
-          module: false,
-          path: false,
-          os: false,
-          crypto: false,
-        }
-      }
-
-      if (typeof nextConfig.webpack === 'function') {
+      if (typeof nextConfig.webpack === 'function')
         return nextConfig.webpack(config, options)
-      } else {
-        return config
-      }
+
+      return config
     },
   }
 }
 ```
 
-Then in your `next.config.js`, import and wrap the main export with `withTwin(...)`:
+Then in your `next.config.mjs`, import and wrap the main export with `withTwin(...)`:
 
 ```js
-// next.config.js
-const withTwin = require('./withTwin.js')
+// next.config.mjs
+import withTwin from './withTwin.mjs'
 
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withTwin({
+export default withTwin({
   reactStrictMode: true,
 })
 ```

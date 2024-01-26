@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Container } from '../components'
+import { Container } from '../components/Container'
+import { Button } from '../components/Button'
 
 const App = () => (
   <Container $hasBackground>

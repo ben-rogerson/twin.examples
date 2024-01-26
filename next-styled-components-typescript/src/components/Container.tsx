@@ -1,7 +1,7 @@
 'use client'
 
 import tw from 'twin.macro'
-import { Logo } from './Logo'
+import { Logo } from '@/components/Logo'
 import { ReactNode } from 'react'
 
 const styles = {

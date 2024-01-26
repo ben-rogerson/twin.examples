@@ -2,7 +2,7 @@
 'use client'
 
 import tw from 'twin.macro'
-import { Logo } from '@/components'
+import { Logo } from '@/components/Logo'
 import { ReactNode } from 'react'
 
 const styles = {
@@ -13,11 +13,12 @@ const styles = {
   ],
 }
 
-const Container = (props: { hasBackground: boolean; children: ReactNode }) => (
+export const Container = (props: {
+  hasBackground: boolean
+  children: ReactNode
+}) => (
   <div css={styles.container({ hasBackground: props.hasBackground })}>
     <div tw="flex flex-col justify-center h-full gap-y-5">{props.children}</div>
     <Logo />
   </div>
 )
-
-export default Container

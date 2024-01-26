@@ -1,5 +1,6 @@
 import tw, { styled } from 'twin.macro'
-import { Logo, Button } from '../components'
+import { Button } from '../components/Button'
+import { Logo } from '../components/Logo'
 
 const Container = styled.div({
   ...tw`flex flex-col items-center justify-center h-screen`,

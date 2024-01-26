@@ -1,6 +1,6 @@
 import tw, { styled, css, theme } from 'twin.macro'
 
-const Button = styled.button(({ variant, isSmall }) => [
+export const Button = styled.button(({ variant, isSmall }) => [
   // The common button styles added with the tw import
   tw`px-8 py-2 rounded transform duration-75`,
 
@@ -26,5 +26,3 @@ const Button = styled.button(({ variant, isSmall }) => [
     color: ${theme`colors.white`};
   `,
 ])
-
-export default Button
