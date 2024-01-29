@@ -1,0 +1,5 @@
+{
+  "name": "@nx-workspace-emotion/tailwind-config",
+  "version": "0.0.1",
+  "main": "src/index.js"
+}
