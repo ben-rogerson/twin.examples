@@ -1,0 +1,4 @@
+{
+  "presets": ["next/babel", "@linaria"],
+  "plugins": ["babel-plugin-macros"]
+}
