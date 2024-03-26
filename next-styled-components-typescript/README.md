@@ -77,6 +77,7 @@ You can import `GlobalStyles` within a new file placed in `src/styles/GlobalStyl
 
 ```js
 // src/styles/GlobalStyles.tsx
+'use client'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import tw, { theme, GlobalStyles as BaseStyles } from 'twin.macro'
@@ -282,6 +283,9 @@ export default withTwin({
   reactStrictMode: true,
 })
 ```
+
+### Note
+- if rendered html shows `css="[object object]"` then check that `"use client"` directive is added whereever twin.macro is used
 
 [](#customization)
 
