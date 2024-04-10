@@ -285,7 +285,8 @@ export default withTwin({
 ```
 
 ### Note
-- if rendered html shows `css="[object object]"` then check that `"use client"` directive is added whereever twin.macro is used
+
+- If the rendered html shows `css="[object object]"` then check that the `"use client"` directive is added wherever twin.macro is used.
 
 [](#customization)
 
